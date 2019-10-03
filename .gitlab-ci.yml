@@ -14,7 +14,7 @@ test:
   stage: test
 
   script:
-    - "env | sort"
+    - "git checkout -B \"${CI_COMMIT_REF_NAME}\" \"${CI_COMMIT_SHA}\""
     - "git status"
 #    - ".gitlab-ci/test.sh"
 
