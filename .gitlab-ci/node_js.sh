@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo '.gitlab-ci/node_js.sh'
+
 # Based on Travis CI `node_js` language.
 
 # npm_disable_prefix

@@ -14,8 +14,7 @@ test:
   stage: test
 
   script:
-    - "echo \"${CI_COMMIT_SHA}\""
-    - "echo \"$(git rev-parse HEAD)\""
+    - "git status"
 #    - ".gitlab-ci/test.sh"
 
 release:
