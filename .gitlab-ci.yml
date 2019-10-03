@@ -1,41 +1,27 @@
+image: "node:lts-alpine"
+
 variables:
   CI_NAME: gitlab
   CI_EMAIL: gitlab-ci@example.com
+  TEST_CMD_TEST: "$(git rev-parse HEAD)"
 
 stages:
   - test
   - release
 
-default:
-  image: "node:lts-alpine"
-
-  before_script:
-    - ".gitlab-ci/node_js.sh"
+before_script:
+  - ".gitlab-ci/node_js.sh"
 
 test:
   stage: test
 
-  except:
-    variables:
-      - "$GITLAB_USER_LOGIN == $CI_NAME"
-
-  tags:
-    - node
-
   script:
     - "env | sort"
-    # - ".gitlab-ci/test.sh"
+#    - ".gitlab-ci/test.sh"
 
 release:
   stage: release
-  when: on_success
-
-  except:
-    variables:
-      - "$GITLAB_USER_LOGIN == $CI_NAME"
-
-  tags:
-    - node
+  when: manual
 
   only:
     - master
