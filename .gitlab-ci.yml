@@ -1,10 +1,5 @@
 image: "node:lts-alpine"
 
-variables:
-  CI_NAME: gitlab
-  CI_EMAIL: gitlab-ci@example.com
-  TEST_CMD_TEST: "$(git rev-parse HEAD)"
-
 stages:
   - test
   - release
@@ -19,7 +14,9 @@ test:
   stage: test
 
   script:
-    - "env | sort"
+    - "echo \"${CI_COMMIT_SHA}\""
+    - "echo \"$(git rev-parse HEAD)\""
+    - "echo \"${CI_REPOSITORY_URL}\""
 #    - ".gitlab-ci/test.sh"
 
 release:
