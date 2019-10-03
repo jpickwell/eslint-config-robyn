@@ -10,6 +10,9 @@ stages:
   - release
 
 before_script:
+  - "apk update"
+  - "apk upgrade"
+  - "apk add bash"
   - ".gitlab-ci/node_js.sh"
 
 test:
