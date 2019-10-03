@@ -7,7 +7,7 @@ stages:
 before_script:
   - "apk update"
   - "apk upgrade"
-  - "apk add bash"
+  - "apk add bash git"
   - ".gitlab-ci/node_js.sh"
 
 test:
@@ -16,7 +16,6 @@ test:
   script:
     - "echo \"${CI_COMMIT_SHA}\""
     - "echo \"$(git rev-parse HEAD)\""
-    - "echo \"${CI_REPOSITORY_URL}\""
 #    - ".gitlab-ci/test.sh"
 
 release:
