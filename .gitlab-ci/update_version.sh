@@ -17,7 +17,4 @@ if [[ -f package.json ]]; then
   fi
 fi
 
-git push --follow-tags "${CI_REPOSITORY_URL}" master:master
-git checkout develop
-git merge master
-git push --follow-tags "${CI_REPOSITORY_URL}" develop:develop
+git push --follow-tags "${CI_REPOSITORY_URL}" master
