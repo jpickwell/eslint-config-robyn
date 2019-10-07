@@ -1,0 +1,84 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="CheckEmptyScriptTag" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="CssInvalidFunction" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="CssInvalidPropertyValue" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="CssInvalidPseudoSelector" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="CssRedundantUnit" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="CssUnknownTarget" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="DuplicatedCode" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="ES6CheckImport" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="ES6ModulesDependencies" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HtmlDeprecatedAttribute" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="myValues">
+        <value>
+          <list size="0" />
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownBooleanAttribute" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="HtmlUnknownTag" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="myValues">
+        <value>
+          <list size="6">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTarget" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="JSCheckFunctionSignatures" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="JSDeprecatedSymbols" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="JSUnfilteredForInLoop" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="JSUnresolvedFunction" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="JSUnresolvedVariable" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="JSUnusedGlobalSymbols" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="JSUnusedLocalSymbols" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="JSValidateTypes" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="NodeModulesDependencies" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="NpmUsedModulesInstalled" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="RailsChecklist01" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RailsParamDefResolve" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RequiredAttributes" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="myAdditionalRequiredHtmlAttributes" value="" />
+    </inspection_tool>
+    <inspection_tool class="Rubocop" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RubyArgCount" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="RubyBlockToMethodReference" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RubyCaseWithoutElseBlockInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RubyClassMethodNamingConvention" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RubyClassModuleNamingConvention" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RubyClassVariableNamingConvention" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RubyConstantNamingConvention" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RubyGlobalVariableNamingConvention" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RubyInstanceMethodNamingConvention" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RubyInstanceVariableNamingConvention" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RubyLocalVariableNamingConvention" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RubyNilAnalysis" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RubyParameterNamingConvention" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RubyResolve" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="warnImplicitResults" value="false" />
+    </inspection_tool>
+    <inspection_tool class="RubyStringKeysInHashInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RubySuperCallWithoutSuperclassInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RubyTooManyMethodsInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SassScssResolvedByNameOnly" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="ShellCheck" enabled="true" level="ERROR" enabled_by_default="true">
+      <shellcheck_settings value="SC1010" />
+    </inspection_tool>
+    <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="UnterminatedStatementJS" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="ignoreSemicolonAtEndOfBlock" value="true" />
+    </inspection_tool>
+  </profile>
+</component>
