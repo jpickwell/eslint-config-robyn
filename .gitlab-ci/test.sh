@@ -4,8 +4,10 @@
 
 if [[ -f package.json ]]; then
   if [[ -f yarn.lock ]]; then
-    yarn test
+    echo 'yarn test'
+#    yarn test
   else
-    npm test
+    echo 'npm test'
+#    npm test
   fi
 fi

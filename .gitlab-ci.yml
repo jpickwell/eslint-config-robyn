@@ -1,29 +1,25 @@
+---
 image: "node:lts-alpine"
 
 stages:
-  - test
-  - release
+  - verify
+  - package
 
 before_script:
   - "apk update"
   - "apk upgrade"
   - "apk add bash git"
-  - ".gitlab-ci/node_js.sh"
+  - .gitlab-ci/node_js.sh
 
 test:
-  stage: test
+  stage: verify
 
   script:
-    - "git checkout -B \"${CI_COMMIT_REF_NAME}\" \"${CI_COMMIT_SHA}\""
-    - "git status"
-#    - ".gitlab-ci/test.sh"
+    - .gitlab-ci/test.sh
 
-release:
-  stage: release
+update_version:
+  stage: package
   when: manual
 
-  only:
-    - master
-
   script:
-    - ".gitlab-ci/release.sh"
+    - .gitlab-ci/update_version.sh
