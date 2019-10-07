@@ -3,12 +3,11 @@ image: 'node:lts-alpine'
 
 stages:
   - verify
-  - package
 
 before_script:
   - 'apk update'
   - 'apk upgrade'
-  - 'apk add bash git gnupg'
+  - 'apk add bash git'
   - .gitlab-ci/node_js.sh
 
 test:
@@ -16,10 +15,3 @@ test:
 
   script:
     - .gitlab-ci/test.sh
-
-update_version:
-  stage: package
-  when: manual
-
-  script:
-    - .gitlab-ci/update_version.sh
