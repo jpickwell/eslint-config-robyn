@@ -15,9 +15,10 @@
   "homepage": "https://gitlab.com/jpickwell/eslint-config-robyn#readme",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint . --config=eslintrc.js",
+    "lint": "eslint . --config=index.js",
     "release": "standard-version -s",
-    "test": "npm run lint && tape test/*.js"
+    "test": "yarn lint && yarn test:tape",
+    "test:tape": "babel-tape-runner test/*.js | faucet"
   },
   "dependencies": {
     "babel-eslint": "^10.0.3",
@@ -34,7 +35,9 @@
     "prettier": "^1.18.2"
   },
   "devDependencies": {
+    "babel-tape-runner": "^3.0.0",
     "conventional-recommended-bump": "^6.0.0",
+    "faucet": "^0.0.1",
     "semver": "^6.3.0",
     "standard-version": "^7.0.0",
     "tape": "^4.11.0"
