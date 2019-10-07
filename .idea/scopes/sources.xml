@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="sources" pattern="file[eslint-config-robyn]:*/&amp;&amp;!file[eslint-config-robyn]:.idea//*&amp;&amp;!file:yarn.lock&amp;&amp;!file:eslint-config-robyn.iml" />
+</component>
