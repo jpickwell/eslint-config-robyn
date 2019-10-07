@@ -15,7 +15,7 @@
   "homepage": "https://gitlab.com/jpickwell/eslint-config-robyn#readme",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint . --config=index.js",
+    "lint": "eslint --cache --report-unused-disable-directives .",
     "release": "standard-version -s",
     "test": "yarn lint && yarn test:jest",
     "test:jest": "jest --coverage"
@@ -35,6 +35,7 @@
     "prettier": "^1.18.2"
   },
   "devDependencies": {
+    "eslint-plugin-jest": "^22.17.0",
     "jest": "^24.9.0",
     "standard-version": "^7.0.0"
   },
