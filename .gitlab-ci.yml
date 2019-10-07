@@ -13,5 +13,7 @@ before_script:
 test:
   stage: verify
 
+  coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
+
   script:
     - .gitlab-ci/test.sh
