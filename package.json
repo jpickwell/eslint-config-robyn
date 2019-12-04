@@ -37,10 +37,10 @@
     "prettier": "^1.19.1"
   },
   "devDependencies": {
-    "eslint-plugin-jest": "latest",
-    "jest": "latest",
-    "standard-version": "latest",
-    "typescript": "latest"
+    "eslint-plugin-jest": "^23.1.1",
+    "jest": "^24.9.0",
+    "standard-version": "^7.0.1",
+    "typescript": "^3.7.3"
   },
   "keywords": [
     "robyn",
