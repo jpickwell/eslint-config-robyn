@@ -18,7 +18,7 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint'
   },
-  plugins: ['babel'],
+  plugins: ['babel', 'markdown'],
   settings: {
     'import/resolver': {
       node: {
