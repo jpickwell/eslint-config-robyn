@@ -1,4 +1,8 @@
-const standardConfig = require('eslint-config-standard/eslintrc')
+// At some point during ESLint's execution, the Standard Config object get
+// modified which causes validation issues. Deep cloning the object prevents
+// this.
+const cloneDeep = require('lodash.clonedeep')
+const standardConfig = cloneDeep(require('eslint-config-standard/eslintrc'))
 
 module.exports = {
   extends: [
