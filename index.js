@@ -1,9 +1,3 @@
-// At some point during ESLint's execution, the Standard Config object get
-// modified which causes validation issues. Deep cloning the object prevents
-// this.
-const cloneDeep = require('lodash.clonedeep')
-const standardConfig = cloneDeep(require('eslint-config-standard/eslintrc'))
-
 module.exports = {
   extends: [
     'standard',
@@ -34,11 +28,20 @@ module.exports = {
     'valid-typeof': 'off',
 
     'array-callback-return': 'error',
-    'babel/camelcase': standardConfig.rules.camelcase,
-    'babel/new-cap': standardConfig.rules['new-cap'],
-    'babel/no-unused-expressions':
-      standardConfig.rules['no-unused-expressions'],
-    'babel/valid-typeof': standardConfig.rules['valid-typeof'],
+    'babel/camelcase': ['error', { properties: 'never' }],
+    'babel/new-cap': [
+      'error',
+      { newIsCap: true, capIsNew: false, properties: true }
+    ],
+    'babel/no-unused-expressions': [
+      'error',
+      {
+        allowShortCircuit: true,
+        allowTernary: true,
+        allowTaggedTemplates: true
+      }
+    ],
+    'babel/valid-typeof': ['error', { requireStringLiterals: true }],
     'callback-return': 'error',
     'consistent-return': 'error',
     'consistent-this': ['error', 'self'],
@@ -74,7 +77,10 @@ module.exports = {
     'no-prototype-builtins': 'error',
     'no-script-url': 'error',
     'no-shadow': 'error',
-    'no-unused-vars': standardConfig.rules['no-unused-vars'],
+    'no-unused-vars': [
+      'error',
+      { vars: 'all', args: 'none', ignoreRestSiblings: true }
+    ],
     'no-useless-concat': 'error',
     'no-useless-rename': 'error',
     'no-var': 'error',
@@ -117,8 +123,6 @@ module.exports = {
     'unicorn/custom-error-definition': 'error',
     'unicorn/no-unsafe-regex': 'error',
     'unicorn/no-unused-properties': 'warn',
-    // IE doesn't support `ParentNode.prototype.append`
-    'unicorn/prefer-node-append': 'off',
     'unicorn/prevent-abbreviations': 'off'
   }
 }

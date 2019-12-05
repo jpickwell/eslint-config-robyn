@@ -5,3 +5,8 @@
 [![coverage report](https://gitlab.com/jpickwell/eslint-config-robyn/badges/master/coverage.svg)](https://gitlab.com/jpickwell/eslint-config-robyn/commits/master)
 
 An ESLint configuration.
+
+## IE Support
+
+Turn off `unicorn/prefer-node-append` because IE doesn't support
+`ParentNode.prototype.append`.
