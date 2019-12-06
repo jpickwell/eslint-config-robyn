@@ -1,25 +1,35 @@
 {
   "name": "eslint-config-robyn",
   "version": "1.0.0",
-  "description": "Robyn Style - ESLint Shareable Config",
   "private": false,
+  "description": "Robyn Style - ESLint Shareable Config",
   "license": "MIT",
-  "author": "Jordan Pickwell",
   "repository": {
     "type": "git",
     "url": "git+https://gitlab.com/jpickwell/eslint-config-robyn.git"
   },
+  "author": "Jordan Pickwell",
+  "homepage": "https://gitlab.com/jpickwell/eslint-config-robyn#readme",
   "bugs": {
     "url": "https://gitlab.com/jpickwell/eslint-config-robyn/issues"
   },
-  "homepage": "https://gitlab.com/jpickwell/eslint-config-robyn#readme",
   "main": "index.js",
   "scripts": {
+    "format": "prettier --write *",
+    "format:check": "prettier --check *",
     "lint": "eslint --cache --report-unused-disable-directives .",
     "release": "standard-version -s",
     "test": "yarn lint && yarn test:jest",
     "test:jest": "jest --coverage"
   },
+  "keywords": [
+    "robyn",
+    "eslint",
+    "config",
+    "prettier",
+    "standard",
+    "unicorn"
+  ],
   "dependencies": {
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
@@ -33,20 +43,14 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-unicorn": "^14.0.1",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "prettier-plugin-package": "^0.3.1",
+    "prettier-plugin-sh": "^0.2.4"
   },
   "devDependencies": {
     "eslint-plugin-jest": "^23.1.1",
     "jest": "^24.9.0",
     "standard-version": "^7.0.1",
     "typescript": "^3.7.3"
-  },
-  "keywords": [
-    "robyn",
-    "eslint",
-    "config",
-    "prettier",
-    "standard",
-    "unicorn"
-  ]
+  }
 }

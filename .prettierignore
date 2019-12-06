@@ -1,0 +1,6 @@
+/.idea/
+/coverage/
+/node_modules/
+/eslint-config-robyn.iml
+/LICENSE
+/yarn.lock
