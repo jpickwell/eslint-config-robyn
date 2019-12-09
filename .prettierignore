@@ -1,6 +1,9 @@
-/.idea/
-/coverage/
-/node_modules/
-/eslint-config-robyn.iml
-/LICENSE
-/yarn.lock
+.idea/
+coverage/
+node_modules/
+.editorconfig
+.gitattributes
+eslint-config-robyn.iml
+LICENSE
+yarn.lock
+.*ignore
