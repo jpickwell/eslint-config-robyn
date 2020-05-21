@@ -27,7 +27,6 @@
     "format": "prettier --write *",
     "format:check": "prettier --check *",
     "lint": "eslint --cache --report-unused-disable-directives .",
-    "preinstall": "npx only-allow pnpm",
     "release": "standard-version -s",
     "test": "yarn lint && yarn test:jest",
     "test:jest": "jest --coverage"
