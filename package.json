@@ -16,17 +16,20 @@
   "main": "index.js",
   "engines": {
     "node": ">= 10",
-    "npm": "No longer used. Please use pnpm.",
-    "pnpm": ">= 4.14.2"
+    "npm": "No longer used. Please use yarn.",
+    "yarn": ">= 1.22.4"
   },
   "os": [
     "darwin",
     "linux"
   ],
   "scripts": {
+    "clean": "rm -fr node_modules yarn.lock",
     "format": "prettier --write *",
     "format:check": "prettier --check *",
+    "install:clean": "yarn clean && yarn",
     "lint": "eslint --cache --report-unused-disable-directives .",
+    "preinstall": "npx only-allow yarn",
     "release": "standard-version -s",
     "test": "yarn lint && yarn test:jest",
     "test:jest": "jest --coverage"

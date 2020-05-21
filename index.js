@@ -7,18 +7,18 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier/babel',
     'prettier/standard',
-    'prettier/unicorn'
+    'prettier/unicorn',
   ],
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
   },
   plugins: ['babel', 'markdown'],
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.mjs']
-      }
-    }
+        extensions: ['.js', '.jsx', '.mjs'],
+      },
+    },
   },
   rules: {
     // ensure incompatible rules are disabled
@@ -31,15 +31,15 @@ module.exports = {
     'babel/camelcase': ['error', { properties: 'never' }],
     'babel/new-cap': [
       'error',
-      { newIsCap: true, capIsNew: false, properties: true }
+      { newIsCap: true, capIsNew: false, properties: true },
     ],
     'babel/no-unused-expressions': [
       'error',
       {
         allowShortCircuit: true,
         allowTernary: true,
-        allowTaggedTemplates: true
-      }
+        allowTaggedTemplates: true,
+      },
     ],
     'babel/valid-typeof': ['error', { requireStringLiterals: true }],
     'callback-return': 'error',
@@ -79,14 +79,14 @@ module.exports = {
     'no-shadow': 'error',
     'no-unused-vars': [
       'error',
-      { vars: 'all', args: 'none', ignoreRestSiblings: true }
+      { vars: 'all', args: 'none', ignoreRestSiblings: true },
     ],
     'no-useless-concat': 'error',
     'no-useless-rename': 'error',
     'no-var': 'error',
     'no-warning-comments': [
       'warn',
-      { terms: ['fixme', 'hack', 'todo', 'xxx'] }
+      { terms: ['fixme', 'hack', 'todo', 'xxx'] },
     ],
     'object-shorthand': 'error',
     'operator-assignment': 'error',
@@ -95,22 +95,22 @@ module.exports = {
       {
         blankLine: 'always',
         prev: ['const', 'let', 'var'],
-        next: '*'
+        next: '*',
       },
       {
         blankLine: 'any',
         prev: ['const', 'let', 'var'],
-        next: ['const', 'let', 'var']
+        next: ['const', 'let', 'var'],
       },
       {
         blankLine: 'always',
         prev: '*',
-        next: 'return'
-      }
+        next: 'return',
+      },
     ],
     'prefer-const': [
       'error',
-      { destructuring: 'any', ignoreReadBeforeAssign: false }
+      { destructuring: 'any', ignoreReadBeforeAssign: false },
     ],
     'prefer-numeric-literals': 'error',
     'prefer-rest-params': 'error',
@@ -123,6 +123,6 @@ module.exports = {
     'unicorn/custom-error-definition': 'error',
     'unicorn/no-unsafe-regex': 'error',
     'unicorn/no-unused-properties': 'warn',
-    'unicorn/prevent-abbreviations': 'off'
-  }
-}
+    'unicorn/prevent-abbreviations': 'off',
+  },
+};
