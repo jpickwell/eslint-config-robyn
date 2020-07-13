@@ -8,12 +8,11 @@ before_script:
   - 'apk update'
   - 'apk upgrade'
   - 'apk add bash git'
+  - 'npx pnpm add -g pnpm'
   - .gitlab-ci/node_js.sh
 
 test:
   stage: verify
-
-  coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
-
+  coverage: "/All files[^|]*\\|[^|]*\\s+([\\d\\.]+)/"
   script:
     - .gitlab-ci/test.sh
