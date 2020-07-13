@@ -1,37 +1,54 @@
+const helpers = require('./helpers.js');
+
 module.exports = {
   addTrailingCommas: true,
   phpVersion: '7.4',
   preferSingleQuotes: false,
+  proseWrap: 'always',
   singleQuote: true,
   trailingComma: 'all',
 
   overrides: [
+    // PHP
     {
-      files: [
-        '*.aw',
-        '*.ctp',
-        '*.fcgi',
-        '*.inc',
-        '*.php',
-        '*.php3',
-        '*.php4',
-        '*.php5',
-        '*.phps',
-        '*.phpt',
-        '*.phtml',
-        '.php_cs',
-        '.php_cs.dist',
-        'artisan',
-        'Phakefile',
-      ],
+      files: helpers.mapFiles([
+        require('linguist-languages/data/PHP.json'),
+        require('linguist-languages/data/HTML+PHP.json'),
+      ]),
       options: {
+        parser: 'php',
         singleQuote: false,
       },
     },
+
+    // Ruby
     {
-      files: ['.simplecov'],
+      files: helpers.mapFiles(require('linguist-languages/data/Ruby.json')),
       options: {
         parser: 'ruby',
+      },
+    },
+
+    // XML
+    {
+      files: helpers.mapFiles([
+        require('linguist-languages/data/XML.json'),
+        require('linguist-languages/data/SVG.json'),
+      ]),
+      options: {
+        parser: 'xml',
+      },
+    },
+
+    // YAML
+    {
+      files: helpers.mapFiles(
+        require('linguist-languages/data/YAML.json'),
+        (fileName) => fileName !== 'yarn.lock',
+      ),
+      options: {
+        parser: 'yaml',
+        singleQuote: false,
       },
     },
   ],

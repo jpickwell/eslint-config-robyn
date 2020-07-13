@@ -14,6 +14,7 @@ dependencies:
   eslint-plugin-promise: 4.2.1
   eslint-plugin-standard: 4.0.1_eslint@7.4.0
   eslint-plugin-unicorn: 20.1.0_eslint@7.4.0
+  linguist-languages: 7.10.0
   prettier: 2.0.5
   prettier-plugin-package: 1.0.0_prettier@2.0.5
   stylelint: 13.6.1
@@ -6873,6 +6874,7 @@ specifiers:
   eslint-plugin-unicorn: ^20.1.0
   husky: ^4.2.5
   jest: ^26.1.0
+  linguist-languages: ^7.10.0
   lint-staged: ^10.2.11
   prettier: 2.0.5
   prettier-plugin-package: ^1.0.0
