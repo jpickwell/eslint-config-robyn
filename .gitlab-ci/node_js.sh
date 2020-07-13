@@ -1,9 +1,9 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # Based on Travis CI `node_js` language.
 
 # npm_disable_prefix
-if [[ $(command -v sw_vers) && -f .npmrc ]]; then
+if command -v sw_vers && [ -f .npmrc ]; then
   echo 'disable prefix'
   npm config delete prefix
 fi
@@ -15,11 +15,13 @@ npm config set spin false
 npm config set progress false
 
 # install
-if [[ -f package.json ]]; then
-  if [[ -f yarn.lock ]]; then
+if [ -f package.json ]; then
+  if [ -f yarn.lock ]; then
     yarn
+  elif [ -f pnpm-lock.yaml ]; then
+    pnpm i
   else
-    if [[ -f npm-shrinkwrap.json || -f package-lock.json ]]; then
+    if [ -f npm-shrinkwrap.json ] || [ -f package-lock.json ]; then
       npm ci
     else
       npm install
