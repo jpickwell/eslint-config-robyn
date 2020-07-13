@@ -1,14 +1,14 @@
 ---
-image: 'node:lts-alpine'
+image: "node:lts-alpine"
 
 stages:
   - verify
 
 before_script:
-  - 'apk update'
-  - 'apk upgrade'
-  - 'apk add bash git'
-  - 'npx pnpm add -g pnpm'
+  - "apk update"
+  - "apk upgrade"
+  - "apk add bash git"
+  - "npm install -g pnpm"
   - .gitlab-ci/node_js.sh
 
 test:
