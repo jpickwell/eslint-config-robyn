@@ -1,31 +1,10 @@
 module.exports = {
-  // addTrailingCommas: false,
-  // arrowParens: 'always',
-  // braceStyle: 'psr-2',
-  // bracketSpacing: true,
-  // endOfLine: 'lf',
-  // htmlWhitespaceSensitivity: 'css',
-  // inlineConditionals: true,
-  // inlineLoops: true,
-  // insertPragma: false,
-  // jsxBracketSameLine: false,
-  // jsxSingleQuote: false,
+  addTrailingCommas: true,
   phpVersion: '7.4',
-  // preferHashLabels: true,
   preferSingleQuotes: false,
-  // printWidth: 80,
-  // proseWrap: 'preserve',
-  // quoteProps: 'as-needed',
-  // requirePragma: false,
-  // semi: true,
   singleQuote: true,
-  // tabWidth: 2,
   trailingComma: 'all',
-  // trailingCommaPHP: true,
-  // useTabs: false,
-  // vueIndentScriptAndStyle: false,
-  // xmlSelfClosingSpace: true,
-  // xmlWhitespaceSensitivity: 'strict',
+
   overrides: [
     {
       files: [
@@ -47,7 +26,6 @@ module.exports = {
       ],
       options: {
         singleQuote: false,
-        // tabWidth: 4,
       },
     },
     {
