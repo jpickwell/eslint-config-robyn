@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-git checkout master && git pull origin master
-yarn release && git push --follow-tags origin master
+pnpm run release && git push --follow-tags origin master
