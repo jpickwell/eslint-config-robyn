@@ -41,6 +41,7 @@
     "lint": "eslint --cache -f friendly --report-unused-disable-directives .",
     "lint:config": "eslint --print-config index.js",
     "pnpm:update": "npm i -g pnpm",
+    "prepare": "husky install",
     "release": "standard-version -s",
     "test": "pnpm run lint && pnpm run test:jest",
     "test:jest": "jest --coverage"
@@ -77,15 +78,8 @@
     "eslint-plugin-jest": "^24.3.6",
     "husky": "^7.0.1",
     "jest": "^27.0.6",
-    "lint-staged": "^11.0.1",
-    "mrm": "^3.0.2",
     "standard-version": "^9.3.0",
     "typescript": "^4.3.5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*": "prettier --write"
