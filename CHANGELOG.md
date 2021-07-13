@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.2](https://gitlab.com/jpickwell/eslint-config-robyn/compare/v2.0.1...v2.0.2) (2021-07-13)
+
+
+### Bug Fixes
+
+* add lint-staged back to dev dependencies ([4c309ea](https://gitlab.com/jpickwell/eslint-config-robyn/commit/4c309ea28d35d6c6ed9c06ae57f1b1cd0d08f621))
+
 ### [2.0.1](https://gitlab.com/jpickwell/eslint-config-robyn/compare/v2.0.0...v2.0.1) (2021-07-13)
 
 
