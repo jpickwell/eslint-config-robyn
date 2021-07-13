@@ -1,15 +1,11 @@
 module.exports = {
-  extends: ['.'],
-  env: {
-    'jest/globals': true,
-  },
-  plugins: ['jest'],
+  extends: ['.', 'plugin:jest/recommended'],
   root: true,
+  globals: {
+    module: true,
+    require: true,
+  },
   rules: {
-    'jest/no-disabled-tests': 'error',
-    'jest/no-focused-tests': 'error',
-    'jest/no-identical-title': 'error',
-    'jest/prefer-to-have-length': 'error',
-    'jest/valid-expect': 'error',
+    'unicorn/prefer-module': 'off',
   },
 };

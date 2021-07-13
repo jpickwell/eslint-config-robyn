@@ -1,29 +1,13 @@
+const filter = require('lodash/filter');
+const map = require('lodash/map');
+
 module.exports = {
   /**
    * @param {string[]} extensions
    * @returns {string[]}
    */
   mapExtensions(extensions) {
-    return extensions.map((ext) => `*${ext}`);
-  },
-
-  /**
-   * @param {?string[]} fileNames
-   * @param {function(string, number, string[]): boolean} [filter]
-   * @returns {string[]}
-   */
-  mapFileNames(fileNames, filter) {
-    if (!fileNames) {
-      return [];
-    }
-
-    if (!filter) {
-      return fileNames;
-    }
-
-    return fileNames.filter((element, index, array) =>
-      filter(element, index, array),
-    );
+    return map(extensions, (extension) => `*${extension}`);
   },
 
   /**
@@ -40,9 +24,15 @@ module.exports = {
     files = [];
     for (const language of languageArray) {
       const extensions = this.mapExtensions(language.extensions);
-      const fileNames = this.mapFileNames(language.filenames, fileNamesFilter);
+      const fileNames = language.filenames || [];
 
       files = [...files, ...extensions, ...fileNames];
+
+      if (fileNamesFilter) {
+        files = filter(files, (element, index, array) =>
+          fileNamesFilter(element, index, array),
+        );
+      }
     }
 
     return files;

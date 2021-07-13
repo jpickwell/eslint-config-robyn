@@ -38,6 +38,7 @@
       <option name="USE_DOUBLE_QUOTES" value="false" />
       <option name="FORCE_QUOTE_STYlE" value="true" />
       <option name="ENFORCE_TRAILING_COMMA" value="WhenMultiline" />
+      <option name="OBJECT_LITERAL_WRAP" value="2" />
       <option name="SPACES_WITHIN_OBJECT_LITERAL_BRACES" value="true" />
       <option name="SPACES_WITHIN_IMPORTS" value="true" />
     </JSCodeStyleSettings>
@@ -80,31 +81,18 @@
         <option name="CONTINUATION_INDENT_SIZE" value="2" />
         <option name="TAB_SIZE" value="8" />
       </indentOptions>
-    </codeStyleSettings>
-    <codeStyleSettings language="CoffeeScript">
-      <option name="KEEP_LINE_BREAKS" value="false" />
-      <option name="KEEP_FIRST_COLUMN_COMMENT" value="false" />
-      <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
-      <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
-      <option name="ALIGN_MULTILINE_ARRAY_INITIALIZER_EXPRESSION" value="false" />
-      <option name="CALL_PARAMETERS_WRAP" value="5" />
-      <option name="CALL_PARAMETERS_LPAREN_ON_NEXT_LINE" value="true" />
-      <option name="CALL_PARAMETERS_RPAREN_ON_NEXT_LINE" value="true" />
-      <option name="METHOD_PARAMETERS_WRAP" value="5" />
-      <option name="METHOD_PARAMETERS_LPAREN_ON_NEXT_LINE" value="true" />
-      <option name="METHOD_PARAMETERS_RPAREN_ON_NEXT_LINE" value="true" />
-      <option name="ARRAY_INITIALIZER_WRAP" value="5" />
-      <option name="ARRAY_INITIALIZER_LBRACE_ON_NEXT_LINE" value="true" />
-      <option name="ARRAY_INITIALIZER_RBRACE_ON_NEXT_LINE" value="true" />
-      <indentOptions>
-        <option name="TAB_SIZE" value="8" />
-      </indentOptions>
-    </codeStyleSettings>
-    <codeStyleSettings language="Gherkin">
-      <indentOptions>
-        <option name="CONTINUATION_INDENT_SIZE" value="2" />
-        <option name="TAB_SIZE" value="8" />
-      </indentOptions>
+      <arrangement>
+        <rules>
+          <section>
+            <rule>
+              <match>
+                <NAME>.*</NAME>
+              </match>
+              <order>BY_NAME</order>
+            </rule>
+          </section>
+        </rules>
+      </arrangement>
     </codeStyleSettings>
     <codeStyleSettings language="HTML">
       <option name="LINE_COMMENT_AT_FIRST_COLUMN" value="false" />
@@ -115,23 +103,11 @@
         <option name="TAB_SIZE" value="8" />
       </indentOptions>
     </codeStyleSettings>
-    <codeStyleSettings language="Haml">
-      <indentOptions>
-        <option name="CONTINUATION_INDENT_SIZE" value="2" />
-        <option name="TAB_SIZE" value="8" />
-      </indentOptions>
-    </codeStyleSettings>
     <codeStyleSettings language="JSON">
       <option name="KEEP_LINE_BREAKS" value="false" />
       <option name="SPACE_WITHIN_BRACES" value="true" />
       <indentOptions>
         <option name="CONTINUATION_INDENT_SIZE" value="2" />
-        <option name="TAB_SIZE" value="8" />
-      </indentOptions>
-    </codeStyleSettings>
-    <codeStyleSettings language="Jade">
-      <indentOptions>
-        <option name="INDENT_SIZE" value="2" />
         <option name="TAB_SIZE" value="8" />
       </indentOptions>
     </codeStyleSettings>
@@ -158,7 +134,7 @@
       <option name="FOR_STATEMENT_WRAP" value="5" />
       <option name="FOR_STATEMENT_LPAREN_ON_NEXT_LINE" value="true" />
       <option name="FOR_STATEMENT_RPAREN_ON_NEXT_LINE" value="true" />
-      <option name="ARRAY_INITIALIZER_WRAP" value="5" />
+      <option name="ARRAY_INITIALIZER_WRAP" value="2" />
       <option name="ARRAY_INITIALIZER_LBRACE_ON_NEXT_LINE" value="true" />
       <option name="ARRAY_INITIALIZER_RBRACE_ON_NEXT_LINE" value="true" />
       <option name="ASSIGNMENT_WRAP" value="1" />
@@ -193,6 +169,18 @@
         <option name="CONTINUATION_INDENT_SIZE" value="2" />
         <option name="TAB_SIZE" value="8" />
       </indentOptions>
+      <arrangement>
+        <rules>
+          <section>
+            <rule>
+              <match>
+                <NAME>.*</NAME>
+              </match>
+              <order>BY_NAME</order>
+            </rule>
+          </section>
+        </rules>
+      </arrangement>
     </codeStyleSettings>
     <codeStyleSettings language="Shell Script">
       <indentOptions>
