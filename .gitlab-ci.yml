@@ -1,18 +1,9 @@
 ---
-image: "node:lts-alpine"
+include:
+  - template: Security/SAST.gitlab-ci.yml
 
 stages:
-  - verify
+  - test
 
-before_script:
-  - "apk update"
-  - "apk upgrade"
-  - "apk add bash git"
-  - "npm install -g pnpm"
-  - .gitlab-ci/node_js.sh
-
-test:
-  stage: verify
-  coverage: "/All files[^|]*\\|[^|]*\\s+([\\d\\.]+)/"
-  script:
-    - .gitlab-ci/test.sh
+sast:
+  stage: test
