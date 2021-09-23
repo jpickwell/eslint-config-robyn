@@ -9,18 +9,21 @@ sast:
   stage: test
 
 before_script:
+  - apk update
+  - apk upgrade
+  - apk add bash git
   - 'curl -f https://get.pnpm.io/v6.14.js | node - add --global pnpm@6'
   - pnpm config set store-dir .pnpm-store
-  - pnpm install
+  - .gitlab-ci/node_js.sh
 
 'node:12':
   image: 'node:12'
   stage: test
   script:
-    - pnpm test
+    - .gitlab-ci/test.sh
 
 'node:14':
   image: 'node:14'
   stage: test
   script:
-    - pnpm test
+    - .gitlab-ci/test.sh
