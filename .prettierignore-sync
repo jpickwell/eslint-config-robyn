@@ -1,0 +1,17 @@
+[github/gitignore]
+Global/JetBrains.gitignore
+Global/Linux.gitignore
+Global/macOS.gitignore
+Global/Vim.gitignore
+Global/Windows.gitignore
+Node.gitignore
+
+[inline]
+.git*
+.husky/_
+.idea
+.*ignore
+CHANGELOG.md
+pnpm-lock.yaml
+
+*.iml

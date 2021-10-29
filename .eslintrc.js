@@ -1,11 +1,11 @@
+'use strict';
+
 module.exports = {
-  extends: ['.', 'plugin:jest/recommended'],
+  extends: [
+    require.resolve('./node.js'),
+    require.resolve('./jest.js'),
+    require.resolve('./commonjs.js'),
+  ],
   root: true,
-  globals: {
-    module: true,
-    require: true,
-  },
-  rules: {
-    'unicorn/prefer-module': 'off',
-  },
+  rules: {},
 };
