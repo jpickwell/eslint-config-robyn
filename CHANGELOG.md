@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v2.0.3...v2.1.0) (2021-11-03)
+
+
+### Features
+
+* add artisan file name to php override ([c761ac5](https://gitlab.com/jpickwell/eslint-config-robyn/-/commit/c761ac5254a490e004dabb6951fcc607d2167f84))
+
 ### [2.0.3](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v2.0.2...v2.0.3) (2021-11-03)
 
 ### [2.0.2](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v2.0.1...v2.0.2) (2021-07-13)
