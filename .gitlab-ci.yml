@@ -9,6 +9,7 @@ sast:
   stage: test
 
 before_script:
+  - whoami
   - apk update
   - apk upgrade
   - apk add bash curl git nodejs
@@ -17,13 +18,19 @@ before_script:
   - .gitlab-ci/node_js.sh
 
 'node:12':
-  image: 'node:12'
+  image: 'node:12-alpine'
   stage: test
   script:
     - .gitlab-ci/test.sh
 
 'node:14':
-  image: 'node:14'
+  image: 'node:14-alpine'
+  stage: test
+  script:
+    - .gitlab-ci/test.sh
+
+'node:16':
+  image: 'node:16-alpine'
   stage: test
   script:
     - .gitlab-ci/test.sh
