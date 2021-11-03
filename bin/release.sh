@@ -1,3 +1,3 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 pnpm run release && git push --follow-tags origin master
