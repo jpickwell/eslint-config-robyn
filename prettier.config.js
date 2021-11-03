@@ -42,7 +42,7 @@ module.exports = {
     // PHP
     {
       excludeFiles: ['*.blade.php'],
-      files: helpers.mapFiles([htmlPhp, php]),
+      files: [...helpers.mapFiles([htmlPhp, php]), 'artisan'],
       options: {
         parser: 'php',
         singleQuote: false,
