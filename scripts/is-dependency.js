@@ -10,6 +10,6 @@ const parentDirectoryOfPackage = path.basename(
 
 const isDependency = parentDirectoryOfPackage === 'node_modules';
 
-console.log(parentDirectoryOfPackage);
+console.log(__dirname);
 
 process.exit(isDependency ? 0 : 1);
