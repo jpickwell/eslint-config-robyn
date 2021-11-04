@@ -1,10 +1,15 @@
-/* eslint-disable node/no-process-exit,unicorn/no-process-exit -- CLI script */
+/* eslint-disable no-console,node/no-process-exit,unicorn/no-process-exit -- CLI script */
 
 'use strict';
 
 const path = require('path');
 
-const isDependency =
-  path.basename(path.resolve(__dirname, '..', '..')) === 'node_modules';
+const parentDirectoryOfPackage = path.basename(
+  path.resolve(path.join(__dirname, '..', '..')),
+);
+
+const isDependency = parentDirectoryOfPackage === 'node_modules';
+
+console.log(parentDirectoryOfPackage);
 
 process.exit(isDependency ? 0 : 1);
