@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.1](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v2.1.0...v2.1.1) (2021-11-04)
+
+
+### Bug Fixes
+
+* move husky install to postinstall ([d215dd4](https://gitlab.com/jpickwell/eslint-config-robyn/-/commit/d215dd459f4d0140a19030f4165c161c1ee5077c))
+
 ## [2.1.0](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v2.0.3...v2.1.0) (2021-11-03)
 
 
