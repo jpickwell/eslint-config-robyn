@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.3](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v2.1.2...v2.1.3) (2021-11-04)
+
+
+### Bug Fixes
+
+* handle git repo dependency detection ([323e0c4](https://gitlab.com/jpickwell/eslint-config-robyn/-/commit/323e0c498cce1bbde2c05c96a4039f79ab783ffc))
+
 ### [2.1.2](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v2.1.1...v2.1.2) (2021-11-04)
 
 
