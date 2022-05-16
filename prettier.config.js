@@ -76,7 +76,7 @@ module.exports = {
 
     // XML
     {
-      excludeFiles: ['*.d.ts'],
+      excludeFiles: ['*.ts', '*.tsx'],
       files: helpers.mapFiles([xml, svg]),
       options: {
         parser: 'xml',
