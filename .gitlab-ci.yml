@@ -8,9 +8,17 @@ stages:
     - security
 
 sast:
+    rules:
+        -
+            if: $CI_COMMIT_TAG
+            when: never
     stage: security
 
 .test_script:
+    rules:
+        -
+            if: $CI_COMMIT_TAG
+            when: never
     script:
         - apk update
         - apk upgrade

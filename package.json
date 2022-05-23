@@ -74,7 +74,7 @@
 		"find-new-rules": "eslint-find-rules -i deprecated -u configs/all.js",
 		"find-unset-rules": "node tests/unset.js",
 		"format": "pnpm prettier -w '{**/.*,.*,**/*,*}'",
-		"format:check": "pnpm prettier -c '{**/.*,.*,**/*,*}'",
+		"format:check": "pnpm prettier:check '{**/.*,.*,**/*,*}'",
 		"husky:install": "is-ci || husky install",
 		"ignore-sync": "ignore-sync .",
 		"install:clean": "pnpm clean && pnpm i",
@@ -83,6 +83,7 @@
 		"lint:config": "pnpm eslint:config index.js",
 		"prepare": "npm run is-dependency || npm run husky:install",
 		"prettier": "prettier -u",
+		"prettier:check": "pnpm prettier -c",
 		"release": "standard-version -s",
 		"test": "run-s find-new-rules find-deprecated-rules lint"
 	},
