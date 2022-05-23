@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v2.1.3...v3.0.0) (2022-05-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* Formatting settings and dependencies have been
+updated/modified.
+
+### Features
+
+* update rules and style ([076f024](https://gitlab.com/jpickwell/eslint-config-robyn/-/commit/076f02497ab8d3aab6fa3173d9fec341b7d0006c))
+
+
+### Bug Fixes
+
+* exclude typescript files from prettier xml plugin ([0ee1c7c](https://gitlab.com/jpickwell/eslint-config-robyn/-/commit/0ee1c7cb73d674187291ecbb7388edfaf8950b18))
+
 ### [2.1.3](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v2.1.2...v2.1.3) (2021-11-04)
 
 
