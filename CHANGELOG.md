@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.1](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v3.0.0...v3.0.1) (2022-05-23)
+
 ## [3.0.0](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v2.1.3...v3.0.0) (2022-05-23)
 
 
