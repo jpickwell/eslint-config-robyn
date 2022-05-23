@@ -15,20 +15,10 @@ sast:
         - apk update
         - apk upgrade
         - apk add bash curl git nodejs
-        - 'curl -f https://get.pnpm.io/v6.14.js | node - add --global pnpm@6'
+        - 'corepack enable && corepack prepare --activate pnpm@7.1.0'
         - pnpm config set store-dir .pnpm-store
         - .gitlab-ci/node_js.sh
         - .gitlab-ci/test.sh
-
-'node:12':
-    extends: .test_script
-    image: 'node:12-alpine'
-    stage: test
-
-'node:14':
-    extends: .test_script
-    image: 'node:14-alpine'
-    stage: test
 
 'node:16':
     extends: .test_script
