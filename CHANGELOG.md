@@ -7,8 +7,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### ⚠ BREAKING CHANGES
 
-* Formatting settings and dependencies have been
-updated/modified.
+* Formatting settings and dependencies have been updated/modified.
 
 ### Features
 
