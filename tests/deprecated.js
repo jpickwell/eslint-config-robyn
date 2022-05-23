@@ -1,22 +1,29 @@
 'use strict';
 
 const getRuleFinder = require('eslint-find-rules');
-const without = require('lodash/fp/without');
+const without = require('lodash/without');
+const sp = require('synchronized-promise');
 const deprecatedConfig = require('../configs/deprecated');
 
-const ruleFinder = getRuleFinder(require.resolve('../configs/all.js'));
+async function run() {
+	const ruleFinder = await getRuleFinder(
+		require.resolve('../configs/all.js'),
+	);
 
-/** @type {string[]} */
-const deprecatedRules = ruleFinder.getDeprecatedRules();
+	/** @type {string[]} */
+	const deprecatedRules = ruleFinder.getDeprecatedRules();
 
-/** @type {string[]} */
-const specifiedRules = [...Object.keys(deprecatedConfig.rules)];
+	/** @type {string[]} */
+	const specifiedRules = [...Object.keys(deprecatedConfig.rules)];
 
-const rules = without(specifiedRules, deprecatedRules);
+	const rules = without(deprecatedRules, ...specifiedRules);
 
-if (rules.length > 0) {
-  // eslint-disable-next-line no-console -- This is a script for development purposes.
-  console.log(rules);
+	if (rules.length > 0) {
+		// eslint-disable-next-line no-console -- This is a script for development purposes.
+		console.log(rules);
 
-  process.exitCode = 1;
+		process.exitCode = 1;
+	}
 }
+
+sp(run)();

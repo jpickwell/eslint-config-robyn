@@ -4,8 +4,8 @@
 
 # npm_disable_prefix
 if command -v sw_vers && [ -f .npmrc ]; then
-  echo 'disable prefix'
-  npm config delete prefix
+	echo 'disable prefix'
+	npm config delete prefix
 fi
 
 # npm_disable_spinner
@@ -16,15 +16,15 @@ npm config set progress false
 
 # install
 if [ -f package.json ]; then
-  if [ -f yarn.lock ]; then
-    yarn
-  elif [ -f pnpm-lock.yaml ]; then
-    pnpm i
-  else
-    if [ -f npm-shrinkwrap.json ] || [ -f package-lock.json ]; then
-      npm ci
-    else
-      npm install
-    fi
-  fi
+	if [ -f yarn.lock ]; then
+		yarn
+	elif [ -f pnpm-lock.yaml ]; then
+		pnpm i
+	else
+		if [ -f npm-shrinkwrap.json ] || [ -f package-lock.json ]; then
+			npm ci
+		else
+			npm install
+		fi
+	fi
 fi

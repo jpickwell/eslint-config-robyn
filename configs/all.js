@@ -6,12 +6,13 @@ const { mapConfigs } = require('../lib/helpers');
 
 /** @type {BaseConfig} */
 module.exports = {
-  extends: mapConfigs(
-    'index',
-    'jest',
-    'jest-dom',
-    'testing-library',
-    'vue',
-    'vue-scoped-css',
-  ),
+	extends: mapConfigs(
+		'index',
+		'jest',
+		'jest-dom',
+		'jest-formatting',
+		'testing-library',
+		'vue',
+		'vue-scoped-css',
+	),
 };

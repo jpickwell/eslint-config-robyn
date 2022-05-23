@@ -4,18 +4,9 @@
 
 /** @type {BaseConfig} */
 module.exports = {
-  parserOptions: {
-    ecmaFeatures: {
-      globalReturn: false,
-    },
-    sourceType: 'module',
-  },
-  rules: {
-    'node/no-unsupported-features/es-syntax': [
-      'error',
-      {
-        ignores: ['modules'],
-      },
-    ],
-  },
+	extends: ['plugin:node/recommended-module'],
+	parserOptions: {
+		ecmaVersion: 'latest',
+	},
+	rules: {},
 };

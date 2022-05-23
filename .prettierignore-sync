@@ -7,11 +7,11 @@ Global/Windows.gitignore
 Node.gitignore
 
 [inline]
+*.iml
+.*ignore
+.*ignore-sync
 .git*
 .husky/_
 .idea
-.*ignore
 CHANGELOG.md
 pnpm-lock.yaml
-
-*.iml

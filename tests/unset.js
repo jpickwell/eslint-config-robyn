@@ -3,9 +3,11 @@
 
 const path = require('path');
 const glob = require('glob');
-const compact = require('lodash/fp/compact');
-const flatMap = require('lodash/fp/flatMap');
-const flow = require('lodash/fp/flow');
+const compact = require('lodash/compact');
+const filter = require('lodash/filter');
+const flatMap = require('lodash/flatMap');
+const flow = require('lodash/flow');
+const map = require('lodash/map');
 
 /** @typedef {import('eslint').BaseConfig} */
 /** @typedef {import('eslint').ConfigOverride} */
@@ -20,36 +22,36 @@ const configFilePaths = glob.sync(`${configsDirectory}/**/*.js`);
  * @returns {BaseConfig}
  */
 function mapConfigFile(configFilePath) {
-  // eslint-disable-next-line node/global-require -- not an issue
-  const config = require(configFilePath);
+	// eslint-disable-next-line node/global-require -- not an issue
+	const config = require(configFilePath);
 
-  config.path = configFilePath;
+	config.path = configFilePath;
 
-  return config;
+	return config;
 }
 
 /** @type {BaseConfig[]} */
-const configs = configFilePaths.map(mapConfigFile);
+const configs = map(configFilePaths, mapConfigFile);
 
 /**
  * @param {BaseConfig[]} cfgs
  * @returns {(BaseConfig|ConfigOverride)[]}
  */
 const mappedConfigs = flatMap(
-  /**
-   * @param {BaseConfig} config
-   * @returns {(BaseConfig|ConfigOverride)[]}
-   */
-  (config) => {
-    /** @type {(BaseConfig|ConfigOverride)[]} */
-    const overrides = [config];
+	/**
+	 * @param {BaseConfig} config
+	 * @returns {(BaseConfig|ConfigOverride)[]}
+	 */
+	(config) => {
+		/** @type {(BaseConfig|ConfigOverride)[]} */
+		const overrides = [config];
 
-    if (config.overrides) {
-      overrides.push(...config.overrides);
-    }
+		if (config.overrides) {
+			overrides.push(...config.overrides);
+		}
 
-    return overrides;
-  },
+		return overrides;
+	},
 );
 
 /**
@@ -57,7 +59,7 @@ const mappedConfigs = flatMap(
  * @returns {(BaseConfig|ConfigOverride)[]}
  */
 function configsWithRules(cfgs) {
-  return cfgs.filter((config) => config.rules);
+	return filter(cfgs, 'rules');
 }
 
 /**
@@ -65,37 +67,39 @@ function configsWithRules(cfgs) {
  * @returns {((string|string[])[]|undefined)[]}
  */
 function unsetRules(cfgs) {
-  return cfgs.map((config) => {
-    /** @type {string[]} */
-    const filteredRules = compact(
-      Object.entries(config.rules).map(
-        /**
-         * @param {string} key
-         * @param {RuleEntry|number} value
-         * @returns {string|undefined}
-         */
-        ([key, value]) => (value === 0 ? key : undefined),
-      ),
-    );
+	return map(cfgs, (config) => {
+		/** @type {string[]} */
+		const filteredRules = compact(
+			map(
+				Object.entries(config.rules),
+				/**
+				 * @param {string} key
+				 * @param {RuleEntry|number} value
+				 * @returns {string|undefined}
+				 */
+				([key, value]) => (value === 0 ? key : undefined),
+			),
+		);
 
-    return filteredRules.length > 0
-      ? [
-          config.files || config.path.replace(`${configsDirectory}/`, ''),
-          filteredRules.sort(),
-        ]
-      : undefined;
-  });
+		return filteredRules.length > 0
+			? [
+					config.files ||
+						config.path.replace(`${configsDirectory}/`, ''),
+					filteredRules.sort(),
+			  ]
+			: undefined;
+	});
 }
 
 const rules = flow(
-  mappedConfigs,
-  configsWithRules,
-  unsetRules,
-  compact,
+	mappedConfigs,
+	configsWithRules,
+	unsetRules,
+	compact,
 )(configs);
 
 if (rules.length > 0) {
-  console.log(rules);
+	console.log(rules);
 
-  process.exitCode = 1;
+	process.exitCode = 1;
 }

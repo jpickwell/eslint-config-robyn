@@ -1,37 +1,51 @@
 'use strict';
 
+const { hasDependencies, testsOverride } = require('../lib/helpers');
+
 /** @typedef {import('eslint').BaseConfig} */
 
 /** @type {BaseConfig} */
 module.exports = {
-  plugins: ['testing-library'],
-  rules: {
-    'testing-library/await-async-query': 'error',
-    'testing-library/await-async-utils': 'error',
-    'testing-library/await-fire-event': 'error',
-    'testing-library/consistent-data-testid': 0,
-    'testing-library/no-await-sync-events': 0,
-    'testing-library/no-await-sync-query': 'error',
-    'testing-library/no-container': 'error',
-    'testing-library/no-debug': 'error',
-    'testing-library/no-debugging-utils': 0,
-    'testing-library/no-dom-import': ['error', 'vue'],
-    'testing-library/no-manual-cleanup': 0,
-    'testing-library/no-node-access': 'error',
-    'testing-library/no-promise-in-fire-event': 'error',
-    'testing-library/no-render-in-setup': 0,
-    'testing-library/no-unnecessary-act': 0,
-    'testing-library/no-wait-for-empty-callback': 'error',
-    'testing-library/no-wait-for-multiple-assertions': 0,
-    'testing-library/no-wait-for-side-effects': 0,
-    'testing-library/no-wait-for-snapshot': 0,
-    'testing-library/prefer-explicit-assert': 0,
-    'testing-library/prefer-find-by': 'error',
-    'testing-library/prefer-presence-queries': 0,
-    'testing-library/prefer-query-by-disappearance': 0,
-    'testing-library/prefer-screen-queries': 'error',
-    'testing-library/prefer-user-event': 0,
-    'testing-library/prefer-wait-for': 0,
-    'testing-library/render-result-naming-convention': 'error',
-  },
+	overrides: [
+		testsOverride({
+			extends: [
+				hasDependencies(['@testing-library/vue'])
+					? 'plugin:testing-library/vue'
+					: 'plugin:testing-library/dom',
+			],
+		}),
+	],
+	plugins: ['testing-library'],
+	rules: {
+		// Because the plugin config(s) are added in an override, the
+		// find-new-rules script won't see those added rules.
+
+		'testing-library/await-async-query': 'off',
+		'testing-library/await-async-utils': 'off',
+		'testing-library/await-fire-event': 'off',
+		'testing-library/consistent-data-testid': 'off',
+		'testing-library/no-await-sync-events': 'off',
+		'testing-library/no-await-sync-query': 'off',
+		'testing-library/no-container': 'off',
+		'testing-library/no-debugging-utils': 'off',
+		'testing-library/no-dom-import': 'off',
+		'testing-library/no-global-regexp-flag-in-query': 'off',
+		'testing-library/no-manual-cleanup': 'off',
+		'testing-library/no-node-access': 'off',
+		'testing-library/no-promise-in-fire-event': 'off',
+		'testing-library/no-render-in-setup': 'off',
+		'testing-library/no-unnecessary-act': 'off',
+		'testing-library/no-wait-for-empty-callback': 'off',
+		'testing-library/no-wait-for-multiple-assertions': 'off',
+		'testing-library/no-wait-for-side-effects': 'off',
+		'testing-library/no-wait-for-snapshot': 'off',
+		'testing-library/prefer-explicit-assert': 'off',
+		'testing-library/prefer-find-by': 'off',
+		'testing-library/prefer-presence-queries': 'off',
+		'testing-library/prefer-query-by-disappearance': 'off',
+		'testing-library/prefer-screen-queries': 'off',
+		'testing-library/prefer-user-event': 'off',
+		'testing-library/prefer-wait-for': 'off',
+		'testing-library/render-result-naming-convention': 'off',
+	},
 };

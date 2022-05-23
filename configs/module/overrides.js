@@ -7,5 +7,5 @@ const config = require('./config');
 
 /** @type {BaseConfig} */
 module.exports = {
-  overrides: [override(['mjs'], config)],
+	overrides: [override(['mjs'], config)],
 };

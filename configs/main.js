@@ -4,16 +4,11 @@
 
 /** @type {BaseConfig} */
 module.exports = {
-  env: {
-    es2021: true,
-    'shared-node-browser': true,
-  },
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: false,
-    },
-    ecmaVersion: 'latest',
-  },
-  reportUnusedDisableDirectives: true,
+	env: {
+		'shared-node-browser': true,
+	},
+	parserOptions: {
+		ecmaVersion: 'latest',
+	},
+	reportUnusedDisableDirectives: true,
 };

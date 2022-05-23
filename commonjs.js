@@ -7,5 +7,5 @@ const { override } = require('./lib/helpers');
 
 /** @type {BaseConfig} */
 module.exports = {
-  overrides: [override(['js'], scriptConfig)],
+	overrides: [override(['js?(x)'], scriptConfig)],
 };

@@ -7,5 +7,7 @@ const config = require('./config');
 
 /** @type {BaseConfig} */
 module.exports = {
-  overrides: [override(['.eslint.js', 'cjs'], config)],
+	overrides: [
+		override([{ extensions: ['cjs'], files: ['.eslint.js'] }], config),
+	],
 };
