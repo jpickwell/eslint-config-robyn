@@ -14,8 +14,9 @@ sast:
     script:
         - apk update
         - apk upgrade
-        - apk add bash curl git nodejs
-        - 'corepack enable && corepack prepare --activate pnpm@7.1.0'
+        - apk add bash curl git python3
+        - corepack enable
+        - corepack prepare --activate pnpm@7.1.0
         - pnpm config set store-dir .pnpm-store
         - .gitlab-ci/node_js.sh
         - .gitlab-ci/test.sh
