@@ -9,4 +9,5 @@ Node.gitignore
 [inline]
 !.eslintrc.js
 !.versionrc.js
-.idea
+/.git
+/.idea

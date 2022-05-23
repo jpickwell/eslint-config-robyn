@@ -1,6 +1,6 @@
 'use strict';
 
 module.exports = {
-	'{.*,*}': 'pnpm prettier --write',
-	'{.*.{cjs,js,md},*.{cjs,js,md}}': 'pnpm eslint',
+	'{.*,*}': 'pnpm prettier -w',
+	'{.*,*}.{cjs,html,js,md,mjs,ts,vue}': 'pnpm eslint',
 };
