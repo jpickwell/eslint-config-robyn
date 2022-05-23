@@ -24,3 +24,8 @@ sast:
     extends: .test_script
     image: 'node:16-alpine'
     stage: test
+
+'node:18':
+    extends: .test_script
+    image: 'node:18-alpine'
+    stage: test
