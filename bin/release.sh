@@ -1,3 +1,3 @@
 #!/bin/sh
 
-pnpm run release && git push --follow-tags origin master
+pnpm run release && git push --follow-tags origin main

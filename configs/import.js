@@ -13,9 +13,15 @@ module.exports = {
 			extends: ['plugin:import/typescript'],
 			settings: {
 				'import/extensions': allExtensions,
+				'import/parsers': {
+					'@typescript-eslint/parser': ['.ts', '.tsx'],
+				},
 				'import/resolver': {
 					node: {
 						extensions: allExtensions,
+					},
+					typescript: {
+						alwaysTryTypes: true,
 					},
 				},
 			},

@@ -1,7 +1,5 @@
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
 const typescriptAllConfig = require('@typescript-eslint/eslint-plugin/dist/configs/all');
 const filter = require('lodash/filter');
 const { override } = require('../lib/helpers');
@@ -10,22 +8,12 @@ const sharedConfigs = require('../lib/shared-configs');
 /** @typedef {import('eslint').BaseConfig} */
 /** @typedef {import('eslint').RulesRecord} */
 
-// eslint-disable-next-line node/no-sync -- not an issue
-const tsConfig = fs.existsSync('tsconfig.json')
-	? path.resolve('tsconfig.json')
-	: fs.existsSync('types/tsconfig.json') // eslint-disable-line node/no-sync -- not an issue
-	? path.resolve('types/tsconfig.json')
-	: undefined;
-
 /** @type {BaseConfig} */
 const config = {
 	extends: ['plugin:@typescript-eslint/base'],
 	overrides: [
 		override(['ts?(x)'], {
-			extends: ['plugin:@typescript-eslint/all'],
-			parserOptions: {
-				project: tsConfig,
-			},
+			extends: ['plugin:@typescript-eslint/recommended'],
 			rules: {
 				'@typescript-eslint/array-type': [
 					'error',
