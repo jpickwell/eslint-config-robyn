@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.0](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v3.1.0...v3.2.0) (2022-05-23)
+
+
+### Features
+
+* move ts type-aware rules to separate config ([1224219](https://gitlab.com/jpickwell/eslint-config-robyn/-/commit/1224219f64041abdfb89124668a275cf1233e877))
+
 ## [3.1.0](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v3.0.2...v3.1.0) (2022-05-23)
 
 
