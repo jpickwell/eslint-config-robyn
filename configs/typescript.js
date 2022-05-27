@@ -48,6 +48,20 @@ const config = {
 					},
 				],
 				'import/named': 'off',
+				'no-shadow': 'off',
+				'node/file-extension-in-import': [
+					'error',
+					'always',
+					{
+						'.ts': 'never',
+					},
+				],
+				'node/no-missing-import': 'off',
+			},
+		}),
+		override(['d.ts'], {
+			rules: {
+				'import/unambiguous': 'off',
 			},
 		}),
 	],
