@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.4.0](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v3.3.0...v3.4.0) (2022-05-27)
+
+
+### Features
+
+* remove vue-scoped-css plugin ([aa2e699](https://gitlab.com/jpickwell/eslint-config-robyn/-/commit/aa2e69923ca19ede629f58d3aec6027d250dacf3))
+
 ## [3.3.0](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v3.2.3...v3.3.0) (2022-05-27)
 
 
