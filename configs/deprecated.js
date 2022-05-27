@@ -58,7 +58,6 @@ module.exports = {
 		'unicorn/prefer-trim-start-end',
 		'unicorn/regex-shorthand',
 		'valid-jsdoc',
-		'vue-scoped-css/require-scoped',
 		'vue/experimental-script-setup-vars',
 		'vue/name-property-casing',
 		'vue/no-confusing-v-for-v-if',

@@ -8,7 +8,7 @@ const { mapConfigs, override } = require('./lib/helpers');
 module.exports = {
 	extends: [
 		require.resolve('./browser.js'),
-		...mapConfigs('vue', 'vue-scoped-css', 'prettier'),
+		...mapConfigs('vue', 'prettier'),
 	],
 	overrides: [
 		override(['?(c)js'], {

@@ -13,6 +13,5 @@ module.exports = {
 		'jest-formatting',
 		'testing-library',
 		'vue',
-		'vue-scoped-css',
 	),
 };
