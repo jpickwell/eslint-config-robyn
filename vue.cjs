@@ -1,13 +1,13 @@
 'use strict';
 
-const { mapConfigs, override } = require('./lib/helpers');
+const { mapConfigs, override } = require('./lib/helpers.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
 
 /** @type {BaseConfig} */
 module.exports = {
 	extends: [
-		require.resolve('./browser.js'),
+		require.resolve('./browser.cjs'),
 		...mapConfigs('vue', 'prettier'),
 	],
 	overrides: [

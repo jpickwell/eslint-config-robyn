@@ -16,7 +16,7 @@
 	"engines": {
 		"node": ">= 16"
 	},
-	"main": "index.js",
+	"main": "index.cjs",
 	"keywords": [
 		"check",
 		"checker",
@@ -65,22 +65,20 @@
 		"clean": "rm -fr node_modules pnpm-lock.yaml",
 		"eslint": "eslint -f friendly --color --max-warnings 0 --no-error-on-unmatched-pattern",
 		"eslint:config": "eslint --print-config",
-		"find-deprecated-rules": "node tests/deprecated.js",
-		"find-new-rules": "eslint-find-rules -i deprecated -u configs/all.js",
-		"find-unset-rules": "node tests/unset.js",
+		"find-deprecated-rules": "node tests/deprecated.cjs",
+		"find-new-rules": "eslint-find-rules -i deprecated -u configs/all.cjs",
+		"find-unset-rules": "node tests/unset.cjs",
 		"format": "pnpm prettier -w '{**/.*,.*,**/*,*}'",
 		"format:check": "pnpm prettier:check '{**/.*,.*,**/*,*}'",
-		"husky:install": "is-ci || husky install",
 		"ignore-sync": "ignore-sync .",
 		"install:clean": "pnpm clean && pnpm i",
-		"is-dependency": "node scripts/is-dependency.js",
-		"lint": "pnpm eslint '{**/.*,.*,**/*,*}.{cjs,html,js,md,mjs,ts,vue}'",
-		"lint:config": "pnpm eslint:config index.js",
-		"prepare": "npm run is-dependency || npm run husky:install",
+		"lint": "pnpm eslint '{**/.*,.*,**/*,*}.{cjs,html,js,jsx,md,mjs,ts,tsx,vue}'",
+		"lint:config": "pnpm eslint:config index.cjs",
+		"prepare": "node scripts/is-dependency.cjs || is-ci || husky install",
 		"prettier": "prettier -u",
 		"prettier:check": "pnpm prettier -c",
 		"release": "standard-version -s",
-		"test": "run-s find-new-rules find-deprecated-rules lint"
+		"test": "pnpm find-new-rules && pnpm find-deprecated-rules && pnpm lint"
 	},
 	"peerDependencies": {
 		"eslint": "^8.15.0",

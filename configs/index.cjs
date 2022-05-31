@@ -1,6 +1,6 @@
 'use strict';
 
-const { mapConfigs } = require('../lib/helpers');
+const { mapConfigs } = require('../lib/helpers.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
 
@@ -14,6 +14,7 @@ module.exports = {
 		'lodash',
 		'markdown',
 		'node',
+		'module/config',
 		'promise',
 		'security',
 		'simple-import-sort',
@@ -24,6 +25,5 @@ module.exports = {
 		'deprecated',
 		'module/overrides',
 		'script/overrides',
-		'module/config',
 	),
 };

@@ -298,7 +298,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-!.eslintrc.js
-!.versionrc.js
+!.eslintrc.*
+!.versionrc.*
 /.git
 /.idea

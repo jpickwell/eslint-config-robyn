@@ -3,11 +3,11 @@
 const getRuleFinder = require('eslint-find-rules');
 const without = require('lodash/without');
 const sp = require('synchronized-promise');
-const deprecatedConfig = require('../configs/deprecated');
+const deprecatedConfig = require('../configs/deprecated.cjs');
 
 async function run() {
 	const ruleFinder = await getRuleFinder(
-		require.resolve('../configs/all.js'),
+		require.resolve('../configs/all.cjs'),
 	);
 
 	/** @type {string[]} */

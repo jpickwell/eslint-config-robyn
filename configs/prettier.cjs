@@ -2,7 +2,7 @@
 
 const prettierConfig = require('eslint-config-prettier');
 const pickBy = require('lodash/pickBy');
-const { override } = require('../lib/helpers');
+const { override } = require('../lib/helpers.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
 

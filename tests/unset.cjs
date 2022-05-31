@@ -14,8 +14,8 @@ const map = require('lodash/map');
 /** @typedef {import('eslint').RuleEntry} */
 /** @typedef {import('eslint').RulesRecord} */
 
-const configsDirectory = path.dirname(require.resolve('../configs'));
-const configFilePaths = glob.sync(`${configsDirectory}/**/*.js`);
+const configsDirectory = path.dirname(require.resolve('../configs/index.cjs'));
+const configFilePaths = glob.sync(`${configsDirectory}/**/*.cjs`);
 
 /**
  * @param {string} configFilePath

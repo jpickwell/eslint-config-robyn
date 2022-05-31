@@ -1,6 +1,6 @@
 'use strict';
 
-const { hasDependencies, testsOverride } = require('../lib/helpers');
+const { hasDependencies, testsOverride } = require('../lib/helpers.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
 

@@ -2,5 +2,5 @@
 
 module.exports = {
 	'{.*,*}': 'pnpm prettier -w',
-	'{.*,*}.{cjs,html,js,md,mjs,ts,vue}': 'pnpm eslint',
+	'{.*,*}.{cjs,html,js,jsx,md,mjs,ts,tsx,vue}': 'pnpm eslint',
 };

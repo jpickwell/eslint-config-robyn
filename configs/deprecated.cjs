@@ -1,6 +1,6 @@
 'use strict';
 
-const { mapDeprecatedRules } = require('../lib/helpers');
+const { mapDeprecatedRules } = require('../lib/helpers.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
 

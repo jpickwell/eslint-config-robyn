@@ -1,6 +1,6 @@
 'use strict';
 
-const { mapConfigs } = require('../lib/helpers');
+const { mapConfigs } = require('../lib/helpers.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
 

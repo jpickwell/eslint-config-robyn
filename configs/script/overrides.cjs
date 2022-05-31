@@ -1,7 +1,7 @@
 'use strict';
 
-const { override } = require('../../lib/helpers');
-const config = require('./config');
+const { override } = require('../../lib/helpers.cjs');
+const config = require('./config.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
 

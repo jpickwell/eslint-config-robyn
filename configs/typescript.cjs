@@ -2,8 +2,8 @@
 
 const typescriptAllConfig = require('@typescript-eslint/eslint-plugin/dist/configs/all');
 const filter = require('lodash/filter');
-const { override } = require('../lib/helpers');
-const sharedConfigs = require('../lib/shared-configs');
+const { override } = require('../lib/helpers.cjs');
+const sharedConfigs = require('../lib/shared-configs.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
 /** @typedef {import('eslint').RulesRecord} */

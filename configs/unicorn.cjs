@@ -1,6 +1,6 @@
 'use strict';
 
-const { warningCommentTerms } = require('../lib/lists');
+const { warningCommentTerms } = require('../lib/lists.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
 

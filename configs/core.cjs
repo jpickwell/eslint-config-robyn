@@ -1,9 +1,9 @@
 'use strict';
 
 const restrictedGlobals = require('confusing-browser-globals');
-const { restrictedSyntax, warningCommentTerms } = require('../lib/lists');
-const { buildIdentifierMatchRegExpString } = require('../lib/reg-exps');
-const sharedConfigs = require('../lib/shared-configs');
+const { restrictedSyntax, warningCommentTerms } = require('../lib/lists.cjs');
+const { buildIdentifierMatchRegExpString } = require('../lib/reg-exps.cjs');
+const sharedConfigs = require('../lib/shared-configs.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
 

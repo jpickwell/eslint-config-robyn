@@ -7,7 +7,7 @@ Global/Windows.gitignore
 Node.gitignore
 
 [inline]
-!.eslintrc.js
-!.versionrc.js
+!.eslintrc.*
+!.versionrc.*
 /.git
 /.idea

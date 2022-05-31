@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { override } = require('./lib/helpers');
+const { override } = require('./lib/helpers.cjs');
 
 // eslint-disable-next-line node/no-sync -- not an issue
 const tsconfig = fs.existsSync('tsconfig.json')

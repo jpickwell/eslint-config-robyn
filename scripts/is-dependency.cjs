@@ -1,4 +1,4 @@
-/* eslint-disable no-process-exit,node/no-process-exit,unicorn/no-process-exit -- CLI script */
+/* eslint-disable no-process-exit, node/no-process-exit, unicorn/no-process-exit -- CLI script */
 'use strict';
 
 const path = require('path');

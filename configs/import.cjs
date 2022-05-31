@@ -1,7 +1,7 @@
 'use strict';
 
-const { override } = require('../lib/helpers');
-const { allExtensions } = require('../lib/lists');
+const { override } = require('../lib/helpers.cjs');
+const { allExtensions } = require('../lib/lists.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
 

@@ -1,7 +1,7 @@
 'use strict';
 
 const globals = require('globals');
-const { buildIdentifierMatchRegExpString } = require('./lib/reg-exps');
+const { buildIdentifierMatchRegExpString } = require('./lib/reg-exps.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
 
@@ -10,7 +10,7 @@ module.exports = {
 	env: {
 		browser: true,
 	},
-	extends: [require.resolve('./index.js')],
+	extends: [require.resolve('./index.cjs')],
 	rules: {
 		'id-match': [
 			'error',
