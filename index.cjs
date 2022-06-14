@@ -212,13 +212,14 @@ module.exports = {
 						},
 					},
 				],
-				'@typescript-eslint/brace-style': sharedConfigs.braceStyle,
+				'@typescript-eslint/brace-style': sharedConfigs.braceStyle(),
 				'@typescript-eslint/class-literal-property-style': [
 					`error`,
 					`getters`,
 				],
-				'@typescript-eslint/comma-dangle': sharedConfigs.commaDangle,
-				'@typescript-eslint/comma-spacing': sharedConfigs.commaSpacing,
+				'@typescript-eslint/comma-dangle': sharedConfigs.commaDangle(),
+				'@typescript-eslint/comma-spacing':
+					sharedConfigs.commaSpacing(),
 				'@typescript-eslint/consistent-indexed-object-style': `error`,
 				'@typescript-eslint/consistent-type-assertions': [
 					`error`,
@@ -234,8 +235,8 @@ module.exports = {
 				'@typescript-eslint/consistent-type-exports': 0,
 				'@typescript-eslint/consistent-type-imports': 0,
 				'@typescript-eslint/default-param-last':
-					sharedConfigs.defaultParamLast,
-				'@typescript-eslint/dot-notation': sharedConfigs.dotNotation,
+					sharedConfigs.defaultParamLast(),
+				'@typescript-eslint/dot-notation': sharedConfigs.dotNotation(),
 
 				// too annoying
 				'@typescript-eslint/explicit-function-return-type': `off`,
@@ -246,14 +247,14 @@ module.exports = {
 				'@typescript-eslint/explicit-module-boundary-types': `off`,
 
 				'@typescript-eslint/func-call-spacing':
-					sharedConfigs.funcCallSpacing,
-				'@typescript-eslint/indent': sharedConfigs.indent,
+					sharedConfigs.funcCallSpacing(),
+				'@typescript-eslint/indent': sharedConfigs.indent(),
 				'@typescript-eslint/init-declarations':
-					sharedConfigs.initDeclarations,
+					sharedConfigs.initDeclarations(),
 				'@typescript-eslint/keyword-spacing':
-					sharedConfigs.keywordSpacing,
+					sharedConfigs.keywordSpacing(),
 				'@typescript-eslint/lines-between-class-members':
-					sharedConfigs.linesBetweenClassMembers,
+					sharedConfigs.linesBetweenClassMembers(),
 				'@typescript-eslint/member-delimiter-style': `off`,
 				'@typescript-eslint/member-ordering': [
 					`error`,
@@ -274,16 +275,16 @@ module.exports = {
 				'@typescript-eslint/naming-convention':
 					sharedConfigs.typescriptEslintNamingConvention(false),
 				'@typescript-eslint/no-array-constructor':
-					sharedConfigs.noArrayConstructor,
+					sharedConfigs.noArrayConstructor(),
 				'@typescript-eslint/no-base-to-string': `error`,
 				'@typescript-eslint/no-confusing-non-null-assertion': 0,
 				'@typescript-eslint/no-confusing-void-expression': `error`,
 				'@typescript-eslint/no-dupe-class-members':
-					sharedConfigs.noDupeClassMembers,
+					sharedConfigs.noDupeClassMembers(),
 				'@typescript-eslint/no-duplicate-enum-values': `error`,
 				'@typescript-eslint/no-dynamic-delete': `error`,
 				'@typescript-eslint/no-empty-function':
-					sharedConfigs.noEmptyFunction,
+					sharedConfigs.noEmptyFunction(),
 				'@typescript-eslint/no-empty-interface': [
 					`error`,
 					{
@@ -299,8 +300,8 @@ module.exports = {
 				],
 				'@typescript-eslint/no-extra-non-null-assertion': `error`,
 				'@typescript-eslint/no-extra-parens':
-					sharedConfigs.noExtraParens,
-				'@typescript-eslint/no-extra-semi': sharedConfigs.noExtraSemi,
+					sharedConfigs.noExtraParens(),
+				'@typescript-eslint/no-extra-semi': sharedConfigs.noExtraSemi(),
 				'@typescript-eslint/no-extraneous-class': [
 					`error`,
 					{
@@ -322,19 +323,19 @@ module.exports = {
 				],
 				'@typescript-eslint/no-for-in-array': `error`,
 				'@typescript-eslint/no-implied-eval':
-					sharedConfigs.noImpliedEval,
+					sharedConfigs.noImpliedEval(),
 				'@typescript-eslint/no-inferrable-types': `error`,
 				'@typescript-eslint/no-invalid-this':
-					sharedConfigs.noInvalidThis,
+					sharedConfigs.noInvalidThis(),
 
 				// too many false-positives
 				'@typescript-eslint/no-invalid-void-type': `off`,
 
-				'@typescript-eslint/no-loop-func': sharedConfigs.noLoopFunc,
+				'@typescript-eslint/no-loop-func': sharedConfigs.noLoopFunc(),
 				'@typescript-eslint/no-loss-of-precision':
-					sharedConfigs.noLossOfPrecision,
+					sharedConfigs.noLossOfPrecision(),
 				'@typescript-eslint/no-magic-numbers':
-					sharedConfigs.noMagicNumbers,
+					sharedConfigs.noMagicNumbers(),
 				'@typescript-eslint/no-meaningless-void-operator': `error`,
 				'@typescript-eslint/no-misused-new': `error`,
 				'@typescript-eslint/no-misused-promises': [
@@ -348,15 +349,15 @@ module.exports = {
 				'@typescript-eslint/no-non-null-asserted-nullish-coalescing': `error`,
 				'@typescript-eslint/no-non-null-asserted-optional-chain': `error`,
 				'@typescript-eslint/no-non-null-assertion': `off`,
-				'@typescript-eslint/no-redeclare': sharedConfigs.noRedeclare,
+				'@typescript-eslint/no-redeclare': sharedConfigs.noRedeclare(),
 				'@typescript-eslint/no-redundant-type-constituents': `error`,
 				'@typescript-eslint/no-require-imports': `error`,
 				'@typescript-eslint/no-restricted-imports':
-					sharedConfigs.noRestrictedImports,
+					sharedConfigs.noRestrictedImports(),
 				'@typescript-eslint/no-shadow': [
-					sharedConfigs.noShadow[0],
+					sharedConfigs.noShadow()[0],
 					{
-						...sharedConfigs.noShadow[1],
+						...sharedConfigs.noShadow()[1],
 						ignoreFunctionTypeParameterNameValueShadow: false,
 					},
 				],
@@ -367,7 +368,7 @@ module.exports = {
 					},
 				],
 				'@typescript-eslint/no-throw-literal': [
-					sharedConfigs.noThrowLiteral,
+					sharedConfigs.noThrowLiteral(),
 					{
 						allowThrowingAny: false,
 
@@ -396,19 +397,20 @@ module.exports = {
 
 				'@typescript-eslint/no-unsafe-return': `error`,
 				'@typescript-eslint/no-unused-expressions':
-					sharedConfigs.noUnusedExpressions,
-				'@typescript-eslint/no-unused-vars': sharedConfigs.noUnusedVars,
+					sharedConfigs.noUnusedExpressions(),
+				'@typescript-eslint/no-unused-vars':
+					sharedConfigs.noUnusedVars(),
 				'@typescript-eslint/no-use-before-define':
-					sharedConfigs.noUseBeforeDefine,
+					sharedConfigs.noUseBeforeDefine(),
 				'@typescript-eslint/no-useless-constructor':
-					sharedConfigs.noUselessConstructor,
+					sharedConfigs.noUselessConstructor(),
 				'@typescript-eslint/no-useless-empty-export': `error`,
 				'@typescript-eslint/no-var-requires': `error`,
 				'@typescript-eslint/non-nullable-type-assertion-style': `error`,
 				'@typescript-eslint/object-curly-spacing':
-					sharedConfigs.objectCurlySpacing,
+					sharedConfigs.objectCurlySpacing(),
 				'@typescript-eslint/padding-line-between-statements':
-					sharedConfigs.paddingLineBetweenStatements,
+					sharedConfigs.paddingLineBetweenStatements(),
 				'@typescript-eslint/parameter-properties': [
 					`error`,
 					{
@@ -435,7 +437,7 @@ module.exports = {
 				'@typescript-eslint/prefer-string-starts-ends-with': `error`,
 				'@typescript-eslint/prefer-ts-expect-error': `error`,
 				'@typescript-eslint/promise-function-async': `error`,
-				'@typescript-eslint/quotes': sharedConfigs.quotes,
+				'@typescript-eslint/quotes': sharedConfigs.quotes(),
 				'@typescript-eslint/require-array-sort-compare': [
 					`error`,
 					{
@@ -460,15 +462,15 @@ module.exports = {
 						allowNumber: true,
 					},
 				],
-				'@typescript-eslint/return-await': sharedConfigs.returnAwait,
-				'@typescript-eslint/semi': sharedConfigs.semi,
+				'@typescript-eslint/return-await': sharedConfigs.returnAwait(),
+				'@typescript-eslint/semi': sharedConfigs.semi(),
 				'@typescript-eslint/sort-type-union-intersection-members': 0,
 				'@typescript-eslint/space-before-blocks':
-					sharedConfigs.spaceBeforeBlocks,
+					sharedConfigs.spaceBeforeBlocks(),
 				'@typescript-eslint/space-before-function-paren':
-					sharedConfigs.spaceBeforeFunctionParen,
+					sharedConfigs.spaceBeforeFunctionParen(),
 				'@typescript-eslint/space-infix-ops':
-					sharedConfigs.spaceInfixOps,
+					sharedConfigs.spaceInfixOps(),
 				'@typescript-eslint/strict-boolean-expressions': [
 					`off`,
 					{
@@ -614,7 +616,7 @@ module.exports = {
 		'arrow-spacing': `off`,
 		'block-scoped-var': `error`,
 		'block-spacing': `off`,
-		'brace-style': sharedConfigs.braceStyle,
+		'brace-style': sharedConfigs.braceStyle(),
 		camelcase: [
 			`error`,
 			{
@@ -635,8 +637,8 @@ module.exports = {
 			},
 		],
 		'class-methods-use-this': `error`,
-		'comma-dangle': sharedConfigs.commaDangle,
-		'comma-spacing': sharedConfigs.commaSpacing,
+		'comma-dangle': sharedConfigs.commaDangle(),
+		'comma-spacing': sharedConfigs.commaSpacing(),
 		'comma-style': `off`,
 		complexity: [`warn`, 10],
 		'computed-property-spacing': `off`,
@@ -646,13 +648,13 @@ module.exports = {
 		curly: `error`,
 		'default-case': `error`,
 		'default-case-last': `error`,
-		'default-param-last': sharedConfigs.defaultParamLast,
+		'default-param-last': sharedConfigs.defaultParamLast(),
 		'dot-location': `off`,
-		'dot-notation': sharedConfigs.dotNotation,
+		'dot-notation': sharedConfigs.dotNotation(),
 		'eol-last': `off`,
 		eqeqeq: `error`,
 		'for-direction': `error`,
-		'func-call-spacing': sharedConfigs.funcCallSpacing,
+		'func-call-spacing': sharedConfigs.funcCallSpacing(),
 		'func-name-matching': [
 			`error`,
 			{
@@ -686,15 +688,15 @@ module.exports = {
 			},
 		],
 		'implicit-arrow-linebreak': `off`,
-		indent: sharedConfigs.indent,
-		'init-declarations': sharedConfigs.initDeclarations,
+		indent: sharedConfigs.indent(),
+		'init-declarations': sharedConfigs.initDeclarations(),
 		'jsx-quotes': `off`,
 		'key-spacing': `off`,
-		'keyword-spacing': sharedConfigs.keywordSpacing,
+		'keyword-spacing': sharedConfigs.keywordSpacing(),
 		'line-comment-position': `off`,
 		'linebreak-style': `off`,
 		'lines-around-comment': `off`,
-		'lines-between-class-members': sharedConfigs.linesBetweenClassMembers,
+		'lines-between-class-members': sharedConfigs.linesBetweenClassMembers(),
 		'max-classes-per-file': `error`,
 		'max-depth': `warn`,
 		'max-len': `off`,
@@ -723,7 +725,7 @@ module.exports = {
 		'new-parens': `off`,
 		'newline-per-chained-call': `off`,
 		'no-alert': `error`,
-		'no-array-constructor': sharedConfigs.noArrayConstructor,
+		'no-array-constructor': sharedConfigs.noArrayConstructor(),
 		'no-arrow-condition': `off`,
 		'no-async-promise-executor': `error`,
 		'no-await-in-loop': `error`,
@@ -751,7 +753,7 @@ module.exports = {
 		'no-delete-var': `error`,
 		'no-div-regex': `error`,
 		'no-dupe-args': `error`,
-		'no-dupe-class-members': sharedConfigs.noDupeClassMembers,
+		'no-dupe-class-members': sharedConfigs.noDupeClassMembers(),
 		'no-dupe-else-if': `error`,
 		'no-dupe-keys': `error`,
 		'no-duplicate-case': `error`,
@@ -769,7 +771,7 @@ module.exports = {
 			},
 		],
 		'no-empty-character-class': `error`,
-		'no-empty-function': sharedConfigs.noEmptyFunction,
+		'no-empty-function': sharedConfigs.noEmptyFunction(),
 		'no-empty-pattern': `error`,
 		'no-eq-null': `error`,
 		'no-eval': `error`,
@@ -783,20 +785,20 @@ module.exports = {
 			},
 		],
 		'no-extra-label': `error`,
-		'no-extra-parens': sharedConfigs.noExtraParens,
-		'no-extra-semi': sharedConfigs.noExtraSemi,
+		'no-extra-parens': sharedConfigs.noExtraParens(),
+		'no-extra-semi': sharedConfigs.noExtraSemi(),
 		'no-fallthrough': `error`,
 		'no-floating-decimal': `off`,
 		'no-func-assign': `error`,
 		'no-global-assign': `error`,
 		'no-implicit-coercion': `error`,
 		'no-implicit-globals': `error`,
-		'no-implied-eval': sharedConfigs.noImpliedEval,
+		'no-implied-eval': sharedConfigs.noImpliedEval(),
 		'no-import-assign': `error`,
 		'no-inline-comments': `off`,
 		'no-inner-declarations': [`error`, `both`],
 		'no-invalid-regexp': `error`,
-		'no-invalid-this': sharedConfigs.noInvalidThis,
+		'no-invalid-this': sharedConfigs.noInvalidThis(),
 		'no-irregular-whitespace': [
 			`error`,
 			{
@@ -814,9 +816,9 @@ module.exports = {
 		],
 		'no-lone-blocks': `error`,
 		'no-lonely-if': `error`,
-		'no-loop-func': sharedConfigs.noLoopFunc,
-		'no-loss-of-precision': sharedConfigs.noLossOfPrecision,
-		'no-magic-numbers': sharedConfigs.noMagicNumbers,
+		'no-loop-func': sharedConfigs.noLoopFunc(),
+		'no-loss-of-precision': sharedConfigs.noLossOfPrecision(),
+		'no-magic-numbers': sharedConfigs.noMagicNumbers(),
 		'no-misleading-character-class': `error`,
 		'no-mixed-operators': `off`,
 		'no-mixed-spaces-and-tabs': `off`,
@@ -840,16 +842,16 @@ module.exports = {
 		'no-promise-executor-return': `error`,
 		'no-proto': `error`,
 		'no-prototype-builtins': `error`,
-		'no-redeclare': sharedConfigs.noRedeclare,
+		'no-redeclare': sharedConfigs.noRedeclare(),
 		'no-regex-spaces': `error`,
 		'no-reserved-keys': `off`,
 		'no-restricted-exports': `off`,
 		'no-restricted-globals': [`error`, `event`],
-		'no-restricted-imports': sharedConfigs.noRestrictedImports,
+		'no-restricted-imports': sharedConfigs.noRestrictedImports(),
 		'no-restricted-properties': `off`,
 		'no-restricted-syntax': [`error`, ...restrictedSyntax],
 		'no-return-assign': [`error`, `always`],
-		'no-return-await': sharedConfigs.returnAwait,
+		'no-return-await': sharedConfigs.returnAwait(),
 		'no-script-url': `error`,
 		'no-self-assign': [
 			`error`,
@@ -865,7 +867,7 @@ module.exports = {
 			},
 		],
 		'no-setter-return': `error`,
-		'no-shadow': sharedConfigs.noShadow,
+		'no-shadow': sharedConfigs.noShadow(),
 		'no-shadow-restricted-names': `error`,
 		'no-space-before-semi': `off`,
 		'no-sparse-arrays': `error`,
@@ -873,7 +875,7 @@ module.exports = {
 		'no-template-curly-in-string': `error`,
 		'no-ternary': `off`,
 		'no-this-before-super': `error`,
-		'no-throw-literal': sharedConfigs.noThrowLiteral,
+		'no-throw-literal': sharedConfigs.noThrowLiteral(),
 		'no-trailing-spaces': `off`,
 		'no-undef': [
 			`error`,
@@ -912,11 +914,11 @@ module.exports = {
 				disallowArithmeticOperators: true,
 			},
 		],
-		'no-unused-expressions': sharedConfigs.noUnusedExpressions,
+		'no-unused-expressions': sharedConfigs.noUnusedExpressions(),
 		'no-unused-labels': `error`,
 		'no-unused-private-class-members': `error`,
-		'no-unused-vars': sharedConfigs.noUnusedVars,
-		'no-use-before-define': sharedConfigs.noUseBeforeDefine,
+		'no-unused-vars': sharedConfigs.noUnusedVars(),
+		'no-use-before-define': sharedConfigs.noUseBeforeDefine(),
 		'no-useless-backreference': `error`,
 		'no-useless-call': `error`,
 		'no-useless-catch': `error`,
@@ -927,7 +929,7 @@ module.exports = {
 			},
 		],
 		'no-useless-concat': `error`,
-		'no-useless-constructor': sharedConfigs.noUselessConstructor,
+		'no-useless-constructor': sharedConfigs.noUselessConstructor(),
 		'no-useless-escape': `error`,
 		'no-useless-rename': `error`,
 		'no-useless-return': `error`,
@@ -944,7 +946,7 @@ module.exports = {
 		'no-wrap-func': `off`,
 		'nonblock-statement-body-position': `off`,
 		'object-curly-newline': `off`,
-		'object-curly-spacing': sharedConfigs.objectCurlySpacing,
+		'object-curly-spacing': sharedConfigs.objectCurlySpacing(),
 		'object-property-newline': `off`,
 		'object-shorthand': [
 			`error`,
@@ -959,7 +961,7 @@ module.exports = {
 		'operator-linebreak': `off`,
 		'padded-blocks': `off`,
 		'padding-line-between-statements':
-			sharedConfigs.paddingLineBetweenStatements,
+			sharedConfigs.paddingLineBetweenStatements(),
 		'prefer-arrow-callback': `off`,
 		'prefer-const': [
 			`error`,
@@ -1011,14 +1013,14 @@ module.exports = {
 		'prefer-spread': `error`,
 		'prefer-template': `error`,
 		'quote-props': `off`,
-		quotes: sharedConfigs.quotes,
+		quotes: sharedConfigs.quotes(),
 		radix: `error`,
 		'require-atomic-updates': `error`,
-		'require-await': sharedConfigs.requireAwait,
+		'require-await': sharedConfigs.requireAwait(),
 		'require-unicode-regexp': `error`,
 		'require-yield': `error`,
 		'rest-spread-spacing': `off`,
-		semi: sharedConfigs.semi,
+		semi: sharedConfigs.semi(),
 		'semi-spacing': `off`,
 		'semi-style': `off`,
 		'sort-imports': `off`, // We use `simple-import-sort` plugin
@@ -1038,13 +1040,13 @@ module.exports = {
 		],
 		'space-after-function-name': `off`,
 		'space-after-keywords': `off`,
-		'space-before-blocks': sharedConfigs.spaceBeforeBlocks,
-		'space-before-function-paren': sharedConfigs.spaceBeforeFunctionParen,
+		'space-before-blocks': sharedConfigs.spaceBeforeBlocks(),
+		'space-before-function-paren': sharedConfigs.spaceBeforeFunctionParen(),
 		'space-before-function-parentheses': `off`,
 		'space-before-keywords': `off`,
 		'space-in-brackets': `off`,
 		'space-in-parens': `off`,
-		'space-infix-ops': sharedConfigs.spaceInfixOps,
+		'space-infix-ops': sharedConfigs.spaceInfixOps(),
 		'space-return-throw-case': `off`,
 		'space-unary-ops': `off`,
 		'space-unary-word-ops': `off`,
