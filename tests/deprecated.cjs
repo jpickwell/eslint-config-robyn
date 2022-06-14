@@ -1,29 +1,88 @@
+#!/usr/bin/env node
+
 'use strict';
 
-const getRuleFinder = require('eslint-find-rules');
-const without = require('lodash/without');
-const sp = require('synchronized-promise');
-const deprecatedConfig = require('../configs/deprecated.cjs');
+const process = require(`process`);
+const intersection = require(`lodash/intersection`);
+const without = require(`lodash/without`);
+const deprecatedConfig = require(`../configs/deprecated.cjs`);
 
-async function run() {
-	const ruleFinder = await getRuleFinder(
-		require.resolve('../configs/all.cjs'),
-	);
+const {
+	asyncRunAsSync,
+	getEnabledRules,
+	loadConfig,
+} = require(`../lib/dev-helpers.cjs`);
 
-	/** @type {string[]} */
-	const deprecatedRules = ruleFinder.getDeprecatedRules();
+async function getDeprecatedRules() {
+	const ruleFinder = await loadConfig(require.resolve(`./full-config.json`));
 
-	/** @type {string[]} */
-	const specifiedRules = [...Object.keys(deprecatedConfig.rules)];
-
-	const rules = without(deprecatedRules, ...specifiedRules);
-
-	if (rules.length > 0) {
-		// eslint-disable-next-line no-console -- This is a script for development purposes.
-		console.log(rules);
-
-		process.exitCode = 1;
-	}
+	return ruleFinder.getDeprecatedRules();
 }
 
-sp(run)();
+function getSpecifiedDeprecatedRules() {
+	return [...Object.keys(deprecatedConfig.rules)];
+}
+
+/**
+ * @param {string[]} deprecatedRules
+ */
+function anyMissingDeprecatedRules(deprecatedRules) {
+	/** @type {string[]} */
+	const specifiedDeprecatedRules = getSpecifiedDeprecatedRules();
+
+	const missingRules = without(deprecatedRules, ...specifiedDeprecatedRules);
+	const unnecessaryRules = without(
+		specifiedDeprecatedRules,
+		...deprecatedRules,
+	);
+	const result = missingRules.length > 0;
+
+	if (result) {
+		console.log(`Missing deprecated rules:`, missingRules);
+	}
+
+	if (unnecessaryRules.length > 0) {
+		console.warn(
+			`Unnecessarily specified deprecated rules:`,
+			unnecessaryRules,
+		);
+	}
+
+	return result;
+}
+
+/**
+ * @param {Record<string, array>} setRules
+ * @param {string[]} deprecatedRules
+ */
+function anyEnabledDeprecatedRules(setRules, deprecatedRules) {
+	const enabledRules = getEnabledRules(setRules);
+	const enabledDeprecatedRules = intersection(enabledRules, deprecatedRules);
+	const result = enabledDeprecatedRules.length > 0;
+
+	if (result) {
+		console.log(`Enabled deprecated rules:`, enabledDeprecatedRules.sort());
+	}
+
+	return result;
+}
+
+async function run() {
+	console.log(`Checking for deprecated rules...`);
+
+	const ruleFinder = await loadConfig(require.resolve(`../vue.cjs`));
+	const deprecatedRules = await getDeprecatedRules();
+
+	process.exitCode =
+		anyMissingDeprecatedRules(deprecatedRules) ||
+		anyEnabledDeprecatedRules(
+			ruleFinder.getCurrentRulesDetailed(),
+			deprecatedRules,
+		)
+			? 1
+			: 0;
+
+	console.log(``);
+}
+
+asyncRunAsSync(run);

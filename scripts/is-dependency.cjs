@@ -1,7 +1,9 @@
-/* eslint-disable no-process-exit, node/no-process-exit, unicorn/no-process-exit -- CLI script */
+#!/usr/bin/env node
+
 'use strict';
 
 const path = require('path');
+const process = require('process');
 const pkg = require('../package.json');
 
 const parentDirectory = path.basename(path.resolve(__dirname, '..'));
@@ -13,4 +15,4 @@ const parentDirectoryOfPackage = path.basename(
 const isDependency =
 	parentDirectory !== pkg.name || parentDirectoryOfPackage === 'node_modules';
 
-process.exit(isDependency ? 0 : 1);
+process.exitCode = isDependency ? 0 : 1;

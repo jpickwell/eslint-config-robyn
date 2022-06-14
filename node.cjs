@@ -1,7 +1,7 @@
 'use strict';
 
-const globals = require('globals');
-const { buildIdentifierMatchRegExpString } = require('./lib/reg-exps.cjs');
+const globals = require(`globals`);
+const { buildIdentifierMatchRegExpString } = require(`./lib/reg-exps.cjs`);
 
 /** @typedef {import('eslint').BaseConfig} */
 
@@ -10,10 +10,10 @@ module.exports = {
 	env: {
 		node: true,
 	},
-	extends: [require.resolve('./index.cjs')],
+	extends: [require.resolve(`./index.cjs`)],
 	rules: {
 		'id-match': [
-			'error',
+			`error`,
 			buildIdentifierMatchRegExpString(Object.keys(globals.node)),
 			{
 				ignoreDestructuring: false,
