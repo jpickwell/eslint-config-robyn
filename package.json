@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-robyn",
-	"version": "3.4.0",
+	"version": "4.0.0",
 	"type": "commonjs",
 	"description": "Robyn Style - Shareable Configs",
 	"repository": {
@@ -141,9 +141,12 @@
 	"devDependencies": {
 		"@commitlint/cli": "^17.0.2",
 		"@commitlint/config-conventional": "^17.0.2",
+		"@linthtml/linthtml": "^0.8.6",
 		"@types/eslint": "^8.4.3",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-find-rules": "^4.1.0",
+		"html-validate": "^7.1.1",
+		"html-validate-vue": "^5.1.0",
 		"husky": "^8.0.1",
 		"ignore-sync": "^5.0.1",
 		"is-ci": "^3.0.1",

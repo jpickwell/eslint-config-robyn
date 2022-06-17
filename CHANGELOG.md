@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v3.4.0...v4.0.0) (2022-06-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* redo eslint config
+* rename all .js files to .cjs
+
+### Features
+
+* redo eslint config ([1d9c6b8](https://gitlab.com/jpickwell/eslint-config-robyn/-/commit/1d9c6b88247820bf63c5d15ff92bb494a7d95b23))
+* rename all .js files to .cjs ([7649ce1](https://gitlab.com/jpickwell/eslint-config-robyn/-/commit/7649ce19af42b37da000e398b4e0ea6ff3eb7bbb))
+* update vue config ([57a6a56](https://gitlab.com/jpickwell/eslint-config-robyn/-/commit/57a6a569a127ef6588094ef81273812710ced728))
+
+
+### Bug Fixes
+
+* use functions for shared configs ([4d6b553](https://gitlab.com/jpickwell/eslint-config-robyn/-/commit/4d6b553ae9b0c0112e15831820bc95701c0b68c0))
+
 ## [3.4.0](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v3.3.0...v3.4.0) (2022-05-27)
 
 
