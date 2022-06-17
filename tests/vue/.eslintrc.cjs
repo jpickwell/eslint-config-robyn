@@ -4,10 +4,6 @@
 
 /** @type {BaseConfig} */
 module.exports = {
-	rules: {
-		'no-console': `off`,
-
-		// eslint-disable-next-line sort-keys
-		'n/shebang': `off`,
-	},
+	extends: [require.resolve('../../vue.cjs')],
+	root: true,
 };

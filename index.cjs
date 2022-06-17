@@ -11,12 +11,7 @@ const {
 	typescriptOverride,
 } = require(`./lib/helpers.cjs`);
 
-const {
-	allExtensions,
-	restrictedSyntax,
-	warningCommentTerms,
-} = require(`./lib/lists.cjs`);
-
+const { allExtensions, warningCommentTerms } = require(`./lib/lists.cjs`);
 const { buildIdentifierMatchRegExpString } = require(`./lib/reg-exps.cjs`);
 const sharedConfigs = require(`./lib/shared-configs.cjs`);
 
@@ -601,8 +596,8 @@ module.exports = {
 				enforceForClassMembers: true,
 			},
 		],
-		'array-bracket-newline': `off`,
-		'array-bracket-spacing': `off`,
+		'array-bracket-newline': sharedConfigs.arrayBracketNewline(),
+		'array-bracket-spacing': sharedConfigs.arrayBracketSpacing(),
 		'array-callback-return': [
 			`error`,
 			{
@@ -613,16 +608,11 @@ module.exports = {
 		'array-element-newline': `off`,
 		'arrow-body-style': `off`,
 		'arrow-parens': `off`,
-		'arrow-spacing': `off`,
+		'arrow-spacing': sharedConfigs.arrowSpacing(),
 		'block-scoped-var': `error`,
-		'block-spacing': `off`,
+		'block-spacing': sharedConfigs.blockSpacing(),
 		'brace-style': sharedConfigs.braceStyle(),
-		camelcase: [
-			`error`,
-			{
-				properties: `always`,
-			},
-		],
+		camelcase: sharedConfigs.camelcase(),
 		'capitalized-comments': [
 			`off`,
 			`always`,
@@ -639,7 +629,7 @@ module.exports = {
 		'class-methods-use-this': `error`,
 		'comma-dangle': sharedConfigs.commaDangle(),
 		'comma-spacing': sharedConfigs.commaSpacing(),
-		'comma-style': `off`,
+		'comma-style': sharedConfigs.commaStyle(),
 		complexity: [`warn`, 10],
 		'computed-property-spacing': `off`,
 		'consistent-return': `off`,
@@ -649,10 +639,10 @@ module.exports = {
 		'default-case': `error`,
 		'default-case-last': `error`,
 		'default-param-last': sharedConfigs.defaultParamLast(),
-		'dot-location': `off`,
+		'dot-location': sharedConfigs.dotLocation(),
 		'dot-notation': sharedConfigs.dotNotation(),
 		'eol-last': `off`,
-		eqeqeq: `error`,
+		eqeqeq: sharedConfigs.eqeqeq(),
 		'for-direction': `error`,
 		'func-call-spacing': sharedConfigs.funcCallSpacing(),
 		'func-name-matching': [
@@ -691,7 +681,7 @@ module.exports = {
 		indent: sharedConfigs.indent(),
 		'init-declarations': sharedConfigs.initDeclarations(),
 		'jsx-quotes': `off`,
-		'key-spacing': `off`,
+		'key-spacing': sharedConfigs.keySpacing(),
 		'keyword-spacing': sharedConfigs.keywordSpacing(),
 		'line-comment-position': `off`,
 		'linebreak-style': `off`,
@@ -699,7 +689,7 @@ module.exports = {
 		'lines-between-class-members': sharedConfigs.linesBetweenClassMembers(),
 		'max-classes-per-file': `error`,
 		'max-depth': `warn`,
-		'max-len': `off`,
+		'max-len': sharedConfigs.maxLen(),
 		'max-lines': `off`,
 		'max-lines-per-function': `off`,
 		'max-nested-callbacks': [`warn`, 4],
@@ -745,7 +735,7 @@ module.exports = {
 		'no-console': `error`,
 		'no-const-assign': `error`,
 		'no-constant-binary-expression': `error`,
-		'no-constant-condition': `error`,
+		'no-constant-condition': sharedConfigs.noConstantCondition(),
 		'no-constructor-return': `error`,
 		'no-continue': `error`,
 		'no-control-regex': `error`,
@@ -772,7 +762,7 @@ module.exports = {
 		],
 		'no-empty-character-class': `error`,
 		'no-empty-function': sharedConfigs.noEmptyFunction(),
-		'no-empty-pattern': `error`,
+		'no-empty-pattern': sharedConfigs.noEmptyPattern(),
 		'no-eq-null': `error`,
 		'no-eval': `error`,
 		'no-ex-assign': `error`,
@@ -799,12 +789,7 @@ module.exports = {
 		'no-inner-declarations': [`error`, `both`],
 		'no-invalid-regexp': `error`,
 		'no-invalid-this': sharedConfigs.noInvalidThis(),
-		'no-irregular-whitespace': [
-			`error`,
-			{
-				skipStrings: false,
-			},
-		],
+		'no-irregular-whitespace': sharedConfigs.noIrregularWhitespace(),
 		'no-iterator': `error`,
 		'no-label-var': `error`,
 		'no-labels': [
@@ -849,7 +834,7 @@ module.exports = {
 		'no-restricted-globals': [`error`, `event`],
 		'no-restricted-imports': sharedConfigs.noRestrictedImports(),
 		'no-restricted-properties': `off`,
-		'no-restricted-syntax': [`error`, ...restrictedSyntax],
+		'no-restricted-syntax': sharedConfigs.noRestrictedSyntax(),
 		'no-return-assign': [`error`, `always`],
 		'no-return-await': sharedConfigs.returnAwait(),
 		'no-script-url': `error`,
@@ -870,7 +855,7 @@ module.exports = {
 		'no-shadow': sharedConfigs.noShadow(),
 		'no-shadow-restricted-names': `error`,
 		'no-space-before-semi': `off`,
-		'no-sparse-arrays': `error`,
+		'no-sparse-arrays': sharedConfigs.noSparseArrays(),
 		'no-tabs': `off`,
 		'no-template-curly-in-string': `error`,
 		'no-ternary': `off`,
@@ -928,7 +913,7 @@ module.exports = {
 				enforceForClassMembers: true,
 			},
 		],
-		'no-useless-concat': `error`,
+		'no-useless-concat': sharedConfigs.noUselessConcat(),
 		'no-useless-constructor': sharedConfigs.noUselessConstructor(),
 		'no-useless-escape': `error`,
 		'no-useless-rename': `error`,
@@ -945,20 +930,14 @@ module.exports = {
 		'no-with': `error`,
 		'no-wrap-func': `off`,
 		'nonblock-statement-body-position': `off`,
-		'object-curly-newline': `off`,
+		'object-curly-newline': sharedConfigs.objectCurlyNewline(),
 		'object-curly-spacing': sharedConfigs.objectCurlySpacing(),
-		'object-property-newline': `off`,
-		'object-shorthand': [
-			`error`,
-			`always`,
-			{
-				avoidExplicitReturnArrows: true,
-			},
-		],
+		'object-property-newline': sharedConfigs.objectPropertyNewline(),
+		'object-shorthand': sharedConfigs.objectShorthand(),
 		'one-var': [`error`, `never`],
 		'one-var-declaration-per-line': `off`,
 		'operator-assignment': [`error`, `always`],
-		'operator-linebreak': `off`,
+		'operator-linebreak': sharedConfigs.operatorLinebreak(),
 		'padded-blocks': `off`,
 		'padding-line-between-statements':
 			sharedConfigs.paddingLineBetweenStatements(),
@@ -1011,8 +990,8 @@ module.exports = {
 		],
 		'prefer-rest-params': `error`,
 		'prefer-spread': `error`,
-		'prefer-template': `error`,
-		'quote-props': `off`,
+		'prefer-template': sharedConfigs.preferTemplate(),
+		'quote-props': sharedConfigs.quoteProps(),
 		quotes: sharedConfigs.quotes(),
 		radix: `error`,
 		'require-atomic-updates': `error`,
@@ -1024,14 +1003,7 @@ module.exports = {
 		'semi-spacing': `off`,
 		'semi-style': `off`,
 		'sort-imports': `off`, // We use `simple-import-sort` plugin
-		'sort-keys': [
-			`error`,
-			`asc`,
-			{
-				caseSensitive: false,
-				natural: true,
-			},
-		],
+		'sort-keys': sharedConfigs.sortKeys(),
 		'sort-vars': [
 			`error`,
 			{
@@ -1045,10 +1017,10 @@ module.exports = {
 		'space-before-function-parentheses': `off`,
 		'space-before-keywords': `off`,
 		'space-in-brackets': `off`,
-		'space-in-parens': `off`,
+		'space-in-parens': sharedConfigs.spaceInParens(),
 		'space-infix-ops': sharedConfigs.spaceInfixOps(),
 		'space-return-throw-case': `off`,
-		'space-unary-ops': `off`,
+		'space-unary-ops': sharedConfigs.spaceUnaryOps(),
 		'space-unary-word-ops': `off`,
 		'spaced-comment': [
 			`error`,
@@ -1068,7 +1040,7 @@ module.exports = {
 		strict: `error`,
 		'switch-colon-spacing': `off`,
 		'symbol-description': `error`,
-		'template-curly-spacing': `off`,
+		'template-curly-spacing': sharedConfigs.templateCurlySpacing(),
 		'template-tag-spacing': `off`,
 		'unicode-bom': `off`,
 		'use-isnan': [
