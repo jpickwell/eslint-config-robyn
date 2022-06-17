@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.0.1](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v4.0.0...v4.0.1) (2022-06-17)
+
+
+### Bug Fixes
+
+* update pnpm lock file ([bd65df3](https://gitlab.com/jpickwell/eslint-config-robyn/-/commit/bd65df3e4f3165d06dbf5178c3e4862402119bd4))
+
 ## [4.0.0](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v3.4.0...v4.0.0) (2022-06-17)
 
 
