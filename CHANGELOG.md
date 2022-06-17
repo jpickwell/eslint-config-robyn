@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.1.0](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v4.0.1...v4.1.0) (2022-06-17)
+
+
+### Features
+
+* remove momentjs plugin and config ([978462c](https://gitlab.com/jpickwell/eslint-config-robyn/-/commit/978462c08b1af542a92efc28dc35aa9a32ca2fa0))
+
 ### [4.0.1](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v4.0.0...v4.0.1) (2022-06-17)
 
 
