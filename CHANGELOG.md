@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.1.1](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v4.1.0...v4.1.1) (2022-06-20)
+
+
+### Bug Fixes
+
+* import/extensions rule requires a ts override ([5bce6b3](https://gitlab.com/jpickwell/eslint-config-robyn/-/commit/5bce6b32404eb625002a5cef6c5543f625336241))
+
 ## [4.1.0](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v4.0.1...v4.1.0) (2022-06-17)
 
 
