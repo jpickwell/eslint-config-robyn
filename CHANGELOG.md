@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.1.2](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v4.1.1...v4.1.2) (2022-06-20)
+
+
+### Bug Fixes
+
+* ts consistent-type-definitions should be interface ([52dd275](https://gitlab.com/jpickwell/eslint-config-robyn/-/commit/52dd275fa5b76c3aed6e985a1ef368d171b5ce62))
+
 ### [4.1.1](https://gitlab.com/jpickwell/eslint-config-robyn/-/compare/v4.1.0...v4.1.1) (2022-06-20)
 
 
