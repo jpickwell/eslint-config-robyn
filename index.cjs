@@ -225,7 +225,7 @@ module.exports = {
 				],
 				'@typescript-eslint/consistent-type-definitions': [
 					`error`,
-					`type`,
+					`interface`,
 				],
 				'@typescript-eslint/consistent-type-exports': 0,
 				'@typescript-eslint/consistent-type-imports': 0,
