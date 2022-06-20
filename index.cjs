@@ -506,6 +506,13 @@ module.exports = {
 				// Disabled because of https://github.com/benmosher/eslint-plugin-import/issues/1590
 				'import/export': `off`,
 
+				'import/extensions': sharedConfigs.import.extensions({
+					pattern: {
+						ts: `never`,
+						tsx: `never`,
+					},
+				}),
+
 				// Disabled as it doesn't work with TypeScript.
 				'import/named': `off`,
 
@@ -1117,13 +1124,7 @@ module.exports = {
 		'import/dynamic-import-chunkname': `error`,
 		'import/export': `error`,
 		'import/exports-last': `error`,
-		'import/extensions': [
-			`error`,
-			`always`,
-			{
-				ignorePackages: true,
-			},
-		],
+		'import/extensions': sharedConfigs.import.extensions(),
 		'import/first': `error`,
 		'import/group-exports': `error`,
 		'import/max-dependencies': `error`,
@@ -1294,7 +1295,8 @@ module.exports = {
 			`error`,
 			`always`,
 			{
-				// TS has issues with extensions
+				// TS does not yet support extensions and fails with error
+				// TS2691.
 				'.ts': `never`,
 				'.tsx': `never`,
 			},
