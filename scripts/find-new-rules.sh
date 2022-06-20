@@ -10,4 +10,8 @@ find_new_rules --ext .cjs \
 	&& find_new_rules --ext .ts \
 	&& find_new_rules --ext .ts vue.cjs
 
+exit_code=$?
+
 echo ''
+
+exit $exit_code
