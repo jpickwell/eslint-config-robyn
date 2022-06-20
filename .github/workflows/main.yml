@@ -1,0 +1,38 @@
+---
+name: CI
+on:
+    pull_request:
+        types:
+            - opened
+            - reopened
+            - synchronize
+    push:
+        branches:
+            - main
+    workflow_dispatch: {}
+jobs:
+    test:
+        name: "Node.js ${{ matrix.node-version }}"
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                node-version:
+                    - 16
+                    - 18
+        steps:
+            - name: "Checkout Code"
+              uses: actions/checkout@v3
+            - name: "Setup Node"
+              uses: actions/setup-node@v2
+              with:
+                  node-version: "${{ matrix.node-version }}"
+            - name: "Enable Corepack"
+              run: "corepack enable"
+            - name: "Activate PNPM"
+              run: "corepack prepare --activate pnpm@7.3.0"
+            - run: "pnpm config set store-dir .pnpm-store"
+            - name: "Install Dependencies"
+              run: "pnpm install --force"
+            - name: "Test Code"
+              run: "pnpm test"

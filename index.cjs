@@ -215,6 +215,7 @@ module.exports = {
 				'@typescript-eslint/comma-dangle': sharedConfigs.commaDangle(),
 				'@typescript-eslint/comma-spacing':
 					sharedConfigs.commaSpacing(),
+				'@typescript-eslint/consistent-generic-constructors': 0,
 				'@typescript-eslint/consistent-indexed-object-style': `error`,
 				'@typescript-eslint/consistent-type-assertions': [
 					`error`,
