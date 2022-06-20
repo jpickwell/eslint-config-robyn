@@ -14,12 +14,6 @@ jobs:
     test:
         name: "Node.js ${{ matrix.node-version }}"
         runs-on: ubuntu-latest
-        strategy:
-            fail-fast: false
-            matrix:
-                node-version:
-                    - 16
-                    - 18
         steps:
             - name: "Checkout Code"
               uses: actions/checkout@v3
@@ -36,3 +30,9 @@ jobs:
               run: "pnpm install --force"
             - name: "Test Code"
               run: "pnpm test"
+        strategy:
+            fail-fast: false
+            matrix:
+                node-version:
+                    - 16
+                    - 18
