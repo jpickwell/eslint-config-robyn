@@ -13,7 +13,7 @@
 	},
 	"author": "Jordan Pickwell",
 	"license": "MIT",
-	"private": false,
+	"packageManager": "yarn@3.2.1",
 	"engines": {
 		"node": ">= 16"
 	},
@@ -63,19 +63,19 @@
 		"you-dont-need"
 	],
 	"scripts": {
-		"clean": "rm -fr node_modules pnpm-lock.yaml",
-		"eslint": "eslint -f pretty --color --max-warnings 0 --no-error-on-unmatched-pattern",
+		"clean": "rm -fr node_modules yarn.lock",
+		"eslint": "eslint -f pretty --color --no-error-on-unmatched-pattern",
 		"eslint:config": "eslint --print-config",
-		"format": "pnpm prettier -w '{**/.*,.*,**/*,*}'",
-		"format:check": "pnpm prettier:check '{**/.*,.*,**/*,*}'",
+		"format": "yarn prettier -w '{**/.*,.*,**/*,*}'",
+		"format:check": "yarn prettier:check '{**/.*,.*,**/*,*}'",
 		"ignore-sync": "ignore-sync .",
-		"install:clean": "pnpm clean && pnpm i",
-		"lint": "echo 'Linting ...'; pnpm --silent eslint '{**/.*,.*,**/*,*}.{c[jt]s,html,js?(x),md,m[jt]s,ts?(x),vue}'",
-		"lint:config": "pnpm eslint:config index.cjs",
+		"install:clean": "yarn clean && yarn install",
+		"lint": "echo 'Linting ...'; yarn eslint '{**/.*,.*,**/*,*}.{c[jt]s,html,js?(x),md,m[jt]s,ts?(x),vue}'",
+		"lint:config": "yarn eslint:config index.cjs",
 		"prepare": "scripts/is-dependency.cjs || is-ci || husky install",
 		"prettier": "prettier -u",
-		"prettier:check": "pnpm prettier -c",
-		"release": "standard-version -s",
+		"prettier:check": "yarn prettier -c",
+		"release": "bin/release.sh",
 		"test": "scripts/test.sh"
 	},
 	"peerDependencies": {
@@ -134,6 +134,7 @@
 		"ignore-sync": "^5.0.1",
 		"is-ci": "^3.0.1",
 		"lint-staged": "^13.0.2",
+		"node-gyp": "^9.0.0",
 		"postcss": "^8.4.14",
 		"postcss-html": "^1.4.1",
 		"postcss-scss": "^4.0.4",

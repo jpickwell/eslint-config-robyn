@@ -6,6 +6,9 @@ Global/Vim.gitignore
 Global/Windows.gitignore
 Node.gitignore
 
+[local]
+project.gitignore
+
 [inline]
 /.github
 /.idea

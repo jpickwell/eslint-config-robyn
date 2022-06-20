@@ -1,3 +1,3 @@
 #!/bin/sh
 
-pnpm release && git push --follow-tags origin main
+yarn standard-version -s && git push --follow-tags origin main

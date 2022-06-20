@@ -298,11 +298,15 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+
+/.git
+/.idea
+/.yarn
+
 *.iml
 .*ignore
-.*ignore-sync
-.git*
-.husky/_
-.idea
-CHANGELOG.md
-pnpm-lock.yaml
+/.*ignore-sync
+/.git*
+/.husky/_
+/CHANGELOG.md
+/yarn.lock

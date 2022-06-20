@@ -6,12 +6,15 @@ Global/Vim.gitignore
 Global/Windows.gitignore
 Node.gitignore
 
+[local]
+project.gitignore
+lint-format.gitignore
+
 [inline]
 *.iml
 .*ignore
-.*ignore-sync
-.git*
-.husky/_
-.idea
-CHANGELOG.md
-pnpm-lock.yaml
+/.*ignore-sync
+/.git*
+/.husky/_
+/CHANGELOG.md
+/yarn.lock

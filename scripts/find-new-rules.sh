@@ -1,7 +1,7 @@
 #!/bin/sh
 
 find_new_rules() {
-	pnpm eslint-find-rules -i deprecated -u "$@"
+	yarn eslint-find-rules -i deprecated -u "$@"
 }
 
 echo 'Looking for new rules...'

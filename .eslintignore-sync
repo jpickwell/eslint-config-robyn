@@ -6,7 +6,10 @@ Global/Vim.gitignore
 Global/Windows.gitignore
 Node.gitignore
 
+[local]
+project.gitignore
+lint-format.gitignore
+
 [inline]
-!.*
-/.git
-/.idea
+!.eslintrc.*
+!.versionrc.*

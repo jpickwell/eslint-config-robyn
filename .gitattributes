@@ -1,1 +1,7 @@
 * text=auto eol=lf
+
+*.zip binary
+/.github export-ignore
+/.yarn/releases/** binary
+/.yarn/plugins/** binary
+CHANGELOG.md export-ignore
