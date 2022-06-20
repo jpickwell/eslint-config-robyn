@@ -1,9 +1,6 @@
 'use strict';
 
 module.exports = {
-	commitUrlFormat: `{{host}}/{{owner}}/{{repository}}/-/commit/{{hash}}`,
-	compareUrlFormat: `{{host}}/{{owner}}/{{repository}}/-/compare/{{previousTag}}...{{currentTag}}`,
-	issueUrlFormat: `{{host}}/{{owner}}/{{repository}}/-/issues/{{id}}`,
 	types: [
 		{
 			hidden: true,
@@ -56,5 +53,4 @@ module.exports = {
 			type: `test`,
 		},
 	],
-	userUrlFormat: `{{host}}/{{user}}`,
 };

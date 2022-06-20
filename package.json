@@ -5,11 +5,11 @@
 	"description": "Robyn Style - Shareable Configs",
 	"repository": {
 		"type": "git",
-		"url": "git+https://gitlab.com/jpickwell/eslint-config-robyn.git"
+		"url": "git+https://github.com/jpickwell/eslint-config-robyn.git"
 	},
-	"homepage": "https://gitlab.com/jpickwell/eslint-config-robyn#readme",
+	"homepage": "https://github.com/jpickwell/eslint-config-robyn#readme",
 	"bugs": {
-		"url": "https://gitlab.com/jpickwell/eslint-config-robyn/issues"
+		"url": "https://github.com/jpickwell/eslint-config-robyn/issues"
 	},
 	"author": "Jordan Pickwell",
 	"license": "MIT",

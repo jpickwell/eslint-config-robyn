@@ -298,8 +298,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-.gitlab-ci
-.gitlab-ci.yml
-.idea
-__tests__
-tests
+/.github
+/.idea
+/tests

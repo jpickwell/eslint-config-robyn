@@ -7,8 +7,6 @@ Global/Windows.gitignore
 Node.gitignore
 
 [inline]
-.gitlab-ci
-.gitlab-ci.yml
-.idea
-__tests__
-tests
+/.github
+/.idea
+/tests
