@@ -2,5 +2,5 @@
 
 module.exports = {
 	'{.*,*}': `yarn prettier -w`,
-	'{.*,*}.{c[jt]s,html,js?(x),md,m[jt]s,ts?(x),vue}': `yarn eslint`,
+	'{.*,*}.{cjs,cts,html,js,jsx,md,mjs,mts,ts,tsx,vue}': `yarn eslint --fix`,
 };
