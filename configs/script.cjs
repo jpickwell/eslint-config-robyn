@@ -3,9 +3,9 @@
 const {
 	commonGlobals,
 	commonRules,
-} = require(`eslint-plugin-n/lib/configs/_commons`);
+} = require('eslint-plugin-n/lib/configs/_commons');
 
-const { nodeVersion } = require(`../lib/helpers.cjs`);
+const { nodeVersion } = require('../lib/helpers.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
 
@@ -13,22 +13,22 @@ const { nodeVersion } = require(`../lib/helpers.cjs`);
 module.exports = {
 	globals: {
 		...commonGlobals,
-		__dirname: `readonly`,
-		__filename: `readonly`,
-		exports: `writable`,
-		module: `readonly`,
-		require: `readonly`,
+		__dirname: 'readonly',
+		__filename: 'readonly',
+		exports: 'writable',
+		module: 'readonly',
+		require: 'readonly',
 	},
 	parserOptions: {
 		ecmaFeatures: {
 			globalReturn: true,
 		},
-		sourceType: `script`,
+		sourceType: 'script',
 	},
 	rules: {
 		...commonRules,
 		'n/no-unsupported-features/es-syntax': [
-			`error`,
+			'error',
 			{
 				ignores: [],
 				version: nodeVersion,

@@ -2,19 +2,19 @@
 
 'use strict';
 
-const process = require(`process`);
-const intersection = require(`lodash/intersection`);
-const without = require(`lodash/without`);
-const deprecatedConfig = require(`../configs/deprecated.cjs`);
+const process = require('process');
+const intersection = require('lodash/intersection');
+const without = require('lodash/without');
+const deprecatedConfig = require('../configs/deprecated.cjs');
 
 const {
 	asyncRunAsSync,
 	getEnabledRules,
 	loadConfig,
-} = require(`../lib/dev-helpers.cjs`);
+} = require('../lib/dev-helpers.cjs');
 
 async function getDeprecatedRules() {
-	const ruleFinder = await loadConfig(require.resolve(`./full-config.json`));
+	const ruleFinder = await loadConfig(require.resolve('./full-config.json'));
 
 	return ruleFinder.getDeprecatedRules();
 }
@@ -38,12 +38,12 @@ function anyMissingDeprecatedRules(deprecatedRules) {
 	const result = missingRules.length > 0;
 
 	if (result) {
-		console.log(`Missing deprecated rules:`, missingRules);
+		console.log('Missing deprecated rules:', missingRules);
 	}
 
 	if (unnecessaryRules.length > 0) {
 		console.warn(
-			`Unnecessarily specified deprecated rules:`,
+			'Unnecessarily specified deprecated rules:',
 			unnecessaryRules,
 		);
 	}
@@ -61,16 +61,16 @@ function anyEnabledDeprecatedRules(setRules, deprecatedRules) {
 	const result = enabledDeprecatedRules.length > 0;
 
 	if (result) {
-		console.log(`Enabled deprecated rules:`, enabledDeprecatedRules.sort());
+		console.log('Enabled deprecated rules:', enabledDeprecatedRules.sort());
 	}
 
 	return result;
 }
 
 async function run() {
-	console.log(`Checking for deprecated rules...`);
+	console.log('Checking for deprecated rules...');
 
-	const ruleFinder = await loadConfig(require.resolve(`../vue.cjs`));
+	const ruleFinder = await loadConfig(require.resolve('../vue.cjs'));
 	const deprecatedRules = await getDeprecatedRules();
 
 	process.exitCode =
@@ -82,7 +82,7 @@ async function run() {
 			? 1
 			: 0;
 
-	console.log(``);
+	console.log('');
 }
 
 asyncRunAsSync(run);

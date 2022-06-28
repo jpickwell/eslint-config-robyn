@@ -5,9 +5,9 @@
 /** @type {BaseConfig} */
 module.exports = {
 	rules: {
-		'no-console': `off`,
+		'no-console': 'off',
 
 		// eslint-disable-next-line sort-keys
-		'n/shebang': `off`,
+		'n/shebang': 'off',
 	},
 };

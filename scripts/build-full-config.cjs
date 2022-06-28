@@ -2,13 +2,13 @@
 
 'use strict';
 
-const fs = require(`fs/promises`);
-const path = require(`path`);
-const reduce = require(`lodash/reduce`);
-const { asyncRunAsSync, loadConfig } = require(`../lib/dev-helpers.cjs`);
+const fs = require('fs/promises');
+const path = require('path');
+const reduce = require('lodash/reduce');
+const { asyncRunAsSync, loadConfig } = require('../lib/dev-helpers.cjs');
 
 async function build() {
-	const ruleFinder = await loadConfig(require.resolve(`../vue.cjs`));
+	const ruleFinder = await loadConfig(require.resolve('../vue.cjs'));
 
 	const allAvailableRules = ruleFinder.getAllAvailableRules();
 
@@ -16,7 +16,7 @@ async function build() {
 		allAvailableRules,
 		(acc, value) => {
 			// eslint-disable-next-line security/detect-object-injection
-			acc[value] = `error`;
+			acc[value] = 'error';
 
 			return acc;
 		},
@@ -24,10 +24,10 @@ async function build() {
 	);
 
 	const config = {
-		extends: [`../vue.cjs`],
+		extends: ['../vue.cjs'],
 		rules,
 	};
-	const configFilePath = path.resolve(__dirname, `../tests/full-config.json`);
+	const configFilePath = path.resolve(__dirname, '../tests/full-config.json');
 
 	// eslint-disable-next-line security/detect-non-literal-fs-filename
 	await fs.writeFile(configFilePath, JSON.stringify(config));

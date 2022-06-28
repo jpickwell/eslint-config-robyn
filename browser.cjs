@@ -1,8 +1,8 @@
 'use strict';
 
-const restrictedGlobals = require(`confusing-browser-globals`);
-const globals = require(`globals`);
-const { buildIdentifierMatchRegExpString } = require(`./lib/reg-exps.cjs`);
+const restrictedGlobals = require('confusing-browser-globals');
+const globals = require('globals');
+const { buildIdentifierMatchRegExpString } = require('./lib/reg-exps.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
 
@@ -12,10 +12,10 @@ module.exports = {
 		browser: true,
 		node: false,
 	},
-	extends: [require.resolve(`./index.cjs`)],
+	extends: [require.resolve('./index.cjs')],
 	rules: {
 		'id-match': [
-			`error`,
+			'error',
 			buildIdentifierMatchRegExpString(Object.keys(globals.browser)),
 			{
 				ignoreDestructuring: false,
@@ -23,6 +23,6 @@ module.exports = {
 				properties: false,
 			},
 		],
-		'no-restricted-globals': [`error`, ...restrictedGlobals],
+		'no-restricted-globals': ['error', ...restrictedGlobals],
 	},
 };
