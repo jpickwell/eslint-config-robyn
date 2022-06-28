@@ -591,7 +591,6 @@ module.exports = {
 		`prettier`,
 		`promise`,
 		`security`,
-		`simple-import-sort`,
 		`unicorn`,
 		`you-dont-need-lodash-underscore`,
 	],
@@ -1009,7 +1008,7 @@ module.exports = {
 		semi: sharedConfigs.semi(),
 		'semi-spacing': `off`,
 		'semi-style': `off`,
-		'sort-imports': `off`, // We use `simple-import-sort` plugin
+		'sort-imports': `off`,
 		'sort-keys': sharedConfigs.sortKeys(),
 		'sort-vars': [
 			`error`,
@@ -1185,16 +1184,13 @@ module.exports = {
 			},
 		],
 
-		// doesn't work with TS
+		// Does not work with TS.
 		'import/no-unresolved': `off`,
 
 		'import/no-unused-modules': 0,
 		'import/no-useless-path-segments': `error`,
 		'import/no-webpack-loader-syntax': `error`,
-
-		// we use `simple-import-sort` plugin
 		'import/order': `off`,
-
 		'import/prefer-default-export': 0,
 		'import/unambiguous': `error`,
 
@@ -1395,10 +1391,9 @@ module.exports = {
 		'security/detect-object-injection': `warn`,
 		'security/detect-possible-timing-attacks': `warn`,
 		'security/detect-pseudoRandomBytes': `warn`,
-		'security/detect-unsafe-regex': `off`, // false-positives and no guidance
 
-		'simple-import-sort/exports': `error`,
-		'simple-import-sort/imports': `error`,
+		// Too many false-positives and no guidance.
+		'security/detect-unsafe-regex': `off`,
 
 		'unicorn/better-regex': `error`,
 		'unicorn/catch-error-name': `error`,

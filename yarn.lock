@@ -2164,7 +2164,6 @@ __metadata:
     eslint-plugin-prettier: ^4.0.0
     eslint-plugin-promise: ^6.0.0
     eslint-plugin-security: ^1.5.0
-    eslint-plugin-simple-import-sort: ^7.0.0
     eslint-plugin-unicorn: ^42.0.0
     eslint-plugin-vue: ^9.1.1
     eslint-plugin-you-dont-need-lodash-underscore: ^6.12.0
@@ -2429,15 +2428,6 @@ __metadata:
   dependencies:
     safe-regex: ^2.1.1
   checksum: c51c9d43d1ef1eaf803d136ae73522369f1e0b4f2633a56fc3226afd64ad3936943080bf506353c25422d1d73e8395946d016847e0ac5c0b5886c394fe848b9f
-  languageName: node
-  linkType: hard
-
-"eslint-plugin-simple-import-sort@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "eslint-plugin-simple-import-sort@npm:7.0.0"
-  peerDependencies:
-    eslint: ">=5.0.0"
-  checksum: 6aacb7179c213cd2081950630368d1f3b1dcb4f5674d8b989fe7839e7b317ee521d74761676e8b1a7cab49f20405dbcc9aac05358ae804e6bcba6cbf1daccb3d
   languageName: node
   linkType: hard
 
