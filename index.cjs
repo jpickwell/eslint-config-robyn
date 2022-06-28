@@ -41,7 +41,7 @@ module.exports = {
 			[
 				{
 					extensions: [`cjs`],
-					files: [`.eslint.js`],
+					files: [`.eslintrc.js`],
 				},
 			],
 			scriptConfig,
