@@ -2,8 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const moduleConfig = require('./module.cjs');
-const scriptConfig = require('./script.cjs');
+const { commonGlobals } = require('eslint-plugin-n/lib/configs/_commons');
 
 const {
 	nodeVersion,
@@ -38,6 +37,9 @@ module.exports = {
 		require.resolve('./module.cjs'),
 		require.resolve('./deprecated.cjs'),
 	],
+	globals: {
+		...commonGlobals,
+	},
 	overrides: [
 		override(
 			[
@@ -46,12 +48,17 @@ module.exports = {
 					files: ['.eslintrc.js'],
 				},
 			],
-			scriptConfig,
+			{
+				extends: [require.resolve('./script.cjs')],
+			},
 		),
-		override(['mjs'], moduleConfig),
+		override(['mjs'], {
+			extends: [require.resolve('./module.cjs')],
+		}),
 		typescriptOverride({
 			parserOptions: {
 				project: 'tsconfig.json',
+				sourceType: 'module',
 				tsconfigRootDir: tsconfigRootDirectory,
 				warnOnUnsupportedTypeScriptVersion: false,
 			},
@@ -1308,6 +1315,9 @@ module.exports = {
 		'n/handle-callback-err': ['error', 'error'],
 		'n/no-callback-literal': 'error',
 
+		'n/no-deprecated-api': 'error',
+		'n/no-exports-assign': 'error',
+
 		// redundant with `import/no-extraneous-dependencies`
 		'n/no-extraneous-import': 'off',
 		'n/no-extraneous-require': 'off',
@@ -1326,9 +1336,11 @@ module.exports = {
 		'n/no-new-require': 'error',
 		'n/no-path-concat': 'error',
 		'n/no-process-env': 'error',
+		'n/no-process-exit': 'error',
 		'n/no-restricted-import': 'off',
 		'n/no-restricted-require': 'off',
 		'n/no-sync': 'error',
+		'n/no-unpublished-bin': 'error',
 		'n/no-unpublished-import': 'off',
 		'n/no-unpublished-require': 'off',
 		'n/no-unsupported-features/es-builtins': [
@@ -1337,6 +1349,7 @@ module.exports = {
 				version: nodeVersion,
 			},
 		],
+		'n/no-unsupported-features/es-syntax': 'error',
 		'n/no-unsupported-features/node-builtins': [
 			'error',
 			{
@@ -1352,6 +1365,7 @@ module.exports = {
 		'n/prefer-global/url-search-params': ['error', 'always'],
 		'n/prefer-promises/dns': 'error',
 		'n/prefer-promises/fs': 'error',
+		'n/process-exit-as-throw': 'error',
 
 		// has issues
 		'n/shebang': 'off',
@@ -1487,7 +1501,6 @@ module.exports = {
 		'unicorn/prefer-math-trunc': 'error',
 		'unicorn/prefer-modern-dom-apis': 'error',
 		'unicorn/prefer-modern-math-apis': 'error',
-		'unicorn/prefer-module': 'error',
 		'unicorn/prefer-native-coercion-functions': 'error',
 		'unicorn/prefer-negative-index': 'error',
 		'unicorn/prefer-node-protocol': 'error',

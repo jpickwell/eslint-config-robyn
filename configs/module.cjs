@@ -1,10 +1,5 @@
 'use strict';
 
-const {
-	commonGlobals,
-	commonRules,
-} = require('eslint-plugin-n/lib/configs/_commons');
-
 const { nodeVersion } = require('../lib/helpers.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
@@ -12,7 +7,6 @@ const { nodeVersion } = require('../lib/helpers.cjs');
 /** @type {BaseConfig} */
 module.exports = {
 	globals: {
-		...commonGlobals,
 		__dirname: 'off',
 		__filename: 'off',
 		exports: 'off',
@@ -26,7 +20,6 @@ module.exports = {
 		sourceType: 'module',
 	},
 	rules: {
-		...commonRules,
 		'n/no-unsupported-features/es-syntax': [
 			'error',
 			{
@@ -34,5 +27,7 @@ module.exports = {
 				version: nodeVersion,
 			},
 		],
+
+		'unicorn/prefer-module': 'error',
 	},
 };
