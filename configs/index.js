@@ -3,16 +3,11 @@
 const fs = require('fs');
 const path = require('path');
 const { commonGlobals } = require('eslint-plugin-n/lib/configs/_commons');
-
-const {
-	nodeVersion,
-	override,
-	typescriptOverride,
-} = require('../lib/helpers.cjs');
-
-const { allExtensions, warningCommentTerms } = require('../lib/lists.cjs');
-const { buildIdentifierMatchRegExpString } = require('../lib/reg-exps.cjs');
-const sharedConfigs = require('../lib/shared-configs.cjs');
+const env = require('../lib/env');
+const { nodeVersion, override, typescriptOverride } = require('../lib/helpers');
+const { allExtensions, warningCommentTerms } = require('../lib/lists');
+const { buildIdentifierMatchRegExpString } = require('../lib/reg-exps');
+const sharedConfigs = require('../lib/shared-configs');
 
 /** @typedef {import('eslint').BaseConfig} */
 
@@ -25,7 +20,10 @@ const tsconfig = fs.existsSync('tsconfig.json')
 
 const tsconfigRootDirectory = tsconfig
 	? path.dirname(tsconfig)
-	: path.resolve('..');
+	: path.resolve(__dirname, '..');
+
+const moduleConfigPath = require.resolve('./module');
+const scriptConfigPath = require.resolve('./script');
 
 /** @type {BaseConfig} */
 module.exports = {
@@ -34,8 +32,8 @@ module.exports = {
 	},
 	extends: [
 		'plugin:markdown/recommended',
-		require.resolve('./module.cjs'),
-		require.resolve('./deprecated.cjs'),
+		moduleConfigPath,
+		require.resolve('./deprecated'),
 	],
 	globals: {
 		...commonGlobals,
@@ -45,15 +43,22 @@ module.exports = {
 			[
 				{
 					extensions: ['cjs'],
-					files: ['.eslintrc.js'],
+					files: [
+						'.commitlintrc.js',
+						'.eslintrc.js',
+						'.prettierrc.js',
+						'.versionrc.js',
+						'commitlint.config.js',
+						'prettier.config.js',
+					],
 				},
 			],
 			{
-				extends: [require.resolve('./script.cjs')],
+				extends: [scriptConfigPath],
 			},
 		),
 		override(['mjs'], {
-			extends: [require.resolve('./module.cjs')],
+			extends: [moduleConfigPath],
 		}),
 		typescriptOverride({
 			parserOptions: {
@@ -522,6 +527,7 @@ module.exports = {
 
 				'import/extensions': sharedConfigs.import.extensions({
 					pattern: {
+						js: 'always',
 						ts: 'never',
 						tsx: 'never',
 					},
@@ -751,7 +757,7 @@ module.exports = {
 				allowParens: false,
 			},
 		],
-		'no-console': 'error',
+		'no-console': env.NODE_ENV === 'production' ? 'error' : 'off',
 		'no-const-assign': 'error',
 		'no-constant-binary-expression': 'error',
 		'no-constant-condition': sharedConfigs.noConstantCondition(),

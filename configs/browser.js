@@ -2,7 +2,7 @@
 
 const restrictedGlobals = require('confusing-browser-globals');
 const globals = require('globals');
-const { buildIdentifierMatchRegExpString } = require('../lib/reg-exps.cjs');
+const { buildIdentifierMatchRegExpString } = require('../lib/reg-exps');
 
 /** @typedef {import('eslint').BaseConfig} */
 
@@ -12,7 +12,7 @@ module.exports = {
 		browser: true,
 		node: false,
 	},
-	extends: [require.resolve('./index.cjs')],
+	extends: [require.resolve('.')],
 	rules: {
 		'id-match': [
 			'error',

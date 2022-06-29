@@ -6,9 +6,9 @@ const {
 	getPackageJson,
 	override,
 	// typescriptOverride,
-} = require('../lib/helpers.cjs');
+} = require('../lib/helpers');
 
-const sharedConfigs = require('../lib/shared-configs.cjs');
+const sharedConfigs = require('../lib/shared-configs');
 
 /** @typedef {import('eslint').BaseConfig} */
 
@@ -31,7 +31,7 @@ const vueVersion = (() => {
 
 /** @type {BaseConfig} */
 module.exports = {
-	extends: [require.resolve('./browser.cjs')],
+	extends: [require.resolve('./browser')],
 	overrides: [
 		override(['vue'], {
 			rules: {

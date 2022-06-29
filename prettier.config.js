@@ -8,7 +8,7 @@ const ruby = require('linguist-languages/data/Ruby.json');
 const svg = require('linguist-languages/data/SVG.json');
 const xml = require('linguist-languages/data/XML.json');
 const yaml = require('linguist-languages/data/YAML.json');
-const { mapFiles } = require('./lib/helpers.cjs');
+const { mapFiles } = require('./lib/helpers');
 
 const POSIX = 1;
 

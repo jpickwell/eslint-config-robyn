@@ -19,7 +19,7 @@ const {
 	asyncRunAsSync,
 	getEnabledRules,
 	loadConfig,
-} = require('../lib/dev-helpers.cjs');
+} = require('../lib/dev-helpers');
 
 async function run() {
 	console.log('Checking for Prettier incompatible rules...');
@@ -41,7 +41,7 @@ async function run() {
 		'vue/max-len',
 	].sort();
 
-	const ruleFinder = await loadConfig(require.resolve('../configs/vue.cjs'));
+	const ruleFinder = await loadConfig(require.resolve('../configs/vue'));
 	const setRules = ruleFinder.getCurrentRulesDetailed();
 	const enabledRules = getEnabledRules(setRules);
 	const enabledIncompatibleRules = intersection(enabledRules, prettierRules);
@@ -54,9 +54,9 @@ async function run() {
 		);
 	}
 
-	process.exitCode = result ? 1 : 0;
-
 	console.log('');
+
+	process.exitCode = result ? 1 : 0;
 }
 
 asyncRunAsSync(run);

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 scripts/find-new-rules.sh \
-	&& tests/deprecated.cjs \
-	&& tests/incompatible.cjs \
-	&& yarn eslint-config-prettier index.cjs \
+	&& tests/deprecated.js \
+	&& tests/incompatible.js \
+	&& yarn eslint-config-prettier index.js \
 	&& yarn lint

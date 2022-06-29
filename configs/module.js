@@ -1,33 +1,33 @@
 'use strict';
 
-const { nodeVersion } = require('../lib/helpers.cjs');
+const { nodeVersion } = require('../lib/helpers');
 
 /** @typedef {import('eslint').BaseConfig} */
 
 /** @type {BaseConfig} */
 module.exports = {
 	globals: {
-		__dirname: 'readonly',
-		__filename: 'readonly',
-		exports: 'writable',
-		module: 'readonly',
-		require: 'readonly',
+		__dirname: 'off',
+		__filename: 'off',
+		exports: 'off',
+		module: 'off',
+		require: 'off',
 	},
 	parserOptions: {
 		ecmaFeatures: {
-			globalReturn: true,
+			globalReturn: false,
 		},
-		sourceType: 'script',
+		sourceType: 'module',
 	},
 	rules: {
 		'n/no-unsupported-features/es-syntax': [
 			'error',
 			{
-				ignores: [],
+				ignores: ['modules'],
 				version: nodeVersion,
 			},
 		],
 
-		'unicorn/prefer-module': 'off',
+		'unicorn/prefer-module': 'error',
 	},
 };
