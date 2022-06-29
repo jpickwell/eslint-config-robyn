@@ -2,18 +2,18 @@
 
 const fs = require('fs');
 const path = require('path');
-const moduleConfig = require('./configs/module.cjs');
-const scriptConfig = require('./configs/script.cjs');
+const moduleConfig = require('./module.cjs');
+const scriptConfig = require('./script.cjs');
 
 const {
 	nodeVersion,
 	override,
 	typescriptOverride,
-} = require('./lib/helpers.cjs');
+} = require('../lib/helpers.cjs');
 
-const { allExtensions, warningCommentTerms } = require('./lib/lists.cjs');
-const { buildIdentifierMatchRegExpString } = require('./lib/reg-exps.cjs');
-const sharedConfigs = require('./lib/shared-configs.cjs');
+const { allExtensions, warningCommentTerms } = require('../lib/lists.cjs');
+const { buildIdentifierMatchRegExpString } = require('../lib/reg-exps.cjs');
+const sharedConfigs = require('../lib/shared-configs.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
 
@@ -24,7 +24,9 @@ const tsconfig = fs.existsSync('tsconfig.json')
 	? path.resolve('types/tsconfig.json')
 	: undefined;
 
-const tsconfigRootDirectory = tsconfig ? path.dirname(tsconfig) : __dirname;
+const tsconfigRootDirectory = tsconfig
+	? path.dirname(tsconfig)
+	: path.resolve('..');
 
 /** @type {BaseConfig} */
 module.exports = {
@@ -33,8 +35,8 @@ module.exports = {
 	},
 	extends: [
 		'plugin:markdown/recommended',
-		require.resolve('./configs/module.cjs'),
-		require.resolve('./configs/deprecated.cjs'),
+		require.resolve('./module.cjs'),
+		require.resolve('./deprecated.cjs'),
 	],
 	overrides: [
 		override(

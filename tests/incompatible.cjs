@@ -41,7 +41,7 @@ async function run() {
 		'vue/max-len',
 	].sort();
 
-	const ruleFinder = await loadConfig(require.resolve('../vue.cjs'));
+	const ruleFinder = await loadConfig(require.resolve('../configs/vue.cjs'));
 	const setRules = ruleFinder.getCurrentRulesDetailed();
 	const enabledRules = getEnabledRules(setRules);
 	const enabledIncompatibleRules = intersection(enabledRules, prettierRules);

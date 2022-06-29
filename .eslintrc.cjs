@@ -4,6 +4,6 @@
 
 /** @type {BaseConfig} */
 module.exports = {
-	extends: [require.resolve('./node.cjs')],
+	extends: [require.resolve('./configs/node.cjs')],
 	root: true,
 };

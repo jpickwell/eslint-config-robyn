@@ -1,7 +1,7 @@
 'use strict';
 
 const globals = require('globals');
-const { buildIdentifierMatchRegExpString } = require('./lib/reg-exps.cjs');
+const { buildIdentifierMatchRegExpString } = require('../lib/reg-exps.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
 

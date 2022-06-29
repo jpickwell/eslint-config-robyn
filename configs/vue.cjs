@@ -6,9 +6,9 @@ const {
 	getPackageJson,
 	override,
 	// typescriptOverride,
-} = require('./lib/helpers.cjs');
+} = require('../lib/helpers.cjs');
 
-const sharedConfigs = require('./lib/shared-configs.cjs');
+const sharedConfigs = require('../lib/shared-configs.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
 

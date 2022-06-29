@@ -2,7 +2,7 @@
 
 const restrictedGlobals = require('confusing-browser-globals');
 const globals = require('globals');
-const { buildIdentifierMatchRegExpString } = require('./lib/reg-exps.cjs');
+const { buildIdentifierMatchRegExpString } = require('../lib/reg-exps.cjs');
 
 /** @typedef {import('eslint').BaseConfig} */
 

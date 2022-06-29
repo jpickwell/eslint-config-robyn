@@ -17,7 +17,7 @@
 	"engines": {
 		"node": ">= 16"
 	},
-	"main": "index.cjs",
+	"main": "configs/index.cjs",
 	"keywords": [
 		"check",
 		"checker",
@@ -70,8 +70,8 @@
 		"format:check": "yarn prettier:check .",
 		"ignore-sync": "ignore-sync .",
 		"install:clean": "yarn clean && yarn install",
-		"lint": "echo 'Linting ...'; yarn eslint --ext .cjs,.cts,.html,.js,.jsx,.md,.mjs,.mts,.ts,.tsx,.vue --fix .",
-		"lint:config": "yarn eslint:config index.cjs",
+		"lint": "echo 'Linting ...'; yarn eslint --ext .cjs,.cts,.html,.js,.jsx,.md,.mjs,.mts,.ts,.tsx,.vue .",
+		"lint:config": "yarn eslint:config configs/index.cjs",
 		"prepare": "scripts/is-dependency.cjs || is-ci || husky install",
 		"prettier": "prettier -u",
 		"prettier:check": "yarn prettier -c",

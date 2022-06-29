@@ -4,6 +4,6 @@
 
 /** @type {BaseConfig} */
 module.exports = {
-	extends: [require.resolve('../../vue.cjs')],
+	extends: [require.resolve('../../configs/vue.cjs')],
 	root: true,
 };
