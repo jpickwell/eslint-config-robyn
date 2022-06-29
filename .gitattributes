@@ -1,7 +1,14 @@
 * text=auto eol=lf
 
+# NPM "bin" scripts MUST have LF, or else the executable fails to run on Mac.
+# This fnmatch expression only matches files in a "bin" folder and without a
+# period in the filename.
+/*/*/bin/+([!.]) -text
+
 *.zip binary
 /.github export-ignore
-/.yarn/releases/** binary
 /.yarn/plugins/** binary
+/.yarn/releases/** binary
+/tests/full-config.json merge=binary
 CHANGELOG.md export-ignore
+yarn.lock merge=binary

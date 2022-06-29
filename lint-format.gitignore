@@ -1,3 +1,4 @@
 /.git
 /.idea
 /.yarn
+/tests/full-config.json

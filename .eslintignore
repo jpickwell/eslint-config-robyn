@@ -302,6 +302,7 @@ dist
 /.git
 /.idea
 /.yarn
+/tests/full-config.json
 
 !.eslintrc.*
 !.versionrc.*
