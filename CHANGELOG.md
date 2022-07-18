@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.2.0](https://github.com/jpickwell/eslint-config-robyn/compare/v5.1.0...v5.2.0) (2022-07-18)
+
+
+### Features
+
+* add stylelint config to overrides ([75b5df6](https://github.com/jpickwell/eslint-config-robyn/commit/75b5df6b9003ba1145738712ea450b468e60bbce))
+
 ## [5.1.0](https://github.com/jpickwell/eslint-config-robyn/compare/v5.0.0...v5.1.0) (2022-07-18)
 
 
