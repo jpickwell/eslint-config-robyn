@@ -1,5 +1,7 @@
 'use strict';
 
-module.exports = {
+const config = {
 	extends: ['stylelint-prettier/recommended'],
 };
+
+module.exports = config;

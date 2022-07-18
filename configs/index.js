@@ -1,15 +1,15 @@
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('node:fs');
+const path = require('node:path');
+
 const { commonGlobals } = require('eslint-plugin-n/lib/configs/_commons');
+
 const env = require('../lib/env');
 const { nodeVersion, override, typescriptOverride } = require('../lib/helpers');
 const { allExtensions, warningCommentTerms } = require('../lib/lists');
 const { buildIdentifierMatchRegExpString } = require('../lib/reg-exps');
 const sharedConfigs = require('../lib/shared-configs');
-
-/** @typedef {import('eslint').BaseConfig} */
 
 // eslint-disable-next-line n/no-sync
 const tsconfig = fs.existsSync('tsconfig.json')
@@ -25,8 +25,8 @@ const tsconfigRootDirectory = tsconfig
 const moduleConfigPath = require.resolve('./module');
 const scriptConfigPath = require.resolve('./script');
 
-/** @type {BaseConfig} */
-module.exports = {
+/** @type {import('eslint').BaseConfig} */
+const config = {
 	env: {
 		'shared-node-browser': true,
 	},
@@ -38,6 +38,13 @@ module.exports = {
 	globals: {
 		...commonGlobals,
 	},
+
+	// Manually authored .d.ts files are generally used to describe external
+	// APIs that are not expected to follow our coding conventions. Linting
+	// those files tends to produce a lot of spurious suppressions, so we simply
+	// ignore them.
+	ignorePatterns: ['*.d.ts'],
+
 	overrides: [
 		override(
 			[
@@ -55,6 +62,9 @@ module.exports = {
 			],
 			{
 				extends: [scriptConfigPath],
+				rules: {
+					'@typescript-eslint/no-var-requires': 'off',
+				},
 			},
 		),
 		override(['mjs'], {
@@ -62,7 +72,7 @@ module.exports = {
 		}),
 		typescriptOverride({
 			parserOptions: {
-				project: 'tsconfig.json',
+				project: './tsconfig.json',
 				sourceType: 'module',
 				tsconfigRootDir: tsconfigRootDirectory,
 				warnOnUnsupportedTypeScriptVersion: false,
@@ -113,7 +123,6 @@ module.exports = {
 				'no-unused-vars': 'off',
 				'no-use-before-define': 'off',
 				'no-useless-constructor': 'off',
-				'no-var': 'error',
 				'no-void': [
 					'error',
 					{
@@ -133,7 +142,9 @@ module.exports = {
 				'space-before-blocks': 'off',
 				'space-before-function-paren': 'off',
 				'space-infix-ops': 'off',
-				'valid-typeof': 'off', // ts(2367)
+
+				// TS(2367)
+				'valid-typeof': 'off',
 
 				// eslint-disable-next-line sort-keys
 				'@typescript-eslint/adjacent-overload-signatures': 'error',
@@ -173,11 +184,11 @@ module.exports = {
 							},
 							BigInt: {
 								fixWith: 'bigint',
-								message: "Use 'bigint' instead.",
+								message: 'Use `bigint` instead.',
 							},
 							Boolean: {
 								fixWith: 'boolean',
-								message: "Use 'boolean' instead.",
+								message: 'Use `boolean` instead.',
 							},
 							Function: {
 								message: [
@@ -189,14 +200,13 @@ module.exports = {
 							},
 							null: {
 								fixWith: 'undefined',
-								message: "Use 'undefined' instead.",
+								message: 'Use `undefined` instead.',
 							},
 							Number: {
 								fixWith: 'number',
-								message: "Use 'number' instead.",
+								message: 'Use `number` instead.',
 							},
 							object: {
-								// object typing
 								message: [
 									'The `object` type actually means "any non-nullish value", so it is marginally better than `unknown`.',
 									'- If you want a type meaning "any object", you probably want `Record<string, unknown>` instead.',
@@ -204,7 +214,6 @@ module.exports = {
 								].join('\n'),
 							},
 							Object: {
-								// object typing
 								message: [
 									'The `Object` type actually means "any non-nullish value", so it is marginally better than `unknown`.',
 									'- If you want a type meaning "any object", you probably want `Record<string, unknown>` instead.',
@@ -213,11 +222,11 @@ module.exports = {
 							},
 							String: {
 								fixWith: 'string',
-								message: "Use 'string' instead.",
+								message: 'Use `string` instead.',
 							},
 							Symbol: {
 								fixWith: 'symbol',
-								message: "Use 'symbol' instead.",
+								message: 'Use `symbol` instead.',
 							},
 						},
 					},
@@ -248,13 +257,17 @@ module.exports = {
 				'@typescript-eslint/default-param-last':
 					sharedConfigs.defaultParamLast(),
 				'@typescript-eslint/dot-notation': sharedConfigs.dotNotation(),
-
-				// too annoying
-				'@typescript-eslint/explicit-function-return-type': 'off',
-
+				'@typescript-eslint/explicit-function-return-type': [
+					'warn',
+					{
+						allowExpressions: true,
+						allowHigherOrderFunctions: false,
+						allowTypedFunctionExpressions: true,
+					},
+				],
 				'@typescript-eslint/explicit-member-accessibility': 0,
 
-				// too many false-positives
+				// Too many false-positives.
 				'@typescript-eslint/explicit-module-boundary-types': 'off',
 
 				'@typescript-eslint/func-call-spacing':
@@ -284,7 +297,7 @@ module.exports = {
 				],
 				'@typescript-eslint/method-signature-style': 'off',
 				'@typescript-eslint/naming-convention':
-					sharedConfigs.typescriptEslintNamingConvention(false),
+					sharedConfigs.typescript.namingConvention(false),
 				'@typescript-eslint/no-array-constructor':
 					sharedConfigs.noArrayConstructor(),
 				'@typescript-eslint/no-base-to-string': 'error',
@@ -303,7 +316,7 @@ module.exports = {
 					},
 				],
 				'@typescript-eslint/no-explicit-any': [
-					'off',
+					'warn',
 					{
 						fixToUnknown: true,
 						ignoreRestArgs: true,
@@ -339,7 +352,7 @@ module.exports = {
 				'@typescript-eslint/no-invalid-this':
 					sharedConfigs.noInvalidThis(),
 
-				// too many false-positives
+				// Too many false-positives.
 				'@typescript-eslint/no-invalid-void-type': 'off',
 
 				'@typescript-eslint/no-loop-func': sharedConfigs.noLoopFunc(),
@@ -356,7 +369,13 @@ module.exports = {
 						checksVoidReturn: false,
 					},
 				],
-				'@typescript-eslint/no-namespace': 'error',
+				'@typescript-eslint/no-namespace': [
+					'error',
+					{
+						allowDeclarations: false,
+						allowDefinitionFiles: false,
+					},
+				],
 				'@typescript-eslint/no-non-null-asserted-nullish-coalescing':
 					'error',
 				'@typescript-eslint/no-non-null-asserted-optional-chain':
@@ -386,7 +405,7 @@ module.exports = {
 						allowThrowingAny: false,
 
 						// This should ideally be `false`, but it makes
-						// rethrowing errors inconvenient. There should be a
+						// re-throwing errors inconvenient. There should be a
 						// separate `allowRethrowingUnknown` option.
 						allowThrowingUnknown: true,
 					},
@@ -400,7 +419,7 @@ module.exports = {
 				'@typescript-eslint/no-unnecessary-type-assertion': 'error',
 				'@typescript-eslint/no-unnecessary-type-constraint': 'error',
 
-				// this makes it hard to pass around errors
+				// This makes it hard to pass around errors.
 				'@typescript-eslint/no-unsafe-argument': 'off',
 
 				'@typescript-eslint/no-unsafe-assignment': 'error',
@@ -415,7 +434,10 @@ module.exports = {
 				'@typescript-eslint/no-unused-vars':
 					sharedConfigs.noUnusedVars(),
 				'@typescript-eslint/no-use-before-define':
-					sharedConfigs.noUseBeforeDefine(),
+					sharedConfigs.noUseBeforeDefine({
+						enums: true,
+						typedefs: true,
+					}),
 				'@typescript-eslint/no-useless-constructor':
 					sharedConfigs.noUselessConstructor(),
 				'@typescript-eslint/no-useless-empty-export': 'error',
@@ -442,7 +464,7 @@ module.exports = {
 				'@typescript-eslint/prefer-optional-chain': 'error',
 				'@typescript-eslint/prefer-readonly': 'error',
 
-				// too annoying
+				// Too annoying.
 				'@typescript-eslint/prefer-readonly-parameter-types': 'off',
 
 				'@typescript-eslint/prefer-reduce-type-parameter': 'error',
@@ -502,7 +524,19 @@ module.exports = {
 					},
 				],
 				'@typescript-eslint/type-annotation-spacing': 'off',
-				'@typescript-eslint/typedef': 0,
+				'@typescript-eslint/typedef': [
+					0,
+					{
+						arrayDestructuring: false,
+						arrowParameter: false,
+						memberVariableDeclaration: true,
+						objectDestructuring: false,
+						parameter: true,
+						propertyDeclaration: true,
+						variableDeclaration: true,
+						variableDeclarationIgnoreFunction: true,
+					},
+				],
 
 				// Disabled as it crashes on most code.
 				'@typescript-eslint/unbound-method': [
@@ -533,7 +567,7 @@ module.exports = {
 					},
 				}),
 
-				// Disabled as it doesn't work with TypeScript.
+				// Disabled as it does not work with TS.
 				'import/named': 'off',
 
 				// The rule is buggy with TS.
@@ -574,24 +608,41 @@ module.exports = {
 		override(['tsx'], {
 			rules: {
 				'@typescript-eslint/naming-convention':
-					sharedConfigs.typescriptEslintNamingConvention(true),
+					sharedConfigs.typescript.namingConvention(true),
 			},
 		}),
-		override(['d.ts'], {
-			rules: {
-				'@typescript-eslint/no-unused-vars': 'off',
-
-				'import/unambiguous': 'off',
+		override(
+			[
+				{
+					files: [
+						'.commitlintrc.cjs',
+						'.commitlintrc.js',
+						'.commitlintrc.ts',
+						'.eslintrc.cjs',
+						'.eslintrc.js',
+						'.prettierrc.cjs',
+						'.prettierrc.js',
+						'.versionrc.cjs',
+						'.versionrc.js',
+						'commitlint.config.cjs',
+						'commitlint.config.js',
+						'commitlint.config.ts',
+						'lint-staged.config.cjs',
+						'lint-staged.config.js',
+						'lint-staged.config.mjs',
+						'prettier.config.cjs',
+						'prettier.config.js',
+						'vite.config.js',
+						'vite.config.ts',
+					],
+				},
+			],
+			{
+				rules: {
+					'n/no-unpublished-require': 'off',
+				},
 			},
-		}),
-		override(['test-d.ts'], {
-			rules: {
-				// Conflicts with `expectError` assertion.
-				'@typescript-eslint/no-confusing-void-expression': 'off',
-
-				'@typescript-eslint/no-unsafe-call': 'off',
-			},
-		}),
+		),
 	],
 	parser: require.resolve('@typescript-eslint/parser'),
 	parserOptions: {
@@ -638,24 +689,17 @@ module.exports = {
 		'block-spacing': sharedConfigs.blockSpacing(),
 		'brace-style': sharedConfigs.braceStyle(),
 		camelcase: sharedConfigs.camelcase(),
-		'capitalized-comments': [
-			'off',
-			'always',
-			{
-				// You can also ignore this rule by wrapping the first word in
-				// quotes.
-
-				ignoreConsecutiveComments: true,
-				ignoreInlineComments: true,
-				ignorePattern: /c8|ignore|pragma|prettier-ignore|webpack\w+:/u
-					.source,
-			},
-		],
+		'capitalized-comments': 'off',
 		'class-methods-use-this': 'error',
 		'comma-dangle': sharedConfigs.commaDangle(),
 		'comma-spacing': sharedConfigs.commaSpacing(),
 		'comma-style': sharedConfigs.commaStyle(),
-		complexity: ['warn', 10],
+		complexity: [
+			'warn',
+			{
+				max: 20,
+			},
+		],
 		'computed-property-spacing': 'off',
 		'consistent-return': 'off',
 		'consistent-this': 'off',
@@ -712,20 +756,67 @@ module.exports = {
 		'linebreak-style': 'off',
 		'lines-around-comment': 'off',
 		'lines-between-class-members': sharedConfigs.linesBetweenClassMembers(),
-		'max-classes-per-file': 'error',
-		'max-depth': 'warn',
-		'max-len': sharedConfigs.maxLen(),
-		'max-lines': 'off',
-		'max-lines-per-function': 'off',
-		'max-nested-callbacks': ['warn', 4],
-		'max-params': [
+		'max-classes-per-file': [
+			'error',
+			{
+				ignoreExpressions: false,
+				max: 1,
+			},
+		],
+		'max-depth': [
 			'warn',
 			{
 				max: 4,
 			},
 		],
-		'max-statements': 'off',
-		'max-statements-per-line': 'error',
+		'max-len': sharedConfigs.maxLen(),
+
+		// If you have more than 2,000 lines in a single source file, then it is
+		// probably time to split up your code.
+		'max-lines': [
+			'warn',
+			{
+				max: 2000,
+				skipBlankLines: true,
+				skipComments: true,
+			},
+		],
+		'max-lines-per-function': [
+			'warn',
+			{
+				IIFEs: false,
+				max: 50,
+				skipBlankLines: true,
+				skipComments: true,
+			},
+		],
+		'max-nested-callbacks': [
+			'warn',
+			{
+				max: 10,
+			},
+		],
+		'max-params': [
+			'warn',
+			{
+				max: 5,
+			},
+		],
+		'max-statements': [
+			'warn',
+			{
+				max: 20,
+			},
+			{
+				ignoreTopLevelFunctions: false,
+			},
+		],
+		'max-statements-per-line': [
+			'error',
+			{
+				max: 1,
+			},
+		],
 		'multiline-comment-style': 'off',
 		'multiline-ternary': 'off',
 		'new-cap': [
@@ -744,7 +835,27 @@ module.exports = {
 		'no-arrow-condition': 'off',
 		'no-async-promise-executor': 'error',
 		'no-await-in-loop': 'error',
-		'no-bitwise': 'error',
+		'no-bitwise': [
+			'warn',
+			{
+				allow: [
+					// '&',
+					// '&=',
+					'<<',
+					'<<=',
+					'>>',
+					'>>=',
+					'>>>',
+					'>>>=',
+					'^',
+					'^=',
+					// '|',
+					// '|=',
+					'~',
+				],
+				int32Hint: false,
+			},
+		],
 		'no-caller': 'error',
 		'no-case-declarations': 'error',
 		'no-class-assign': 'error',
@@ -810,7 +921,14 @@ module.exports = {
 		'no-implicit-globals': 'error',
 		'no-implied-eval': sharedConfigs.noImpliedEval(),
 		'no-import-assign': 'error',
-		'no-inline-comments': 'off',
+		'no-inline-comments': [
+			'warn',
+			{
+				// ESLint directive comments are always ignored, so this pattern
+				// does not need to include them.
+				ignorePattern: '',
+			},
+		],
 		'no-inner-declarations': ['error', 'both'],
 		'no-invalid-regexp': 'error',
 		'no-invalid-this': sharedConfigs.noInvalidThis(),
@@ -1027,7 +1145,10 @@ module.exports = {
 		semi: sharedConfigs.semi(),
 		'semi-spacing': 'off',
 		'semi-style': 'off',
-		'sort-imports': 'off', // We use `import` plugin.
+
+		// We use `import` plugin.
+		'sort-imports': 'off',
+
 		'sort-keys': sharedConfigs.sortKeys(),
 		'sort-vars': [
 			'error',
@@ -1131,7 +1252,7 @@ module.exports = {
 		'eslint-comments/no-duplicate-disable': 'error',
 		'eslint-comments/no-restricted-disable': 'off',
 
-		// covered by `unicorn/no-abusive-eslint-disable`
+		// Covered by `unicorn/no-abusive-eslint-disable`
 		'eslint-comments/no-unlimited-disable': 'off',
 
 		'eslint-comments/no-unused-disable': 'error',
@@ -1159,7 +1280,7 @@ module.exports = {
 		'import/no-amd': 'error',
 		'import/no-anonymous-default-export': 'error',
 
-		// we use `unicorn/prefer-module` instead
+		// We use `unicorn/prefer-module` instead.
 		'import/no-commonjs': 'off',
 
 		'import/no-cycle': [
@@ -1209,7 +1330,44 @@ module.exports = {
 		'import/no-unused-modules': 0,
 		'import/no-useless-path-segments': 'error',
 		'import/no-webpack-loader-syntax': 'error',
-		'import/order': 'off',
+		'import/order': [
+			'warn',
+			{
+				alphabetize: {
+					caseInsensitive: true,
+					order: 'asc',
+				},
+				groups: [
+					'builtin',
+					'external',
+					'internal',
+					'parent',
+					'sibling',
+					'index',
+					'object',
+					'type',
+				],
+				'newlines-between': 'always',
+				pathGroups: [
+					{
+						group: 'internal',
+						pattern: '@/**',
+						position: 'after',
+					},
+					{
+						group: 'internal',
+						pattern: '~/**',
+						position: 'after',
+					},
+				],
+				pathGroupsExcludedImportTypes: [
+					'builtin',
+					'external',
+					'object',
+				],
+				warnOnUnassignedImports: true,
+			},
+		],
 		'import/prefer-default-export': 0,
 		'import/unambiguous': 'error',
 
@@ -1324,11 +1482,11 @@ module.exports = {
 		'n/no-deprecated-api': 'error',
 		'n/no-exports-assign': 'error',
 
-		// redundant with `import/no-extraneous-dependencies`
+		// Redundant with `import/no-extraneous-dependencies`
 		'n/no-extraneous-import': 'off',
 		'n/no-extraneous-require': 'off',
 
-		// redundant with `import/no-unresolved`
+		// Redundant with `import/no-unresolved`
 		'n/no-missing-import': 'off',
 		'n/no-missing-require': 'off',
 
@@ -1373,7 +1531,7 @@ module.exports = {
 		'n/prefer-promises/fs': 'error',
 		'n/process-exit-as-throw': 'error',
 
-		// has issues
+		// Has issues.
 		'n/shebang': 'off',
 
 		'no-use-extend-native/no-use-extend-native': 'error',
@@ -1418,7 +1576,7 @@ module.exports = {
 		'security/detect-possible-timing-attacks': 'warn',
 		'security/detect-pseudoRandomBytes': 'warn',
 
-		// Too many false-positives and no guidance.
+		// Too many false-positives, and no guidance.
 		'security/detect-unsafe-regex': 'off',
 
 		'unicorn/better-regex': 'error',
@@ -1429,15 +1587,9 @@ module.exports = {
 		'unicorn/empty-brace-spaces': 'off',
 		'unicorn/error-message': 'error',
 		'unicorn/escape-case': 'error',
-		'unicorn/expiring-todo-comments': [
-			'error',
-			{
-				terms: warningCommentTerms,
-			},
-		],
+		'unicorn/expiring-todo-comments': 'off',
 		'unicorn/explicit-length-check': 'error',
 		'unicorn/filename-case': 'error',
-		'unicorn/import-index': 'error',
 		'unicorn/import-style': 'error',
 		'unicorn/new-for-builtins': 'error',
 		'unicorn/no-abusive-eslint-disable': 'error',
@@ -1500,10 +1652,15 @@ module.exports = {
 		'unicorn/prefer-dom-node-dataset': 'error',
 		'unicorn/prefer-dom-node-remove': 'error',
 		'unicorn/prefer-dom-node-text-content': 'error',
+		'unicorn/prefer-event-target': 'error',
 		'unicorn/prefer-export-from': 'error',
 		'unicorn/prefer-includes': 'error',
-		'unicorn/prefer-json-parse-buffer': 'off', // doesn't work with TS
+
+		// Does not work with TS.
+		'unicorn/prefer-json-parse-buffer': 'off',
+
 		'unicorn/prefer-keyboard-event-key': 'error',
+		'unicorn/prefer-logical-operator-over-ternary': 'error',
 		'unicorn/prefer-math-trunc': 'error',
 		'unicorn/prefer-modern-dom-apis': 'error',
 		'unicorn/prefer-modern-math-apis': 'error',
@@ -1723,3 +1880,5 @@ module.exports = {
 		'import/core-modules': ['electron', 'atom'],
 	},
 };
+
+module.exports = config;

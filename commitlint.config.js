@@ -1,5 +1,7 @@
 'use strict';
 
-module.exports = {
+const config = {
 	extends: ['@commitlint/config-conventional'],
 };
+
+module.exports = config;

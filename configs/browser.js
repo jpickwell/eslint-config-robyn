@@ -2,12 +2,11 @@
 
 const restrictedGlobals = require('confusing-browser-globals');
 const globals = require('globals');
+
 const { buildIdentifierMatchRegExpString } = require('../lib/reg-exps');
 
-/** @typedef {import('eslint').BaseConfig} */
-
-/** @type {BaseConfig} */
-module.exports = {
+/** @type {import('eslint').BaseConfig} */
+const config = {
 	env: {
 		browser: true,
 		node: false,
@@ -26,3 +25,5 @@ module.exports = {
 		'no-restricted-globals': ['error', ...restrictedGlobals],
 	},
 };
+
+module.exports = config;

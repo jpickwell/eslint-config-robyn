@@ -2,8 +2,9 @@
 
 'use strict';
 
-const path = require('path');
-const process = require('process');
+const path = require('node:path');
+const process = require('node:process');
+
 const pkg = require('../package.json');
 
 const parentDirectory = path.basename(path.resolve(__dirname, '..'));

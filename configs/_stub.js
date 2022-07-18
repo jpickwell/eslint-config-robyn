@@ -1,6 +1,6 @@
 'use strict';
 
-/** @typedef {import('eslint').BaseConfig} */
+/** @type {import('eslint').BaseConfig} */
+const config = {};
 
-/** @type {BaseConfig} */
-module.exports = {};
+module.exports = config;

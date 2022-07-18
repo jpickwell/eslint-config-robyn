@@ -2,15 +2,14 @@
 
 'use strict';
 
-const process = require('process');
-const { rules: prettierConfigRules } = require('eslint-config-prettier');
+const process = require('node:process');
 
+const { rules: prettierConfigRules } = require('eslint-config-prettier');
 const {
 	configs: {
 		recommended: { rules: prettierPluginRules },
 	},
 } = require('eslint-plugin-prettier');
-
 const intersection = require('lodash/intersection');
 const merge = require('lodash/merge');
 const omitBy = require('lodash/omitBy');

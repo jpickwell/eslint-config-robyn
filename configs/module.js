@@ -2,10 +2,8 @@
 
 const { nodeVersion } = require('../lib/helpers');
 
-/** @typedef {import('eslint').BaseConfig} */
-
-/** @type {BaseConfig} */
-module.exports = {
+/** @type {import('eslint').BaseConfig} */
+const config = {
 	globals: {
 		__dirname: 'off',
 		__filename: 'off',
@@ -31,3 +29,5 @@ module.exports = {
 		'unicorn/prefer-module': 'error',
 	},
 };
+
+module.exports = config;

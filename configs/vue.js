@@ -2,17 +2,10 @@
 
 const find = require('lodash/find');
 
-const {
-	getPackageJson,
-	override,
-	// typescriptOverride,
-} = require('../lib/helpers');
-
+const { getPackageJson, override } = require('../lib/helpers');
 const sharedConfigs = require('../lib/shared-configs');
 
-/** @typedef {import('eslint').BaseConfig} */
-
-// determine the vue version
+// Determine the Vue.js version.
 const vueVersion = (() => {
 	const packageJson = getPackageJson();
 	const version = find(
@@ -29,44 +22,35 @@ const vueVersion = (() => {
 	return version;
 })();
 
-/** @type {BaseConfig} */
-module.exports = {
+/** @type {import('eslint').BaseConfig} */
+const config = {
 	extends: [require.resolve('./browser')],
 	overrides: [
 		override(['vue'], {
 			rules: {
+				'no-invalid-this': 'off',
+
+				// eslint-disable-next-line sort-keys
 				'import/unambiguous': 'off',
 			},
 		}),
-		// override([`?(c)js`], {
-		// 	rules: {
-		// 		'@typescript-eslint/no-var-requires': `off`,
-		// 	},
-		// }),
-		// typescriptOverride({
-		// 	rules: {
-		// 		'no-unused-vars': `off`,
-		//
-		// 		// eslint-disable-next-line sort-keys
-		// 		'@typescript-eslint/explicit-function-return-type': `off`,
-		// 	},
-		// }),
-		// override([{ files: [`shims-tsx.d.ts`] }], {
-		// 	rules: {
-		// 		'@typescript-eslint/no-empty-interface': `off`,
-		// 		'@typescript-eslint/no-explicit-any': `off`,
-		// 		'@typescript-eslint/no-unused-vars': `off`,
-		// 	},
-		// }),
 	],
 	parser: require.resolve('vue-eslint-parser'),
 	parserOptions: {
 		extraFileExtensions: ['.vue'],
-		parser: require.resolve('@typescript-eslint/parser'),
+		parser: {
+			js: 'espree',
+			jsx: 'espree',
+			ts: require.resolve('@typescript-eslint/parser'),
+			tsx: require.resolve('@typescript-eslint/parser'),
+		},
 	},
 	plugins: ['vue'],
 	rules: {
 		'sort-keys': 'off',
+
+		// eslint-disable-next-line sort-keys
+		'@typescript-eslint/explicit-function-return-type': 'off',
 
 		'vue/array-bracket-newline': sharedConfigs.arrayBracketNewline(),
 		'vue/array-bracket-spacing': sharedConfigs.arrayBracketSpacing(),
@@ -352,3 +336,5 @@ module.exports = {
 		'vue/valid-v-text': 'error',
 	},
 };
+
+module.exports = config;

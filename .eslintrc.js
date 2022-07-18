@@ -1,12 +1,12 @@
 'use strict';
 
-/** @typedef {import('eslint').BaseConfig} */
-
-/** @type {BaseConfig} */
-module.exports = {
+/** @type {import('eslint').BaseConfig} */
+const config = {
 	extends: [
 		require.resolve('./configs/node'),
 		require.resolve('./configs/commonjs'),
 	],
 	root: true,
 };
+
+module.exports = config;

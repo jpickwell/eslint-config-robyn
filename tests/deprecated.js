@@ -2,11 +2,12 @@
 
 'use strict';
 
-const process = require('process');
+const process = require('node:process');
+
 const intersection = require('lodash/intersection');
 const without = require('lodash/without');
-const deprecatedConfig = require('../configs/deprecated');
 
+const deprecatedConfig = require('../configs/deprecated');
 const {
 	asyncRunAsSync,
 	getEnabledRules,

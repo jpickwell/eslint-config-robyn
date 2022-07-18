@@ -1,12 +1,11 @@
 'use strict';
 
 const globals = require('globals');
+
 const { buildIdentifierMatchRegExpString } = require('../lib/reg-exps');
 
-/** @typedef {import('eslint').BaseConfig} */
-
-/** @type {BaseConfig} */
-module.exports = {
+/** @type {import('eslint').BaseConfig} */
+const config = {
 	env: {
 		node: true,
 	},
@@ -23,3 +22,5 @@ module.exports = {
 		],
 	},
 };
+
+module.exports = config;

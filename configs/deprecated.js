@@ -2,10 +2,8 @@
 
 const reduce = require('lodash/reduce');
 
-/** @typedef {import('eslint').BaseConfig} */
-
-/** @type {BaseConfig} */
-module.exports = {
+/** @type {import('eslint').BaseConfig} */
+const config = {
 	rules: reduce(
 		[
 			'@typescript-eslint/no-duplicate-imports',
@@ -36,6 +34,7 @@ module.exports = {
 			'no-sync',
 			'prefer-reflect',
 			'require-jsdoc',
+			'unicorn/import-index',
 			'unicorn/no-array-instanceof',
 			'unicorn/no-fn-reference-in-iterator',
 			'unicorn/no-reduce',
@@ -64,3 +63,5 @@ module.exports = {
 		{},
 	),
 };
+
+module.exports = config;

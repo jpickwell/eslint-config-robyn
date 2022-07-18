@@ -2,8 +2,10 @@
 
 'use strict';
 
-const process = require('process');
+const process = require('node:process');
+
 const pickBy = require('lodash/pickBy');
+
 const { asyncRunAsSync, loadConfig } = require('../lib/dev-helpers');
 
 async function run() {

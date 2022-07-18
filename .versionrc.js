@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = {
+const config = {
 	types: [
 		{
 			hidden: true,
@@ -54,3 +54,5 @@ module.exports = {
 		},
 	],
 };
+
+module.exports = config;
