@@ -1344,6 +1344,7 @@ const config = {
 					order: 'asc',
 				},
 				groups: [
+					'unknown',
 					'builtin',
 					'external',
 					'internal',
@@ -1371,7 +1372,7 @@ const config = {
 					'external',
 					'object',
 				],
-				warnOnUnassignedImports: true,
+				warnOnUnassignedImports: false,
 			},
 		],
 		'import/prefer-default-export': 0,
