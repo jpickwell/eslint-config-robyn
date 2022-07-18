@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.1.0](https://github.com/jpickwell/eslint-config-robyn/compare/v5.0.0...v5.1.0) (2022-07-18)
+
+
+### Features
+
+* turn off vue/no-bare-strings-in-template ([21d84ed](https://github.com/jpickwell/eslint-config-robyn/commit/21d84ed79ec102ed3be5e84a0779a3b4eca0bf2f))
+
 ## [5.0.0](https://github.com/jpickwell/eslint-config-robyn/compare/v4.1.5...v5.0.0) (2022-07-18)
 
 
