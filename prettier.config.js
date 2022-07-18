@@ -38,9 +38,6 @@ const config = {
 	linesBetweenQueries: 1,
 	logicalOperatorNewline: 'before',
 	minify: false,
-	multilineLists: 'always',
-	newlineBeforeCloseParen: true,
-	newlineBeforeOpenParen: true,
 	newlineBeforeSemicolon: false,
 	overrides: [
 		// Haml
