@@ -152,7 +152,7 @@ const config = {
 		'vue/next-tick-style': 'error',
 		'vue/no-arrow-functions-in-watch': 'error',
 		'vue/no-async-in-computed-properties': 'error',
-		'vue/no-bare-strings-in-template': 'warn',
+		'vue/no-bare-strings-in-template': 'off',
 		'vue/no-boolean-default': 'error',
 		'vue/no-child-content': 'error',
 		'vue/no-computed-properties-in-data': 'error',
