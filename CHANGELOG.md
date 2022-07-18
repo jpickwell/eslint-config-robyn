@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0](https://github.com/jpickwell/eslint-config-robyn/compare/v4.1.5...v5.0.0) (2022-07-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* switch back to js extension
+* move configs to separate directory
+* remove backticks config
+
+### Features
+
+* update configs ([19bd215](https://github.com/jpickwell/eslint-config-robyn/commit/19bd215e62c3a03da17ac936fa229a5706cf0a1e))
+
+
+### Bug Fixes
+
+* misspelled eslint config file name ([3da21a4](https://github.com/jpickwell/eslint-config-robyn/commit/3da21a41efebbb53cf98cfa3798ef467d9e35302))
+* restore shell scripts ([2dda071](https://github.com/jpickwell/eslint-config-robyn/commit/2dda0715dec43c6fe44baeb754e83f92d8401051))
+* script/module configs ([9f3b814](https://github.com/jpickwell/eslint-config-robyn/commit/9f3b8146d3656b8b2b0db9a29f033541876b6e3a))
+
+
+### Code Refactoring
+
+* move configs to separate directory ([19f32a2](https://github.com/jpickwell/eslint-config-robyn/commit/19f32a2e89907aed6421ef1d33746646f9209af8))
+* remove backticks config ([09f0f37](https://github.com/jpickwell/eslint-config-robyn/commit/09f0f3771918f564fd44690b5c4325dc5c83d7fc))
+* switch back to js extension ([c768888](https://github.com/jpickwell/eslint-config-robyn/commit/c7688884649a5dceba51df913689cce904bf208c))
+
 ### [4.1.5](https://github.com/jpickwell/eslint-config-robyn/compare/v4.1.4...v4.1.5) (2022-06-20)
 
 ### [4.1.4](https://github.com/jpickwell/eslint-config-robyn/compare/v4.1.3...v4.1.4) (2022-06-20)
