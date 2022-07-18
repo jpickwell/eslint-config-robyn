@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.3.0](https://github.com/jpickwell/eslint-config-robyn/compare/v5.2.1...v5.3.0) (2022-07-18)
+
+
+### Features
+
+* allow leading $ in identifiers ([258a497](https://github.com/jpickwell/eslint-config-robyn/commit/258a4975879d7daef5d08dabd634472941b3ff56))
+
 ### [5.2.1](https://github.com/jpickwell/eslint-config-robyn/compare/v5.2.0...v5.2.1) (2022-07-18)
 
 
