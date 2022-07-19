@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.4.0](https://github.com/jpickwell/eslint-config-robyn/compare/v5.3.0...v5.4.0) (2022-07-19)
+
+
+### Features
+
+* add postcss config to overrides ([0c8d288](https://github.com/jpickwell/eslint-config-robyn/commit/0c8d2880f38765eadfacabfdb72695bc4f809018))
+* turn off vue/no-v-model-argument ([8b25f24](https://github.com/jpickwell/eslint-config-robyn/commit/8b25f24f1872c2a3b88ee507af1b8bb3e7af49d4))
+
 ## [5.3.0](https://github.com/jpickwell/eslint-config-robyn/compare/v5.2.1...v5.3.0) (2022-07-18)
 
 
