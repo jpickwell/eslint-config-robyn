@@ -260,7 +260,7 @@ const config = {
 		'vue/no-v-for-template-key': 'error',
 		'vue/no-v-for-template-key-on-child': 'error',
 		'vue/no-v-html': 'error',
-		'vue/no-v-model-argument': 'error',
+		'vue/no-v-model-argument': 'off',
 		'vue/no-v-text': 'error',
 		'vue/no-v-text-v-html-on-component': 'error',
 		'vue/no-watch-after-await': 'error',
