@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.5.2](https://github.com/jpickwell/eslint-config-robyn/compare/v5.5.1...v5.5.2) (2022-07-20)
+
+
+### Bug Fixes
+
+* ignore packages for import/extensions ([313a9a0](https://github.com/jpickwell/eslint-config-robyn/commit/313a9a0bf6e1f018752cc85f05c4d564d8303b97))
+
 ### [5.5.1](https://github.com/jpickwell/eslint-config-robyn/compare/v5.5.0...v5.5.1) (2022-07-20)
 
 
