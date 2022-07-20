@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.5.0](https://github.com/jpickwell/eslint-config-robyn/compare/v5.4.0...v5.5.0) (2022-07-20)
+
+
+### Features
+
+* add tailwind config to overrides ([b18462b](https://github.com/jpickwell/eslint-config-robyn/commit/b18462bbd915c758a3451d1b7b12054816a60710))
+
+
+### Bug Fixes
+
+* add missing postcss config file names ([4b65687](https://github.com/jpickwell/eslint-config-robyn/commit/4b65687902937f349df29a58fc13e072fbdfbba9))
+
 ## [5.4.0](https://github.com/jpickwell/eslint-config-robyn/compare/v5.3.0...v5.4.0) (2022-07-19)
 
 
