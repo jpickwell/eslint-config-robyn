@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.0.0](https://github.com/jpickwell/eslint-config-robyn/compare/v5.5.2...v6.0.0) (2022-07-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* move typescript to its own configs
+
+### Features
+
+* move typescript to its own configs ([7aa5061](https://github.com/jpickwell/eslint-config-robyn/commit/7aa50619a8287b742bb759c2a00fb4fd81546d86))
+
 ### [5.5.2](https://github.com/jpickwell/eslint-config-robyn/compare/v5.5.1...v5.5.2) (2022-07-20)
 
 
