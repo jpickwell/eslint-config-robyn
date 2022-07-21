@@ -26,13 +26,6 @@ const config = {
 			],
 			{
 				extends: [require.resolve('./script.js')],
-				rules: {
-					/**********************************************************
-					 * @TYPESCRIPT-ESLINT
-					 **********************************************************/
-
-					'@typescript-eslint/no-var-requires': 'off',
-				},
 			},
 		),
 		override(
