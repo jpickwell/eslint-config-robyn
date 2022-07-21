@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.0.2](https://github.com/jpickwell/eslint-config-robyn/compare/v6.0.1...v6.0.2) (2022-07-21)
+
+
+### Bug Fixes
+
+* move base overrides to separate config ([6035b07](https://github.com/jpickwell/eslint-config-robyn/commit/6035b07e304e90646fbd7adec90e347e0bd134e6))
+
 ### [6.0.1](https://github.com/jpickwell/eslint-config-robyn/compare/v6.0.0...v6.0.1) (2022-07-21)
 
 
