@@ -159,6 +159,18 @@ const config = {
 						ignoreStatic: true,
 					},
 				],
+
+				/**************************************************************
+				 * IMPORT
+				 **************************************************************/
+
+				'import/extensions': sharedConfigs.import.extensions({
+					pattern: {
+						js: 'always',
+						ts: 'never',
+						tsx: 'never',
+					},
+				}),
 			},
 		}),
 		override(['tsx'], {
@@ -174,7 +186,6 @@ const config = {
 	],
 	parser: require.resolve('@typescript-eslint/parser'),
 	parserOptions: {
-		sourceType: 'module',
 		warnOnUnsupportedTypeScriptVersion: false,
 	},
 	plugins: ['@typescript-eslint'],
@@ -540,14 +551,6 @@ const config = {
 
 		// Disabled because of https://github.com/benmosher/eslint-plugin-import/issues/1590
 		'import/export': 'off',
-
-		'import/extensions': sharedConfigs.import.extensions({
-			pattern: {
-				js: 'always',
-				ts: 'never',
-				tsx: 'never',
-			},
-		}),
 
 		// Disabled as it does not work with TS.
 		'import/named': 'off',
