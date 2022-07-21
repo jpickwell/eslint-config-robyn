@@ -9,7 +9,10 @@ const config = {
 	env: {
 		node: true,
 	},
-	extends: [require.resolve('./base-configs/index.js')],
+	extends: [
+		require.resolve('./base-configs/index.js'),
+		require.resolve('./base-configs/overrides.js'),
+	],
 	rules: {
 		/**********************************************************************
 		 * CORE

@@ -6,6 +6,7 @@ const config = {
 		require.resolve('./base-configs/index.js'),
 		require.resolve('./base-configs/browser.js'),
 		require.resolve('./base-configs/vue.js'),
+		require.resolve('./base-configs/overrides.js'),
 	],
 };
 

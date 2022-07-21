@@ -2,7 +2,10 @@
 
 /** @type {import('eslint').BaseConfig} */
 const config = {
-	extends: [require.resolve('./base-configs/index.js')],
+	extends: [
+		require.resolve('./base-configs/index.js'),
+		require.resolve('./base-configs/overrides.js'),
+	],
 };
 
 module.exports = config;

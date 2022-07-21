@@ -5,6 +5,7 @@ const config = {
 	extends: [
 		require.resolve('../base-configs/index.js'),
 		require.resolve('../base-configs/typescript/index.js'),
+		require.resolve('../base-configs/overrides.js'),
 	],
 };
 

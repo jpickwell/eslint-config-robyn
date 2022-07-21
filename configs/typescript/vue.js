@@ -8,6 +8,7 @@ const config = {
 		require.resolve('../base-configs/typescript/index.js'),
 		require.resolve('../base-configs/vue.js'),
 		require.resolve('../base-configs/typescript/vue.js'),
+		require.resolve('../base-configs/overrides.js'),
 	],
 };
 
