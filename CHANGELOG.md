@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.0.4](https://github.com/jpickwell/eslint-config-robyn/compare/v6.0.3...v6.0.4) (2022-07-21)
+
+
+### Bug Fixes
+
+* turn off import/extensions for ts vue ([df75fb6](https://github.com/jpickwell/eslint-config-robyn/commit/df75fb65782fafd2ae7734710dbdb632a103a0f8))
+
 ### [6.0.3](https://github.com/jpickwell/eslint-config-robyn/compare/v6.0.2...v6.0.3) (2022-07-21)
 
 
