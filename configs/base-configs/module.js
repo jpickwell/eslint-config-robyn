@@ -1,6 +1,6 @@
 'use strict';
 
-const { nodeVersion } = require('../lib/helpers');
+const { nodeVersion } = require('../../lib/helpers');
 
 /** @type {import('eslint').BaseConfig} */
 const config = {
@@ -18,6 +18,10 @@ const config = {
 		sourceType: 'module',
 	},
 	rules: {
+		/**********************************************************************
+		 * N[ODE]
+		 **********************************************************************/
+
 		'n/no-unsupported-features/es-syntax': [
 			'error',
 			{
@@ -25,6 +29,10 @@ const config = {
 				version: nodeVersion,
 			},
 		],
+
+		/**********************************************************************
+		 * UNICORN
+		 **********************************************************************/
 
 		'unicorn/prefer-module': 'error',
 	},

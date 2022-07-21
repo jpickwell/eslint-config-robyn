@@ -1,4 +1,4 @@
-interface OverrideExtension {
+declare interface OverrideExtension {
 	directories: string[] | undefined;
 	extensions: string[];
 }

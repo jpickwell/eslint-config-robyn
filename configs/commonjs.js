@@ -6,7 +6,7 @@ const { override } = require('../lib/helpers');
 const config = {
 	overrides: [
 		override(['js', 'jsx'], {
-			extends: [require.resolve('./script')],
+			extends: [require.resolve('./base-configs/script.js')],
 		}),
 	],
 };

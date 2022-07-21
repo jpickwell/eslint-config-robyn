@@ -3,10 +3,9 @@
 /** @type {import('eslint').BaseConfig} */
 const config = {
 	extends: [
-		require.resolve('../../configs/vue.js'),
-		require.resolve('../../configs/commonjs.js'),
+		require.resolve('../base-configs/index.js'),
+		require.resolve('../base-configs/typescript/index.js'),
 	],
-	root: true,
 };
 
 module.exports = config;

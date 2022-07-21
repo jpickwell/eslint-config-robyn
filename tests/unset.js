@@ -9,7 +9,7 @@ const pickBy = require('lodash/pickBy');
 const { asyncRunAsSync, loadConfig } = require('../lib/dev-helpers');
 
 async function run() {
-	const ruleFinder = await loadConfig(require.resolve('../configs/vue'));
+	const ruleFinder = await loadConfig(require.resolve('../configs/vue.js'));
 	const unsetRules = Object.keys(
 		pickBy(ruleFinder.getCurrentRulesDetailed(), (value) => {
 			const ruleSeverity = Array.isArray(value) ? value[0] : value;

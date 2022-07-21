@@ -7,7 +7,7 @@ const process = require('node:process');
 const intersection = require('lodash/intersection');
 const without = require('lodash/without');
 
-const deprecatedConfig = require('../configs/deprecated');
+const deprecatedConfig = require('../configs/base-configs/deprecated');
 const {
 	asyncRunAsSync,
 	getEnabledRules,
@@ -71,7 +71,7 @@ function anyEnabledDeprecatedRules(setRules, deprecatedRules) {
 async function run() {
 	console.log('Checking for deprecated rules...');
 
-	const ruleFinder = await loadConfig(require.resolve('../configs/vue'));
+	const ruleFinder = await loadConfig(require.resolve('../configs/vue.js'));
 	const deprecatedRules = await getDeprecatedRules();
 
 	process.exitCode =

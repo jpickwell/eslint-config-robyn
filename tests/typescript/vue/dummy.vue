@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
-<script setup>
-// eslint-disable-next-line no-unused-vars
+<script lang="ts" setup>
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const dummy = {};
 </script>
 

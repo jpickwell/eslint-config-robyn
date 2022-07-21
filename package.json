@@ -72,7 +72,7 @@
 		"format:check": "yarn prettier:check .",
 		"ignore-sync": "ignore-sync .",
 		"install:clean": "yarn clean && yarn install",
-		"lint": "echo 'Linting ...'; yarn eslint --ext .cjs,.cts,.html,.js,.jsx,.md,.mjs,.mts,.ts,.tsx,.vue .",
+		"lint": "echo 'Linting ...'; yarn eslint --ext .js,.md,.ts,.vue .",
 		"lint:config": "yarn eslint:config configs/index.js",
 		"prepare": "scripts/is-dependency.js || is-ci || husky install",
 		"prettier": "prettier -u",
