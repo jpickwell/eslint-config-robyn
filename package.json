@@ -74,7 +74,7 @@
 		"install:clean": "yarn clean && yarn install",
 		"lint": "echo 'Linting ...'; yarn eslint --ext .js,.md,.ts,.vue .",
 		"lint:config": "yarn eslint:config configs/index.js",
-		"postinstall": "node \"$(node -e \"const path = require('node:path'); console.log(path.resolve(__dirname));\")/scripts/is-dependency.js\" || is-ci || husky install",
+		"postinstall": "node scripts/is-dependency.js || is-ci || husky install",
 		"prettier": "prettier -u",
 		"prettier:check": "yarn prettier -c",
 		"prettier:write": "yarn prettier -w",
