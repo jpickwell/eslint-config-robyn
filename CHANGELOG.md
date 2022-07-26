@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.0.5](https://github.com/jpickwell/eslint-config-robyn/compare/v6.0.4...v6.0.5) (2022-07-26)
+
+
+### Bug Fixes
+
+* add lint-staged config to script override ([4f00884](https://github.com/jpickwell/eslint-config-robyn/commit/4f00884ff4242123648d12d6c200e0b71a9136d6))
+
 ### [6.0.4](https://github.com/jpickwell/eslint-config-robyn/compare/v6.0.3...v6.0.4) (2022-07-21)
 
 
