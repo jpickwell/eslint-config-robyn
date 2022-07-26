@@ -17,6 +17,7 @@ const config = {
 						'.stylelintrc.js',
 						'.versionrc.js',
 						'commitlint.config.js',
+						'lint-staged.config.js',
 						'postcss.config.js',
 						'prettier.config.js',
 						'stylelint.config.js',
