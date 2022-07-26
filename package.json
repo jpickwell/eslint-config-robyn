@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-robyn",
-	"version": "6.0.5",
+	"version": "6.0.6",
 	"type": "commonjs",
 	"description": "Robyn Style - Shareable Configs",
 	"repository": {
