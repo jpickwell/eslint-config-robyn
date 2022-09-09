@@ -1,7 +1,7 @@
 #!/bin/sh
 
 scripts/find-new-rules.sh \
-	&& check:deprecated-rules \
+	&& tests/deprecated.js \
 	&& tests/incompatible.js \
-	&& yarn eslint-config-prettier index.js \
-	&& yarn lint
+	&& npx eslint-config-prettier index.js \
+	&& npm run lint

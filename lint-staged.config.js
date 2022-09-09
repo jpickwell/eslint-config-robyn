@@ -1,8 +1,8 @@
 'use strict';
 
 const config = {
-	'{.*,*}': 'yarn prettier:write',
-	'{.*,*}.{js,md,ts,vue}': 'yarn eslint:fix',
+	'{.*,*}': 'npm run prettier:write --',
+	'{.*,*}.{js,md,ts,vue}': 'npm run eslint:fix --',
 };
 
 module.exports = config;

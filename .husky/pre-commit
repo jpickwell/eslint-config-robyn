@@ -5,4 +5,4 @@
 # Skip pre-commit hook on CI
 [ -n "$CI" ] && exit
 
-yarn lint-staged
+npx lint-staged

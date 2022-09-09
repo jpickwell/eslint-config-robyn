@@ -5,4 +5,4 @@
 # Skip commit-msg hook on CI
 [ -n "$CI" ] && exit
 
-yarn commitlint --edit "$1"
+npx commitlint --edit "$1"
