@@ -6,9 +6,6 @@ const reduce = require('lodash/reduce');
 const config = {
 	rules: reduce(
 		[
-			'@typescript-eslint/no-duplicate-imports',
-			'@typescript-eslint/no-implicit-any-catch',
-			'@typescript-eslint/no-parameter-properties',
 			'callback-return',
 			'global-require',
 			'handle-callback-err',

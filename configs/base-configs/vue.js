@@ -250,7 +250,7 @@ const config = {
 		'vue/no-useless-mustaches': 'error',
 		'vue/no-useless-template-attributes': 'error',
 		'vue/no-useless-v-bind': 'error',
-		'vue/no-v-for-template-key': 'error',
+		'vue/no-v-for-template-key': 'off',
 		'vue/no-v-for-template-key-on-child': 'error',
 		'vue/no-v-html': 'error',
 		'vue/no-v-model-argument': 'off',

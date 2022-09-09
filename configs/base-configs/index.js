@@ -977,9 +977,7 @@ const config = {
 		'security/detect-object-injection': 'warn',
 		'security/detect-possible-timing-attacks': 'warn',
 		'security/detect-pseudoRandomBytes': 'warn',
-
-		// Too many false-positives, and no guidance.
-		'security/detect-unsafe-regex': 'off',
+		'security/detect-unsafe-regex': 'warn',
 
 		/**********************************************************************
 		 * UNICORN
@@ -1028,7 +1026,7 @@ const config = {
 		'unicorn/no-this-assignment': 'error',
 		'unicorn/no-unreadable-array-destructuring': 'error',
 		'unicorn/no-unreadable-iife': 'error',
-		'unicorn/no-unsafe-regex': 'error',
+		'unicorn/no-unsafe-regex': 'warn',
 		'unicorn/no-unused-properties': 'error',
 		'unicorn/no-useless-fallback-in-spread': 'error',
 		'unicorn/no-useless-length-check': 'error',
