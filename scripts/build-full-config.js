@@ -17,7 +17,6 @@ async function build() {
 	const rules = reduce(
 		allAvailableRules,
 		(acc, value) => {
-			// eslint-disable-next-line security/detect-object-injection
 			acc[value] = 'error';
 
 			return acc;

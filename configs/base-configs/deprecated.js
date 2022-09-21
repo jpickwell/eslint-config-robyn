@@ -52,7 +52,6 @@ const config = {
 			'vue/script-setup-uses-vars',
 		],
 		(acc, rule) => {
-			// eslint-disable-next-line security/detect-object-injection
 			acc[rule] = 'off';
 
 			return acc;
