@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.3.0](https://github.com/jpickwell/eslint-config-robyn/compare/v6.2.0...v6.3.0) (2022-09-21)
+
+
+### Features
+
+* turn off some rules ([362463f](https://github.com/jpickwell/eslint-config-robyn/commit/362463f6ff3077b6d32a1ab393d93927096ea81b))
+
+
+### Bug Fixes
+
+* remove verbose console output ([463c319](https://github.com/jpickwell/eslint-config-robyn/commit/463c319e75b30bcfa710f14fe9ea840adc7c822a))
+* use vue-ts config for various tests ([0a77f4e](https://github.com/jpickwell/eslint-config-robyn/commit/0a77f4e8f280a915477fbcc4aeab8fd6ddd07a31))
+
 ## [6.2.0](https://github.com/jpickwell/eslint-config-robyn/compare/v6.1.0...v6.2.0) (2022-09-09)
 
 
