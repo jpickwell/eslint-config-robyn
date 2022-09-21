@@ -12,11 +12,6 @@ const parentDirectoryNameOfPackage = path.basename(
 	path.resolve(parentDirectory, '..'),
 );
 
-console.log('pkg.name:', pkg.name);
-console.log('parentDirectory:', parentDirectory);
-console.log('parentDirectoryName:', parentDirectoryName);
-console.log('parentDirectoryNameOfPackage:', parentDirectoryNameOfPackage);
-
 const isDependency =
 	parentDirectoryName !== pkg.name ||
 	parentDirectoryNameOfPackage === 'node_modules';
