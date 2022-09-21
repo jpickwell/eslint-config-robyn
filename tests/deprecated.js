@@ -71,7 +71,10 @@ function anyEnabledDeprecatedRules(setRules, deprecatedRules) {
 async function run() {
 	console.log('Checking for deprecated rules...');
 
-	const ruleFinder = await loadConfig(require.resolve('../configs/vue.js'));
+	const ruleFinder = await loadConfig(
+		require.resolve('../configs/typescript/vue.js'),
+	);
+
 	const deprecatedRules = await getDeprecatedRules();
 
 	process.exitCode =

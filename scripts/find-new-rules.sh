@@ -6,9 +6,9 @@ find_new_rules() {
 
 echo 'Looking for new rules...'
 
-find_new_rules --ext .js \
-	&& find_new_rules --ext .ts \
-	&& find_new_rules --ext .ts configs/vue.js
+find_new_rules --ext .js configs/index.js \
+	&& find_new_rules --ext .ts configs/typescript/index.js \
+	&& find_new_rules --ext .ts configs/typescript/vue.js
 
 exit_code=$?
 

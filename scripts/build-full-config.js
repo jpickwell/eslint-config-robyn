@@ -10,7 +10,9 @@ const reduce = require('lodash/reduce');
 const { asyncRunAsSync, loadConfig } = require('../lib/dev-helpers');
 
 async function build() {
-	const ruleFinder = await loadConfig(require.resolve('../configs/vue.js'));
+	const ruleFinder = await loadConfig(
+		require.resolve('../configs/typescript/vue.js'),
+	);
 
 	const allAvailableRules = ruleFinder.getAllAvailableRules();
 
@@ -25,7 +27,7 @@ async function build() {
 	);
 
 	const config = {
-		extends: ['../configs/vue'],
+		extends: ['../configs/typescript/vue'],
 		rules,
 	};
 	const configFilePath = path.resolve(__dirname, '../tests/full-config.json');
