@@ -41,7 +41,7 @@ const config = {
 				'no-implied-eval': 'off',
 				'no-return-await': 'off',
 				'no-throw-literal': 'off',
-				// 'require-await': `off`,
+				'require-await': 'off',
 
 				/**************************************************************
 				 * @TYPESCRIPT-ESLINT
@@ -124,11 +124,8 @@ const config = {
 						ignoreStringArrays: true,
 					},
 				],
-				'@typescript-eslint/require-await': [
-					// Disabled for now because it is too buggy.
-					// sharedConfigs.requireAwait,
-					'off',
-				],
+				'@typescript-eslint/require-await':
+					sharedConfigs.requireAwait(),
 				'@typescript-eslint/restrict-plus-operands': [
 					'error',
 					{
