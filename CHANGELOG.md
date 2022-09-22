@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.3.1](https://github.com/jpickwell/eslint-config-robyn/compare/v6.3.0...v6.3.1) (2022-09-22)
+
+
+### Bug Fixes
+
+* turn off require await ([04ab13e](https://github.com/jpickwell/eslint-config-robyn/commit/04ab13e719f6bf9e02ae5a15ca0c850191cb99b1))
+
 ## [6.3.0](https://github.com/jpickwell/eslint-config-robyn/compare/v6.2.0...v6.3.0) (2022-09-21)
 
 
