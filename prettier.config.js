@@ -14,7 +14,6 @@ const { mapFiles } = require('./lib/helpers');
 const POSIX = 1;
 
 const config = {
-	aliasAs: 'always',
 	arrowParens: 'always',
 	binaryNextLine: true,
 	braceStyle: 'psr-2',
