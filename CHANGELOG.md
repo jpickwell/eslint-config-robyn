@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.3.3](https://github.com/jpickwell/eslint-config-robyn/compare/v6.3.2...v6.3.3) (2022-09-23)
+
+
+### Bug Fixes
+
+* remove unrecognized prettier option ([b4060a0](https://github.com/jpickwell/eslint-config-robyn/commit/b4060a02040739114f1a3d8c7b729d0aa7e2877e))
+* turn off import/max-dependencies ([5be53de](https://github.com/jpickwell/eslint-config-robyn/commit/5be53de79bd0f4b9ddf2b035be1f6d87c3abb46c))
+
 ### [6.3.2](https://github.com/jpickwell/eslint-config-robyn/compare/v6.3.1...v6.3.2) (2022-09-22)
 
 
