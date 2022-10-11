@@ -66,8 +66,7 @@ const config = {
 					},
 				],
 				'@typescript-eslint/no-for-in-array': 'error',
-				'@typescript-eslint/no-implied-eval':
-					sharedConfigs.noImpliedEval(),
+				'@typescript-eslint/no-implied-eval': sharedConfigs.noImpliedEval(),
 				'@typescript-eslint/no-meaningless-void-operator': 'error',
 				'@typescript-eslint/no-misused-promises': [
 					'error',
@@ -88,8 +87,7 @@ const config = {
 						allowThrowingUnknown: true,
 					},
 				],
-				'@typescript-eslint/no-unnecessary-boolean-literal-compare':
-					'error',
+				'@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
 				'@typescript-eslint/no-unnecessary-condition': 'off',
 				'@typescript-eslint/no-unnecessary-qualifier': 'error',
 				'@typescript-eslint/no-unnecessary-type-arguments': 'error',
@@ -124,8 +122,7 @@ const config = {
 						ignoreStringArrays: true,
 					},
 				],
-				'@typescript-eslint/require-await':
-					sharedConfigs.requireAwait(),
+				'@typescript-eslint/require-await': sharedConfigs.requireAwait(),
 				'@typescript-eslint/restrict-plus-operands': [
 					'error',
 					{
@@ -280,8 +277,7 @@ const config = {
 				types: {
 					'[[[[[]]]]]': '🦄💥',
 					'[[[[]]]]': 'ur drunk 🤡',
-					'[[[]]]':
-						'Do not use `[[[]]]`. Use `SomeType[][][]` instead.',
+					'[[[]]]': 'Do not use `[[[]]]`. Use `SomeType[][][]` instead.',
 					'[[]]': 'Do not use `[[]]`. It only allows an array with a single element which is an empty array. Use `SomeType[][]` instead.',
 					'[]': 'Do not use the empty array type `[]`. It only allows empty arrays. Use `SomeType[]` instead.',
 					'{}': {
@@ -354,13 +350,9 @@ const config = {
 				objectLiteralTypeAssertions: 'allow-as-parameter',
 			},
 		],
-		'@typescript-eslint/consistent-type-definitions': [
-			'error',
-			'interface',
-		],
+		'@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
 		'@typescript-eslint/consistent-type-imports': 0,
-		'@typescript-eslint/default-param-last':
-			sharedConfigs.defaultParamLast(),
+		'@typescript-eslint/default-param-last': sharedConfigs.defaultParamLast(),
 		'@typescript-eslint/explicit-function-return-type': [
 			'warn',
 			{
@@ -376,33 +368,23 @@ const config = {
 
 		'@typescript-eslint/func-call-spacing': sharedConfigs.funcCallSpacing(),
 		'@typescript-eslint/indent': sharedConfigs.indent(),
-		'@typescript-eslint/init-declarations':
-			sharedConfigs.initDeclarations(),
+		'@typescript-eslint/init-declarations': sharedConfigs.initDeclarations(),
 		'@typescript-eslint/keyword-spacing': sharedConfigs.keywordSpacing(),
-		'@typescript-eslint/lines-between-class-members':
-			sharedConfigs.linesBetweenClassMembers(),
+		'@typescript-eslint/lines-between-class-members': sharedConfigs.linesBetweenClassMembers(),
 		'@typescript-eslint/member-delimiter-style': 'off',
 		'@typescript-eslint/member-ordering': [
 			'error',
 			{
 				default: {
-					memberTypes: [
-						'signature',
-						'field',
-						'constructor',
-						['get', 'set'],
-						'method',
-					],
+					memberTypes: ['signature', 'field', 'constructor', ['get', 'set'], 'method'],
 					order: 'alphabetically-case-insensitive',
 				},
 			},
 		],
 		'@typescript-eslint/method-signature-style': 'off',
-		'@typescript-eslint/no-array-constructor':
-			sharedConfigs.noArrayConstructor(),
+		'@typescript-eslint/no-array-constructor': sharedConfigs.noArrayConstructor(),
 		'@typescript-eslint/no-confusing-non-null-assertion': 0,
-		'@typescript-eslint/no-dupe-class-members':
-			sharedConfigs.noDupeClassMembers(),
+		'@typescript-eslint/no-dupe-class-members': sharedConfigs.noDupeClassMembers(),
 		'@typescript-eslint/no-duplicate-enum-values': 'error',
 		'@typescript-eslint/no-dynamic-delete': 'error',
 		'@typescript-eslint/no-empty-function': sharedConfigs.noEmptyFunction(),
@@ -438,8 +420,7 @@ const config = {
 		'@typescript-eslint/no-invalid-void-type': 'off',
 
 		'@typescript-eslint/no-loop-func': sharedConfigs.noLoopFunc(),
-		'@typescript-eslint/no-loss-of-precision':
-			sharedConfigs.noLossOfPrecision(),
+		'@typescript-eslint/no-loss-of-precision': sharedConfigs.noLossOfPrecision(),
 		'@typescript-eslint/no-magic-numbers': sharedConfigs.noMagicNumbers(),
 		'@typescript-eslint/no-misused-new': 'error',
 		'@typescript-eslint/no-namespace': [
@@ -454,8 +435,7 @@ const config = {
 		'@typescript-eslint/no-non-null-assertion': 'off',
 		'@typescript-eslint/no-redeclare': sharedConfigs.noRedeclare(),
 		'@typescript-eslint/no-require-imports': 'error',
-		'@typescript-eslint/no-restricted-imports':
-			sharedConfigs.noRestrictedImports(),
+		'@typescript-eslint/no-restricted-imports': sharedConfigs.noRestrictedImports(),
 		'@typescript-eslint/no-shadow': [
 			sharedConfigs.noShadow()[0],
 			{
@@ -471,20 +451,16 @@ const config = {
 		],
 		'@typescript-eslint/no-type-alias': 0,
 		'@typescript-eslint/no-unnecessary-type-constraint': 'error',
-		'@typescript-eslint/no-unused-expressions':
-			sharedConfigs.noUnusedExpressions(),
+		'@typescript-eslint/no-unused-expressions': sharedConfigs.noUnusedExpressions(),
 		'@typescript-eslint/no-unused-vars': sharedConfigs.noUnusedVars(),
-		'@typescript-eslint/no-use-before-define':
-			sharedConfigs.noUseBeforeDefine({
-				enums: true,
-				typedefs: true,
-			}),
-		'@typescript-eslint/no-useless-constructor':
-			sharedConfigs.noUselessConstructor(),
+		'@typescript-eslint/no-use-before-define': sharedConfigs.noUseBeforeDefine({
+			enums: true,
+			typedefs: true,
+		}),
+		'@typescript-eslint/no-useless-constructor': sharedConfigs.noUselessConstructor(),
 		'@typescript-eslint/no-useless-empty-export': 'error',
 		'@typescript-eslint/no-var-requires': 'error',
-		'@typescript-eslint/object-curly-spacing':
-			sharedConfigs.objectCurlySpacing(),
+		'@typescript-eslint/object-curly-spacing': sharedConfigs.objectCurlySpacing(),
 		'@typescript-eslint/padding-line-between-statements':
 			sharedConfigs.paddingLineBetweenStatements(),
 		'@typescript-eslint/parameter-properties': [
@@ -504,10 +480,8 @@ const config = {
 		'@typescript-eslint/quotes': sharedConfigs.quotes(),
 		'@typescript-eslint/semi': sharedConfigs.semi(),
 		'@typescript-eslint/sort-type-union-intersection-members': 0,
-		'@typescript-eslint/space-before-blocks':
-			sharedConfigs.spaceBeforeBlocks(),
-		'@typescript-eslint/space-before-function-paren':
-			sharedConfigs.spaceBeforeFunctionParen(),
+		'@typescript-eslint/space-before-blocks': sharedConfigs.spaceBeforeBlocks(),
+		'@typescript-eslint/space-before-function-paren': sharedConfigs.spaceBeforeFunctionParen(),
 		'@typescript-eslint/space-infix-ops': sharedConfigs.spaceInfixOps(),
 		'@typescript-eslint/triple-slash-reference': [
 			'error',
@@ -586,10 +560,7 @@ const config = {
 	},
 	settings: {
 		'import/extensions': allExtensions,
-		'import/external-module-folders': [
-			'node_modules',
-			'node_modules/@types',
-		],
+		'import/external-module-folders': ['node_modules', 'node_modules/@types'],
 		'import/parsers': {
 			[require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx'],
 		},

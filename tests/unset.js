@@ -9,9 +9,7 @@ const pickBy = require('lodash/pickBy');
 const { asyncRunAsSync, loadConfig } = require('../lib/dev-helpers');
 
 async function run() {
-	const ruleFinder = await loadConfig(
-		require.resolve('../configs/typescript/vue.js'),
-	);
+	const ruleFinder = await loadConfig(require.resolve('../configs/typescript/vue.js'));
 
 	const unsetRules = Object.keys(
 		pickBy(ruleFinder.getCurrentRulesDetailed(), (value) => {

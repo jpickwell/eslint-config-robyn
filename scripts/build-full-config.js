@@ -10,9 +10,7 @@ const reduce = require('lodash/reduce');
 const { asyncRunAsSync, loadConfig } = require('../lib/dev-helpers');
 
 async function build() {
-	const ruleFinder = await loadConfig(
-		require.resolve('../configs/typescript/vue.js'),
-	);
+	const ruleFinder = await loadConfig(require.resolve('../configs/typescript/vue.js'));
 
 	const allAvailableRules = ruleFinder.getAllAvailableRules();
 

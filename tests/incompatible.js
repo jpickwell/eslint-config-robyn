@@ -14,11 +14,7 @@ const intersection = require('lodash/intersection');
 const merge = require('lodash/merge');
 const omitBy = require('lodash/omitBy');
 
-const {
-	asyncRunAsSync,
-	getEnabledRules,
-	loadConfig,
-} = require('../lib/dev-helpers');
+const { asyncRunAsSync, getEnabledRules, loadConfig } = require('../lib/dev-helpers');
 
 async function run() {
 	console.log('Checking for Prettier incompatible rules...');
@@ -28,8 +24,7 @@ async function run() {
 			omitBy(
 				merge(prettierPluginRules, prettierConfigRules),
 				(value, key) =>
-					key === 'prettier/prettier' ||
-					(Array.isArray(value) ? value[0] : value) === 0,
+					key === 'prettier/prettier' || (Array.isArray(value) ? value[0] : value) === 0,
 			),
 		),
 		'lines-around-comment',
@@ -40,9 +35,7 @@ async function run() {
 		'vue/max-len',
 	].sort();
 
-	const ruleFinder = await loadConfig(
-		require.resolve('../configs/typescript/vue.js'),
-	);
+	const ruleFinder = await loadConfig(require.resolve('../configs/typescript/vue.js'));
 
 	const setRules = ruleFinder.getCurrentRulesDetailed();
 	const enabledRules = getEnabledRules(setRules);
@@ -50,10 +43,7 @@ async function run() {
 	const result = enabledIncompatibleRules.length > 0;
 
 	if (result) {
-		console.log(
-			'Enabled Prettier incompatible rules:',
-			enabledIncompatibleRules.sort(),
-		);
+		console.log('Enabled Prettier incompatible rules:', enabledIncompatibleRules.sort());
 	}
 
 	console.log('');

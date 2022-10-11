@@ -99,12 +99,7 @@ const config = {
 		'vue/component-tags-order': [
 			'error',
 			{
-				order: [
-					'script',
-					'template',
-					'style[scoped]',
-					'style:not([scoped])',
-				],
+				order: ['script', 'template', 'style[scoped]', 'style:not([scoped])'],
 			},
 		],
 		'vue/custom-event-name-casing': 'error',

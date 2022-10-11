@@ -136,6 +136,9 @@ const config = {
 		'linebreak-style': 'off',
 		'lines-around-comment': 'off',
 		'lines-between-class-members': sharedConfigs.linesBetweenClassMembers(),
+		'logical-assignment-operators': sharedConfigs.operatorAssignment({
+			enforceForIfStatements: true,
+		}),
 		'max-classes-per-file': [
 			'error',
 			{
@@ -459,11 +462,10 @@ const config = {
 		'object-shorthand': sharedConfigs.objectShorthand(),
 		'one-var': ['error', 'never'],
 		'one-var-declaration-per-line': 'off',
-		'operator-assignment': ['error', 'always'],
+		'operator-assignment': sharedConfigs.operatorAssignment(),
 		'operator-linebreak': sharedConfigs.operatorLinebreak(),
 		'padded-blocks': 'off',
-		'padding-line-between-statements':
-			sharedConfigs.paddingLineBetweenStatements(),
+		'padding-line-between-statements': sharedConfigs.paddingLineBetweenStatements(),
 		'prefer-arrow-callback': 'off',
 		'prefer-const': [
 			'error',
@@ -751,11 +753,7 @@ const config = {
 						position: 'after',
 					},
 				],
-				pathGroupsExcludedImportTypes: [
-					'builtin',
-					'external',
-					'object',
-				],
+				pathGroupsExcludedImportTypes: ['builtin', 'external', 'object'],
 				warnOnUnassignedImports: false,
 			},
 		],
@@ -1024,6 +1022,7 @@ const config = {
 		'unicorn/no-static-only-class': 'error',
 		'unicorn/no-thenable': 'error',
 		'unicorn/no-this-assignment': 'error',
+		'unicorn/no-unnecessary-await': 'error',
 		'unicorn/no-unreadable-array-destructuring': 'error',
 		'unicorn/no-unreadable-iife': 'error',
 		'unicorn/no-unsafe-regex': 'warn',
@@ -1209,6 +1208,7 @@ const config = {
 		'unicorn/require-number-to-fixed-digits-argument': 'error',
 		'unicorn/require-post-message-target-origin': 'error',
 		'unicorn/string-content': 'off',
+		'unicorn/switch-case-braces': ['error', 'always'],
 		'unicorn/template-indent': 'error',
 		'unicorn/text-encoding-identifier-case': 'error',
 		'unicorn/throw-new-error': 'error',
