@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.4.0](https://github.com/jpickwell/eslint-config-robyn/compare/v6.3.3...v6.4.0) (2022-10-11)
+
+
+### Features
+
+* add and enable new rules ([b88ca8f](https://github.com/jpickwell/eslint-config-robyn/commit/b88ca8f6a6aa19963fd642c6133be3e386ad36df))
+* bump line length to 100 ([fa0d0d1](https://github.com/jpickwell/eslint-config-robyn/commit/fa0d0d14d5f9946d93c24f8ee417f4533a76c7f9))
+* update dependencies ([dd2cc74](https://github.com/jpickwell/eslint-config-robyn/commit/dd2cc74bea06247c0594974bd9bdd8c2600e4b49))
+
 ### [6.3.3](https://github.com/jpickwell/eslint-config-robyn/compare/v6.3.2...v6.3.3) (2022-09-23)
 
 
