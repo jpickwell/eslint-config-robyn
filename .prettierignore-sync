@@ -1,20 +1,12 @@
-[github/gitignore]
-Global/JetBrains.gitignore
-Global/Linux.gitignore
-Global/macOS.gitignore
-Global/Vim.gitignore
-Global/Windows.gitignore
-Node.gitignore
-
 [local]
-project.gitignore
-lint-format.gitignore
+.gitignore-sync
 
 [inline]
 *.iml
 .*ignore
-/.*ignore-sync
+.*ignore-sync
 /.git*
-/.husky/_
+/.idea
+/.yarn
 /CHANGELOG.md
-/yarn.lock
+/tests/full-config.json

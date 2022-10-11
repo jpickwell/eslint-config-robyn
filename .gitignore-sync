@@ -3,19 +3,9 @@ Global/JetBrains.gitignore
 Global/Linux.gitignore
 Global/macOS.gitignore
 Global/Vim.gitignore
+Global/VisualStudioCode.gitignore
 Global/Windows.gitignore
 Node.gitignore
 
-[local]
-project.gitignore
-
 [inline]
-.yarn/*
-
-!.pnp.*
-!.yarn/cache
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+/.husky/_

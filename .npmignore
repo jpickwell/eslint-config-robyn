@@ -142,6 +142,19 @@ tags
 # Persistent undo
 [._]*.un~
 
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
 # Windows thumbnail cache files
 Thumbs.db
 Thumbs.db:encryptable
@@ -298,8 +311,8 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+/.husky/_
 
-
-/.github
-/.idea
+.*
+/bin
 /tests

@@ -1,15 +1,7 @@
-[github/gitignore]
-Global/JetBrains.gitignore
-Global/Linux.gitignore
-Global/macOS.gitignore
-Global/Vim.gitignore
-Global/Windows.gitignore
-Node.gitignore
-
 [local]
-project.gitignore
+.gitignore-sync
 
 [inline]
-/.github
-/.idea
+.*
+/bin
 /tests
