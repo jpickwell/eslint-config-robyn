@@ -109,7 +109,7 @@ const config = {
 		'prettier-plugin-sh',
 		'prettier-plugin-sql',
 	],
-	printWidth: 80,
+	printWidth: 100,
 	proseWrap: 'always',
 	quoteProps: 'as-needed',
 	requirePragma: false,
