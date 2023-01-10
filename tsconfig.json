@@ -14,9 +14,5 @@
 		"target": "ESNext",
 		"useDefineForClassFields": true
 	},
-	"files": [
-		"lib/helpers.d.ts",
-		"tests/typescript/dummy.ts",
-		"tests/typescript/vue/dummy.vue"
-	]
+	"files": ["lib/helpers.d.ts", "tests/typescript/dummy.ts", "tests/typescript/vue/dummy.vue"]
 }

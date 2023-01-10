@@ -7,8 +7,7 @@ Shareable ESLint, Prettier, and Stylelint configs.
 
 ## IE Support
 
-Turn off `unicorn/prefer-node-append` because IE doesn't support
-`ParentNode.prototype.append`.
+Turn off `unicorn/prefer-node-append` because IE doesn't support `ParentNode.prototype.append`.
 
 ## Semantic Versioning Policy
 
