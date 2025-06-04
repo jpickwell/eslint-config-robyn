@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=https://json.schemastore.org/dependabot-2.0.json
+---
+updates:
+    # GitHub Actions
+    - allow:
+          - dependency-type: all
+      commit-message:
+          include: scope
+          prefix: chore
+      directory: /
+      package-ecosystem: github-actions
+      schedule:
+          day: sunday
+          interval: weekly
+          time: '00:00'
+          timezone: Etc/UTC
+
+    # NPM
+    - allow:
+          - dependency-type: all
+      commit-message:
+          include: scope
+          prefix: chore
+      directory: /
+      # Disable PRs for the time being.
+      open-pull-requests-limit: 0
+      package-ecosystem: npm
+      schedule:
+          day: sunday
+          interval: weekly
+          time: '00:00'
+          timezone: Etc/UTC
+      versioning-strategy: increase
+
+version: 2
