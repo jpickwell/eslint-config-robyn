@@ -1,0 +1,71 @@
+{
+	"[editorconfig]": {
+		"editor.defaultFormatter": "EditorConfig.EditorConfig"
+	},
+	"[github-actions-workflow]": {
+		"editor.defaultFormatter": "github.vscode-github-actions"
+	},
+	"[ignore]": {
+		"editor.defaultFormatter": "foxundermoon.shell-format"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json5]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[shellscript]": {
+		"editor.defaultFormatter": "foxundermoon.shell-format"
+	},
+	"[toml]": {
+		"editor.defaultFormatter": "tamasfe.even-better-toml"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[yaml]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[yml]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"cSpell.words": [
+		"dont",
+		"futil",
+		"gemrc",
+		"jpickwell",
+		"kaitai",
+		"lkml",
+		"lookml",
+		"publint",
+		"raml",
+		"regru",
+		"rviz",
+		"taggrouping"
+	],
+	"debug.javascript.autoAttachFilter": "onlyWithFlag",
+	"debug.javascript.defaultRuntimeExecutable": {
+		"pwa-node": "node"
+	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.fixAll.shellcheck": "explicit",
+		"source.fixAll.ts": "explicit",
+		"source.sort.json": "explicit"
+	},
+	"eslint.enable": true,
+	"mise.autoDetectMiseBinPath": false,
+	"mise.binPath": "mise",
+	"mise.configureExtensionsAutomatically": false,
+	"prettier.enable": true,
+	"shellcheck.executablePath": "shellcheck"
+}

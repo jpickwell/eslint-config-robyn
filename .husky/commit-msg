@@ -1,8 +1,0 @@
-#!/bin/sh
-
-. "$(dirname "$0")/_/husky.sh"
-
-# Skip commit-msg hook on CI
-[ -n "$CI" ] && exit
-
-npx commitlint --edit "$1"
